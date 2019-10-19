@@ -1,0 +1,22 @@
+.search-hotel {
+  width: 100%;
+  border-top: 1rpx solid #F0F2F5;
+  border-bottom: 1rpx solid #F0F2F5;
+  display: flex;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  margin-top: 20%;
+}
+.search-hotel input {
+  line-height: 100rpx;
+  height: 100rpx;
+  margin-left: 100rpx;
+  font-size: 30rpx;
+  flex: 1;
+  text-align: center;
+}
+.search-hotel .search-btn {
+  margin-right: 100rpx;
+  flex: 1;
+  text-align: center;
+}

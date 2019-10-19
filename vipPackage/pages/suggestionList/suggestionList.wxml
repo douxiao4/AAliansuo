@@ -1,0 +1,66 @@
+<!-- vipPackage/pages/suggestionList/suggestionList.wxml -->
+<import src='../../../template/stars-template.wxml' />
+<view class="page suggestionList" style="background: url(https://ucpic.aaroom.cc/2019-01-23_5c47d92087b62.jpg) repeat-y; background-size:100% auto;">
+  <!-- 顶部标题 -->
+  <view class="topBox">
+    <image class="topImg" mode="widthFix" src="https://ucpic.aaroom.cc/2019-01-22_5c46b4e0d69cf.png"></image>
+    <view class="titleBox">
+      <!-- <image class="titBg" src="" /> -->
+      <text>AA品牌店</text>
+    </view>
+    <view class="detail mt5">
+      <text>AA连锁酒店</text>
+      <text class="bigTxt">8</text>
+      <text>家旗舰级甄选，全心打造!</text>
+    </view>
+    <view class="detail">
+      <text>升级您的入住体验!!!</text>
+    </view>
+  </view>
+  <!-- 顶部标题end -->
+  <!-- 推荐列表 -->
+  <view class="list">
+    <view class="borderBox tapItem mt15" data-index="{{index}}" data-item="{{item}}" catchtap="toBuyRoom" wx:for="{{list}}" wx:key="index" wx:for-index="index" wx:for-item="item">
+      <view class="index">{{index+1}}</view>
+      <view class="item">
+        <view class="titleBox">
+          <!-- <view class="index">{{index+1}}</view> -->
+          <view class="title">{{item.name}}</view>
+          <view class="distance">
+            <image class="iconImg" mode="scaleToFill" src="../../../images/dingwei@1x.png"></image>
+            <view class="txt">距离您{{item.distance}}KM</view>
+          </view>
+        </view>
+        <view class="bannerBox">
+          <image class="bannerImg" mode="scaleToFill" src="{{item.picture}}"></image>
+        </view>
+        <view class="tagBox">
+          <view class="tag" wx:for="{{item.labels}}" wx:key="idxTag" wx:for-index="idxTag" wx:for-item="tag">
+            {{tag.label}}
+          </view>
+        </view>
+        <view class="serviceBox">
+          <view class="serviceItems">{{item.serviceItems}}</view>
+        </view>
+        <view class="bottomBox">
+          <view class="starBox">
+            <!-- <view>推荐指数：</view> -->
+            <template is='starsTemplate' data='{{...item}}'></template>
+          </view>
+          <view class="priceBox" wx:if="{{item.price}}">￥{{item.price}}起</view>
+          <view class="btnBox">
+            <button class="buy">立即预定</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 推荐列表end -->
+  <!-- 触底提示 -->
+  <view class="bottomTipBox">
+    <text class="border">———</text>
+    <text class="txt">我是有底线的</text>
+    <text class="border">———</text>
+  </view>
+  <!-- 触底提示end -->
+</view>

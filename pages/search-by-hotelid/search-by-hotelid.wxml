@@ -1,0 +1,9 @@
+<import src="../../wetoast/wetoast.wxml"/>
+
+<view class="search-hotel">
+  <input type="number" maxlength="5" placeholder="输入酒店ID" value="{{hotelId}}" bindinput="bindHotelId"></input>
+  <text bindtap="openHotelById" class="search-btn">搜索</text>
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}"/>

@@ -1,0 +1,67 @@
+<view class="container">
+  <view class="mycenter-box">
+  	<image class="mycenter-img" src="http://m.ihotels.cc/app/images/miniapp/mine_top_bg@3x.png"></image>
+		<view class="my-header my_personal my_personal_wei {{loginStatus?'user_login':''}}" 
+		bindtap="openUserInfo">
+  	</view>
+  	<view class="my-number">
+  	  <view>
+	  		<text>余额</text>
+	  		<text class="fonts22">{{loginStatus?memberInfo.remainStoredValue:'-'}}</text>	
+  	  </view>
+  		<view>
+	  		<text>优惠劵</text>
+	  		<text class="fonts22">{{loginStatus?memberInfo.couponCount:'-'}}</text>	
+  	  </view>
+  	  <view>
+	  		<text>积分</text>
+	  		<text class="fonts22">{{loginStatus?memberInfo.availableRewardsNum:'-'}}</text>	
+  	  </view>
+  	</view>  	
+  </view>
+  <view class="my-persomal" bindtap="openHotelList">
+    <image class="mycenter-img2" src="http://m.ihotels.cc/app/images/miniapp/01.png"></image>
+  	<view style="width:70%">
+  		<view>酒店订单</view>
+  		<view class="fonts12 gray">即刻开启优质住宿体验吧</view>
+  	</view>
+  	<image class="mycenter-img3" src="http://m.ihotels.cc/app/images/miniapp/mine_check_btn@2x.png"></image>	
+  </view>
+  <view class="my-accountmy-list mrt10 ">
+  	<view class="accountmy-list boderr" bindtap="openMyHotel">
+  		<icon class="accountmy-list-icon"></icon>
+  		<view>
+  			<view class="fonts14">我的酒店</view>
+  			<view class="fonts12 gray">收藏酒店和常住酒店</view>
+  		</view>
+  	</view>
+  	<view class="accountmy-list" bindtap="openMyComment">
+  		<icon class="accountmy-list-icon"></icon>
+  		<view>
+  			<view class="fonts14">我的评价</view>
+  			<view class="fonts12 gray">查看您评价过的酒店</view>
+  		</view>
+  	</view>
+  	<view class="accountmy-list boderr" bindtap="openCommonInfo" style="width: 100%;">
+  		<icon class="accountmy-list-icon"></icon>
+  		<view>
+  			<view class="fonts14">常用信息</view>
+  			<view class="fonts12 gray">旅客 地址 发票</view>
+  		</view>
+  	</view>
+  	<view class="accountmy-list" style="display: none;">
+  		<icon class="accountmy-list-icon"></icon>
+  		<view>
+  			<view class="fonts14">帮助</view>
+  			<view class="fonts12 gray">常见问题</view>
+  		</view>
+  	</view>
+  	<view class="accountmy-list" style="width: 100%;display: none;">
+  		<icon class="accountmy-list-icon"></icon>
+  		<view>
+  			<view class="fonts14">关于</view>
+  			<view class="fonts12 gray">应用介绍</view>
+  		</view>
+  	</view>
+  </view>
+</view>

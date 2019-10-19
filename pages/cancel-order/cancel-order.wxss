@@ -1,0 +1,32 @@
+.container {
+  font-size: 30rpx;
+}
+.cancel-info {
+  text-align: center;
+  padding-top: 20rpx;
+  border-bottom: 20rpx solid #F5F5F5;
+}
+.cancel-icon {
+  width: 188rpx;
+  height: 148rpx;
+}
+.cancel-text {
+  font-size: 28rpx;
+  padding: 100rpx 20rpx 50rpx;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.cancel-list {
+  padding: 50rpx 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+.cancel-btn-wrap {
+  padding: 50rpx 50rpx;
+}
+.cancel-btn {
+  background: #F05442;
+  color: #fff;
+  font-size: 30rpx;
+}

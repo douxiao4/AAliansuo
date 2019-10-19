@@ -1,0 +1,32 @@
+@import '../../template/coupons-template.wxss';
+
+.order-info-null{
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 35%;
+}
+.order-null-text{
+    text-align: center;
+    margin-top: 20px;
+    color: #798394;
+    font-size: 16px;
+}
+
+.roomExchange {
+    display: block;
+    width: 160rpx;
+    height: 55rpx;
+    /* float: right; */
+    line-height: 55rpx;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8rpx;
+    margin-left: 296rpx;
+    margin-bottom: 20rpx;
+    font-size: 25rpx;
+    font-weight: bold;
+    color: white;
+    background-color: #F05442;
+}

@@ -1,0 +1,51 @@
+<import src="../../wetoast/wetoast.wxml" />
+
+<view class="container">
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">旅客</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">地址</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">发票</view>
+  </view>
+  <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:{{winHeight - 31}}px" bindscrolltoupper="" scroll-top="0" wx:if="{{true}}">
+        <view class="order-list-main" wx:for="{{getAllTravelerByCreate}}" wx:key="" bindtap="editList" data-id="{{item.id}}" data-itype="{{item.card_type}}" data-index="{{index}}" data-type="1">
+          <view class="t-wrap">
+            <view class="t-name">{{item.name}}</view>
+            <view class="t-phone">{{item.phone}}</view>
+          </view>
+          <view class="t-icon"> > </view>
+        </view>
+        <button class="add-t" data-id="1" bindtap="addNewList">+ 新增常用旅客</button>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:{{winHeight - 31}}px" bindscrolltoupper="" scroll-top="0" wx:if="{{true}}">
+        <view class="order-list-main" wx:for="{{getAddress}}" wx:key="" bindtap="editList" data-id="{{item.id}}" data-type="2">
+          <view class="t-wrap">
+            <view class="t-name">{{item.name}} {{item.phone}}</view>
+            <view class="t-phone">{{item.province == item.city? '':item.province}}{{item.city}}{{item.area}}{{item.address_detail}}</view>
+          </view>
+          <view class="t-icon"> > </view>
+        </view>
+        <button wx:if="{{getAddress.length==0}}" class="add-t" data-id="2" bindtap="addNewList">+ 新增地址</button>
+      </scroll-view>
+      <!-- <button class="add-t" data-id="2" bindtap="addNewList">+ 新增地址</button> -->
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:{{winHeight - 31}}px" bindscrolltoupper="" scroll-top="0" wx:if="{{true}}">
+        <view class="order-list-main" wx:for="{{invoiceGet}}" wx:key="" bindtap="editList" data-id="{{item.id}}" data-itype='{{item.invoice_rise}}' data-type="3">
+          <view class="t-wrap">
+            <view class="t-name">{{item.company_name}}</view>
+          </view>
+          <view class="i-icon"> > </view>
+        </view>
+        <button wx:if="{{invoiceGet.length==0}}" class="add-t" data-id="3" bindtap="addNewList">+ 新增发票</button>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}" />

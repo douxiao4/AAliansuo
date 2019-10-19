@@ -1,0 +1,128 @@
+<import src="../../wetoast/wetoast.wxml" />
+<import src="../../template/template.wxml" />
+<import src='../../template/stars-template.wxml' />
+<view class="container">
+  <view class="lc-head">
+    <view class="lc-headline">
+      <view class="lc-headimgs" catchtap='letImagesPreview'>
+        <image src="{{getHotelInfo.imgsArr[0]? getHotelInfo.imgsArr[0]:'/images/pic_loading@2x.png'}}" data-src='{{getHotelInfo.imgsArr[0]}}' catchtap='letImagesPreview'></image>
+        <image src="{{getHotelInfo.imgsArr[1]? getHotelInfo.imgsArr[1]:'/images/pic_loading@2x.png'}}" data-src='{{getHotelInfo.imgsArr[1]}}' catchtap='letImagesPreview'></image>
+        <image src="{{getHotelInfo.imgsArr[2]? getHotelInfo.imgsArr[2]:'/images/pic_loading@2x.png'}}" data-src='{{getHotelInfo.imgsArr[2]}}' catchtap='letImagesPreview'></image>
+        <view class="lc-imgnum">
+          <image src='/images/icon_pic@2x.png'></image>
+          <text>{{getHotelInfo.hotelPic.length}}</text>
+        </view>
+        <view class="lc-collect" catchtap='collectHotel'>
+          <image src='/images/icon_heart_empty@2x.png' wx:if='{{iscollection==2}}'></image>
+          <image src='/images/icon_heart@2x.png' wx:if='{{iscollection==1}}'></image>
+        </view>
+      </view>
+      <view class="lc-headname" data-id='{{getHotelInfo.hotelId}}' catchtap='goToIntroduce'>
+        <text class="lchl-r1push" wx:if='{{getHotelInfo.allowStorgeTime}}'>时间储值</text>
+        <text>{{getHotelInfo.hotelName}}</text>
+      </view>
+    </view>
+    <view class="lc-headaddress">
+      <view class="lc-adr" catchtap='openMap'>
+        <image src='/images/address.png'></image>
+        <text>{{getHotelInfo.hotelAddress? getHotelInfo.hotelAddress : '位置未添加，可电话咨询或打开地图查看'}}</text>
+        <text wx:if='{{areaname&&distance}}'>{{areaname}} , 距您 {{distance}} km</text>
+      </view>
+      <view class="lc-consult" catchtap="callHotel">
+        <image src='/images/icon_tel.svg'></image>
+      </view>
+    </view>
+  </view>
+  <view class="select-day">
+    <!-- 全日房/钟点房 -->
+    <view class="room-type">
+      <view class="{{openType==1?'active':''}}" bindtap="changeRoomType" data-type="1">全日房</view>
+      <view class="{{openType==2?'active':''}}" bindtap="changeRoomType" data-type="2">钟点房</view>
+    </view>
+    <!-- 时间选择器 -->
+    <template is="selectdate" data="{{...selectDate}}" wx:if="{{openType==1}}" />
+    <template is="selecthourdate" data="{{...selectDate}}" wx:if="{{openType==2}}" />
+  </view>
+  <!-- 房型列表 -->
+  <!-- 新房型接口 -->
+  <view class="room-list-wrap" wx:if="{{openType==1}}">
+    <view class="room-list">
+      <view class="room-item" wx:for="{{getRoomType}}" wx:key="" style="display: {{index<showRoomCount?'block':'none'}}">
+        <view class="room-type-name" bindtap="showLevelPrice" data-id="{{item.room_type_code}}">
+          <view class="title">{{item.room_type_name}}</view>
+          <view class="price">
+            ￥{{item.room_type_prices[0].aa_plus_price}}起
+            <text>（Aplus会员价）</text>
+            <!-- <text>（玫瑰金会员价）</text> -->
+          </view>
+          <view class="switch-more">></view>
+        </view>
+        <view class="room-level-price" data-show="room{{item.room_type_code}}" wx:if="{{item.isShow}}">
+          <view class="level-item" wx:if="{{levelNum=='v1'}}">
+            <text class="level-name">AA会员价</text>
+            <text class="level-price">￥{{item.room_type_prices[0].price}}</text>
+            <text class="level-btn {{item.minNum>0?'':'disabled-btn'}}" bindtap="bookBtn" data-index="{{index}}" data-roomname="{{item.room_type_name}}" data-roomid="{{item.room_type_code}}" data-type="1" data-level="v1" data-roomnum="{{item.minNum}}">{{item.minNum>0?'预订':'订完'}}</text>
+          </view>
+          <view class="level-item" wx:if="{{levelNum=='v2'}}">
+            <text class="level-name">Aplus会员价</text>
+            <text class="level-price">￥{{item.room_type_prices[0].aa_plus_price}}</text>
+            <text class="level-btn {{item.minNum>0?'':'disabled-btn'}}" bindtap="bookBtn" data-index="{{index}}" data-roomname="{{item.room_type_name}}" data-roomid="{{item.room_type_code}}" data-type="1" data-level="v2" data-roomnum="{{item.minNum}}">{{item.minNum>0?'预订':'订完'}}</text>
+          </view>
+          <view class="level-item" wx:if="{{levelNum=='v3'}}">
+            <text class="level-name">Apro会员价</text>
+            <text class="level-price">￥{{item.room_type_prices[0].aa_pro_price}}</text>
+            <text class="level-btn {{item.minNum>0?'':'disabled-btn'}}" bindtap="bookBtn" data-index="{{index}}" data-roomname="{{item.room_type_name}}" data-roomid="{{item.room_type_code}}" data-type="1" data-level="v3" data-roomnum="{{item.minNum}}">{{item.minNum>0?'预订':'订完'}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="show-more-btn" bindtap="showMoreBtn" wx:if='{{allNum > 3}}'>
+      {{showRoomCount==3?'查看':'收起'}}更多房型 >
+    </view>
+    <view class="show-more-btn" wx:if='{{allNum <= 3}}'>没有更多房型</view>
+  </view>
+  <!-- 新房型接口end -->
+  <view class="lc-comment">
+    <view class="lc-commenthead">
+      <text>用户评论</text>
+      <text class="{{hasCom? '':'lcComment-gray'}}" bindtap='searchAllComment'>查看全部 ></text>
+    </view>
+    <!-- 新评价 -->
+    <template is='starsTemplate' data='{{...starMsg}}'></template>
+    <view class="lc-comments" wx:if='{{!hasCom}}'>
+      <text class="lc-noComments">暂无用户评论</text>
+    </view>
+    <view class="lc-comments" wx:if='{{hasCom}}'>
+      <view class="lc-commentshead">
+        <image src="{{commentlist.memberHead? commentlist.memberHead:'/images/pic_Default_red.svg'}}"></image>
+        <text>{{commentlist.memberCardNum}}</text>
+        <text>{{commentlist.star_level? commentlist.star_level:'超级棒'}} {{commentlist.star}}分</text>
+        <text>{{commentlist.memberCommentDetail.create_time}}</text>
+      </view>
+      <view class="lc-commentcontent">
+        <text>{{commentlist.memberCommentDetail.comment_text}}</text>
+      </view>
+    </view>
+<!-- 新评价end -->
+  </view>
+</view>
+<view class='copytabBar'>
+  <view bindtap="copytabBarindex" data-url='../index/index'>
+    <image src='/images/home_gray.png'></image>
+    <view>首页</view>
+  </view>
+  <view bindtap="copytabBar" data-url='../reside-service/reside-service' wx:if="{{scene_id}}">
+    <image src='/images/reside-service.png'></image>
+    <view>宿中服务</view>
+  </view>
+  <view bindtap="copytabBar" data-url='../play-around/play-around'>
+    <image src='/images/around-service.png'></image>
+    <view>玩周边</view>
+  </view>
+  <view bindtap="copytabBarmine" data-url='../minecenter/minecenter'>
+    <image src='/images/my_gray.png'></image>
+    <view>我的</view>
+  </view>
+</view>
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}" />

@@ -1,0 +1,171 @@
+view,text,image,picker,textarea,scroll-view,swiper,swiper-item{
+  box-sizing: border-box;
+}
+page{
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  background: #f1f1f1;
+  .page{
+    display: flex;
+    width: 100%;
+    min-height: 100%;
+    padding: 20rpx 30rpx 0;
+    // padding: 20rpx 0 0;
+    flex-flow: column;
+    .con-box{
+      width: 100%;
+      padding: 20rpx;
+      background: #fff;
+      border: 6rpx solid #e6e6e6;
+      border-radius: 12rpx;
+    }
+    .con{
+      width: 100%;
+      .con-tit{
+        font-size: 16px;
+        color: #333;
+      }
+      // 住店信息
+      .msg-box{
+        width: 100%;
+        color: #333;
+        .input-box{
+          width: 100%;
+          padding-top: 20rpx;
+          display: flex;
+          flex-flow: row;
+          .input-name{
+            width: 80px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 14px;
+          }
+          .input{
+            flex: 1;
+            width: 100%;
+            overflow: hidden;
+            height: 30px;
+            line-height: 30px;
+            input{
+              padding: 0 10rpx;
+              height: 28px;
+              line-height: 28px;
+              border: 1px solid #e6e6e6;
+              border-radius: 8rpx;
+              font-size: 14px;
+            }
+          }
+        }
+        textarea{
+          display: block;
+          width: 100%;
+          margin-top: 20rpx;
+          padding: 20rpx;
+          height: 300rpx;
+          background: #f2f2f2;
+          font-size: 14px;
+          color: #333;
+        }
+      }
+      // 住店信息end
+      // 选择时间
+      .day-box{
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 100%;
+        // padding: 20rpx 0;
+        padding-top: 20rpx;
+        .day{
+          margin: 10rpx 0;
+          width: 30%;
+          // height: 30px;
+          line-height: 30px;
+          font-size: 14px;
+          text-align: center;
+          border:4rpx solid #e6e6e6;
+          border-radius: 4px;
+          color: #333;
+        }
+        radio{
+          display: none;
+        }
+      }
+    // 选择时间 end
+    }
+  }
+  // 底部按钮
+  .foot-box{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 40rpx 60rpx;
+    z-index: 3;
+    .stay-btn{
+      // width: 80%;
+      margin: 0 auto;
+      background: #F05442;
+      color: #fff;
+      font-size: 16px;
+      line-height: 40px;
+      border-radius: 12rpx;
+      text-align: center;
+    }
+  }
+  // 返回首页
+  .backIndexShow {
+    position: fixed;
+    width: 100rpx;
+    height: 100rpx;
+    bottom: 40rpx;
+    left: -50rpx;
+    background: #e0481f;
+    border-radius: 999px;
+    overflow: hidden;
+    text-align: center;
+    z-index: 9;
+
+    .icon {
+      line-height: 100rpx;
+      font-size: 60rpx;
+      color: #fff;
+    }
+  }
+
+  .backIndex {
+    position: fixed;
+    width: 100rpx;
+    height: 100rpx;
+    // left: 40rpx;
+    bottom: 40rpx;
+    left: -50rpx;
+    background: #e0481f;
+    border-radius: 999px;
+    overflow: hidden;
+    text-align: center;
+    z-index: 8;
+
+    .icon {
+      line-height: 100rpx;
+      font-size: 60rpx;
+      color: #fff;
+    }
+  }
+  .mt10{
+    margin-top: 20rpx;
+  }
+  .red{
+    color: red;
+  }
+  .yellow{
+    color: #fff !important;
+    border-color: #F05442 !important;
+    background: #F05442 !important;
+  }
+  .last{
+    margin-bottom: 80px;
+  }
+}

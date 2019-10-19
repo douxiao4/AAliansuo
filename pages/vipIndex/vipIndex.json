@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText":"会员频道",
+  "usingComponents": {
+    "getPhone": "../../components/getPhone/getPhone"
+  }
+}

@@ -1,0 +1,4 @@
+<!-- <web-view src="{{url}}"></web-view> -->
+<view class="" hover-class="none" hover-stop-propagation="false">
+	rc
+</view>

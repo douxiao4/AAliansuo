@@ -1,0 +1,9 @@
+<!-- components/getPhone/getPhone.wxml -->
+<view class="getPhone mask">
+  <!-- <view class="btnBox">
+    <button type="primary" open-type="getPhoneNumber"  bindgetphonenumber="getPhoneNumber">授权手机号</button>
+  </view> -->
+  <button class="getPhoneBtn" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+    <image mode="widthFix" class="btnImg" src='https://ucpic.aaroom.cc/2019-03-20_5c91d39500dd0.png'></image>
+  </button>
+</view>

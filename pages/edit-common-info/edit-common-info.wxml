@@ -1,0 +1,170 @@
+<import src="../../wetoast/wetoast.wxml" />
+<!-- 新增旅客信息 -->
+<view class="t" wx:if="{{addTraveler}}">
+  <form bindsubmit="addTravelerForm">
+    <view class="form-box">
+      <view class="box-left">姓名</view>
+      <view class="box-right">
+        <input type="text" name="name" placeholder="与乘客证件一致" value="{{getTravelerByIdAndCreate.name}}"></input>
+      </view>
+    </view>
+    <view class="form-box">
+      <view class="box-left">手机号</view>
+      <view class="box-right">
+        <input type="text" name="phone" placeholder="有效的手机号" value="{{getTravelerByIdAndCreate.phone}}"></input>
+      </view>
+    </view>
+    <view class="form-box">
+      <view class="box-left">邮箱</view>
+      <view class="box-right">
+        <input type="text" name="email" placeholder="用于找回密码" value="{{getTravelerByIdAndCreate.email}}"></input>
+      </view>
+    </view>
+    <view class="form-box">
+      <view class="box-left">证件类型</view>
+      <view class="box-right">
+        <picker bindchange="bindCardChange" name="idType" value="{{cardIndex}}" range="{{cardArray}}">
+          {{cardArray[cardIndex]}}
+        </picker>
+      </view>
+    </view>
+    <view class="form-box">
+      <view class="box-left">证件号码</view>
+      <view class="box-right">
+        <input type="text" name="idCode" placeholder="与旅客证件一致" value="{{getTravelerByIdAndCreate.card_number}}"></input>
+      </view>
+    </view>
+    <button class="save-btn" formType="submit" disabled='{{isBtnUseful}}'>保存</button>
+    <button class="back-btn" bindtap="backBtn">返回</button>
+    <button class="back-btn" bindtap="delBtn">删除</button>
+  </form>
+</view>
+<!-- 新增地址 -->
+<view class="a" wx:if="{{addAddress}}">
+  <form bindsubmit="addAddressForm">
+    <view class="form-box">
+      <view class="box-left">收件人</view>
+      <view class="box-right">
+        <input type="text" name="contactName" placeholder="昵称或真实姓名" value="{{getAddress.name}}"></input>
+      </view>
+    </view>
+    <view class="form-box">
+      <view class="box-left">联系手机</view>
+      <view class="box-right">
+        <input type="text" placeholder="有效的手机号" name="contactMobile" value="{{getAddress.phone}}"></input>
+      </view>
+    </view>
+    <view class="form-box">
+      <view class="box-left">所在地区</view>
+      <view class="box-right" bindtap="openCityPickerView">
+        <text>{{province}}{{city}}{{area}}</text>
+      </view>
+    </view>
+    <view class="form-box">
+      <view class="box-left">详细地址</view>
+      <view class="box-right">
+        <input type="text" placeholder="不需再填写省/市/区" name="address" value="{{getAddress.address_detail}}"></input>
+      </view>
+    </view>
+    <view class="form-box">
+      <view class="box-left">邮政编码</view>
+      <view class="box-right">
+        <input type="text" placeholder="所在地区的邮政编码" name="postCode" value="{{getAddress.postal_code}}"></input>
+      </view>
+    </view>
+    <button class="save-btn" formType="submit" disabled='{{isBtnUseful}}'>保存</button>
+    <button class="back-btn" bindtap="backBtn">返回</button>
+    <button class="back-btn" bindtap="delBtn">删除</button>
+  </form>
+</view>
+<!-- 城市选择器 -->
+<view id="city-selected" class="city-selected" wx:if="{{showCityPickerView}}">
+  <view class="city-selected-wrap" bindtap="closeCityPickerView"></view>
+  <view class="city-selected-inner">
+    <view class="city-selected-content">
+      <text class="jg">{{province}}-{{city}}-{{area}}</text>
+      <text class="btn" bindtap="closeCityPickerView">确定</text>
+    </view>
+    <picker-view indicator-style="height: 50px;" value="{{value}}" bindchange="bindAddressChange">
+      <picker-view-column>
+        <view wx:for="{{provinces}}" wx:key="">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{citys}}" wx:key="">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{areas}}" wx:key="">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>
+<!-- 新增发票 -->
+<view class="i" wx:if="{{addInvoice}}">
+  <!-- <form bindsubmit="addInvoiceForm">
+    <view class="form-box">
+        <view class="box-left">发票抬头</view>
+        <view class="box-right">
+          <input type="text" name="invoiceHead" placeholder="个人姓名或公司名称" value="{{invoiceGet.invoiceHead}}"></input>
+        </view>
+    </view>
+    <view class="form-box">
+        <view class="box-left">税号</view>
+        <view class="box-right">
+          <input type="text" name="invoiceHead" placeholder="税号(个人发票不填写)" value="{{invoiceGet.invoiceHead}}"></input>
+        </view>
+    </view>
+    <button class="save-btn" formType="submit" disabled='{{isBtnUseful}}'>保存</button>
+    <button class="back-btn" bindtap="backBtn">返回</button>
+    <button class="back-btn" bindtap="delBtn">删除</button>
+  </form> -->
+  <form bindsubmit="formSubmit">
+    <!-- <view class="lcfp-head">发票抬头</view>
+  <view class="lcfp-check">
+    <radio-group class="radio-group" bindchange="radioChange" name="radio-group">
+      <label class="radio" wx:for="{{items}}" wx:key='{{index}}'>
+        <radio value="{{item.name}}" checked="{{item.checked}}" color='red'style='transform:scale(0.7)'/>{{item.value}}
+      </label>
+    </radio-group>
+  </view> -->
+    <view class="lcfp-head">发票抬头</view>
+    <view class="lcfp-check">
+      <radio-group class="radio-group" bindchange="radioChange" name="radio-group">
+        <label class="radio" wx:for="{{items}}" wx:key='{{index}}' wx:if='{{index != "2"}}'>
+          <radio value="{{item.name}}" checked="{{item.checked}}" color='red' style='transform:scale(0.7)' />
+          {{item.value}}
+        </label>
+      </radio-group>
+    </view>
+    <view class="lcfp-head">发票信息</view>
+    <view class="lcfp-main">
+      <view>
+        <label>{{isZz? '企业名称':'发票抬头'}}</label>
+        <input placeholder="公司名称" name='gsmc' value="{{invoiceGet.company_name}}" placeholder-style='color:#E0E4E7; font-size: 28rpx' />
+      </view>
+      <!-- <view wx:if='{{!isGr}}'> -->
+      <view>
+        <label>识别号</label>
+        <input placeholder="纳税人识别号" name='sbh' value="{{invoiceGet.company_number}}" placeholder-style='color:#E0E4E7; font-size: 28rpx' />
+      </view>
+      <!-- <view wx:if='{{isZz}}'>
+        <label>注册地址</label><input placeholder="公司注册地址" name='zcdz' value="{{invoiceGet.regAddress}}" placeholder-style='color:#E0E4E7; font-size: 28rpx' />
+      </view>
+      <view wx:if='{{isZz}}'>
+        <label>联系电话</label><input placeholder="区号-总机" name='lxdh' value="{{invoiceGet.phoneNo}}" placeholder-style='color:#E0E4E7; font-size: 28rpx' />
+      </view>
+      <view wx:if='{{isZz}}'>
+        <label>开户行</label><input placeholder="对外付款的开户行" name='khh' value="{{invoiceGet.bankName}}" placeholder-style='color:#E0E4E7; font-size: 28rpx' />
+      </view>
+      <view wx:if='{{isZz}}'>
+        <label>开户行账号</label><input placeholder="对外付款的银行账号" name='khhzh' value="{{invoiceGet.bankNo}}" placeholder-style='color:#E0E4E7; font-size: 28rpx' />
+      </view> -->
+    </view>
+    <view class="btn-area">
+      <button formType="submit" disabled='{{isBtnUseful}}'>保存</button>
+      <button class="back" bindtap='backBtn'>返回</button>
+      <button class="del" bindtap='delBtn'>删除</button>
+    </view>
+  </form>
+</view>
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}" />

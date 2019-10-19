@@ -1,0 +1,60 @@
+view,
+text,
+image,
+picker,
+textarea,
+scroll-view,
+swiper,
+swiper-item {
+  box-sizing: border-box;
+}
+.page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  background: #f1f1f1;
+}
+.page .conBox {
+  width: 100%;
+  background: #fff;
+}
+.page .conBox .item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100rpx;
+  padding: 30rpx 24rpx;
+  font-size: 28rpx;
+  color: #333;
+  border-bottom: 1px solid #ebedf0;
+}
+.page .conBox .item .left {
+  flex: 1;
+  text-align: left;
+}
+.page .conBox .item .right {
+  min-width: 400rpx;
+  text-align: right;
+  color: #798394;
+}
+.page .conBox .item .right input {
+  display: block;
+}
+.page .conBox .item:last-child {
+  border: 0;
+}
+.page .saveBtn {
+  background-color: #F05442;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
+  height: 40px;
+  border-radius: 5px;
+  border: 0px;
+  color: #fff;
+  font-size: 16px;
+  display: block;
+  text-align: center;
+}

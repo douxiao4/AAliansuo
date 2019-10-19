@@ -1,0 +1,44 @@
+<import src="../../wetoast/wetoast.wxml"/>
+
+<view class="container">
+  <view class="topinfo">
+    <image src="http://m.ihotels.cc/app/images/miniapp/reserve_ill.png"></image>
+    <view class="success-text">订单已生成，请尽快付款！</view>
+    <view class="pay-price">待付款 <text>￥{{totalmoney<0? 0:totalmoney}}</text></view>
+  </view>
+  <view class="order-detail">
+    <text>订单详情</text>
+    <text class="right-icon">></text>
+  </view>
+  <!-- <view class="lc-coupon" catchtap='goToCoupons'>
+    <text>优惠券</text>
+    <text class="lc-introduce">{{couponsInfoText}} ></text>
+  </view> -->
+  <!-- <view class="lc-coupon1">
+    <text>时间储值</text>
+    <text class="lc-timetip">{{timeText}}</text>
+    <check-group catchtap='changeCheck'>
+      <checkbox checked='{{checked}}' disabled = '{{disable}}' style='zoom: 80%;'></checkbox>
+    </check-group>
+  </view> -->
+  <view class="payment">
+    <view class="payment-title">支付方式</view>
+    <view class="we-pay">
+      <view class="we-pay-img">
+        <image src="http://m.ihotels.cc/app/images/miniapp/wei.jpg"></image>
+      </view>
+      <view class="we-pay-des">
+        <view class="we-pay-des-top">微信支付</view>
+        <view class="we-pay-des-bottom">推荐安装微信5.0及以上版本的使用</view>
+      </view>
+    </view>
+    <view class="pay-btnwrap">
+      <!-- <button class="pay-btn" bindtap="payBtn" disabled='{{canUseClick}}'>确认支付</button> -->
+      <!-- <button class="pay-btn" bindtap="payBtn">确认支付</button> -->
+      <button class="pay-btn" bindtap="tapPay">确认支付</button>
+    </view>
+  </view>
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}"/>

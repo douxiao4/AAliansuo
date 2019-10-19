@@ -1,0 +1,23 @@
+.lc-commentstar {
+    height: 130rpx;
+    text-align: center;
+    font-size: 48rpx;
+    color: #F5A623;
+    box-sizing: content-box;
+    border-bottom: 1px solid #eee;
+  }
+  .lc-stars {
+    display: inline-block;
+    overflow: hidden;
+  }
+  .lc-commentstar>text {
+    display: block;
+    margin-top: 10rpx;
+    margin-bottom: -6rpx;
+  }
+  .lc-stars>image {
+    width: 24rpx;
+    height: 24rpx;
+    float: left;
+    margin-right: 15rpx;
+  }

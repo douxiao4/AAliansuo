@@ -1,0 +1,70 @@
+<view class="page feedbackPage">
+  <form bindsubmit="formSubmit" report-submit='true'>
+    <!-- con box -->
+    <view class="con-box">
+      <!-- 住店信息 -->
+      <view class="con msg">
+        <view class="msg-tit con-tit">
+          请填写您的住店信息:
+        </view>
+        <view class="msg-box">
+          <view class="input-box">
+            <view class="input-name">
+              <text class="red">*</text>
+              <text>房间号码:</text>
+            </view>
+            <view class="input">
+              <input name="roomNum" placeholder="请填写房间号码" />
+            </view>
+          </view>
+          <view class="input-box">
+            <view class="input-name">
+              <text class="red">*</text>
+              <text>房客姓名:</text>
+            </view>
+            <view class="input">
+              <input bindinput="getName" name="uname" placeholder="请填写房客姓名" />
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 住店信息 end -->
+    </view>
+    <!-- con box end -->
+    <!-- con box -->
+    <view class="con-box mt10">
+      <view class="time con">
+        <view class="time-tit con-tit">
+          入住类型:
+        </view>
+        <!-- 类型 -->
+        <radio-group name="occupancyType" class="radio-group day-box">
+        <!-- <radio-group name="occupancyType" class="radio-group day-box" bindchange="radioChange"> -->
+          <label class="radio day {{item.checked=='true'?'yellow':''}}" wx:key="index" wx:for="{{typeList}}"
+            wx:for-index="index" wx:for-item="item" data-item="{{item}}" data-index="{{index}}" catchtap="tapLabel">
+            <radio value="{{item.value}}" checked="{{item.checked}}" />
+            {{item.txt}}
+          </label>
+        </radio-group>
+        <!-- 类型end -->
+      </view>
+    </view>
+    <!-- con box end -->
+    <!-- con box -->
+    <view class="con-box mt10 last">
+      <view class="msg con">
+        <view class="msg-tit con-tit">您的反馈:</view>
+        <view class="msg-box">
+          <textarea maxlength="300" placeholder="住店过程中遇到任何问题，都可以反馈，我们会尽快为您解决，希望您住店愉快！" name="feedbackContent" />
+          </view>
+      </view>
+    </view>
+    <!-- con box end -->
+    <!-- 底部btn -->
+    <view class="foot-box">
+      <button id="submit" class="btn stay-btn" formType="submit">提交反馈</button>
+    </view>
+    <!-- 底部btn end -->
+  </form>
+
+</view>

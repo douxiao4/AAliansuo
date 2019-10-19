@@ -1,0 +1,47 @@
+<import src="../../wetoast/wetoast.wxml"/>
+
+<!--pages/pormptly/pormptly.wxml-->
+<view class="container">
+  <view class="login-box">
+  	<image class="img-tu" src="https://ucpic.aaroom.cc/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190301105109.jpg"></image>
+      <block wx:if="{{step==1}}">
+  	  	<view class="login-input">
+  	  	  <label>手机号：</label>
+  	  		<input placeholder="11位数字" class="login-ipt" type="text" value="{{phone}}" bindinput="bindphone"></input>
+  	  	</view>
+  	  	<view class="underline"></view>
+  	  	<view class="login-input">
+  	  	  <label>姓名：</label>
+  	  		<input placeholder="不超过6个汉字或20个英文" class="login-ipt" type="text" value="{{name}}" bindinput="bindname"></input>
+  	  	</view>
+  	  	<view class="underline"></view>
+  	  	<view class="login-btn">
+          <button class="login-submit" bindtap="nextStep2">下一步，验证手机号</button>
+  	  	</view>
+      </block>
+      <block wx:if="{{step==2}}">
+        <view class="login-input">
+          <label>验证码：</label>
+          <input placeholder="6位数字" class="login-ipt" type="text" value="{{vcode}}" bindinput="bindvcode"></input>
+          <label class="bule checkcode" bindtap="sendVcode">{{vcodeBtnText}}</label>
+        </view>
+        <view class="underline"></view>
+        <view class="login-btn">
+          <button class="login-submit" bindtap="nextStep3">下一步，设置密码</button>
+        </view>
+      </block>
+      <block wx:if="{{step==3}}">
+        <view class="login-input">
+          <label>密码：</label>
+          <input placeholder="请输4-20位密码" class="login-ipt" type="password" value="{{pwd}}" bindinput="bindpwd"></input>
+        </view>
+        <view class="underline"></view>
+        <view class="login-btn">
+          <button class="login-submit" bindtap="registerBtn">确认注册</button>
+        </view>
+      </block>
+  </view>
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}"/>

@@ -1,0 +1,45 @@
+<import src='../../template/stars-template.wxml' />
+
+<view class="container">
+  <view class="comment-star">
+    <template is='starsTemplate' data='{{...starMsg}}'></template>
+  </view>
+  <view class="comment-classify">
+    <view>
+      <text class="{{tap.all? 'bottom-redline':''}}" bindtap="changeTap" data-id='1'>全部</text>
+    </view>
+    <view>
+      <text class="{{tap.good? 'bottom-redline':''}}" bindtap="changeTap" data-id='2'>好评</text>
+    </view>
+    <view>
+      <text class="{{tap.mid? 'bottom-redline':''}}" bindtap="changeTap" data-id='3'>中评</text>
+    </view>
+    <view>
+      <text class="{{tap.bad? 'bottom-redline':''}}" bindtap="changeTap" data-id='4'>差评</text>
+    </view>
+
+  </view>
+
+  <view class="comment-coms">
+    <view class="lc-comments" wx:if='{{!hasCom}}'>
+      <text class="lc-noComments">暂无用户评论</text>
+    </view>
+    <block wx:for='{{commentlist}}' wx:key='index'>
+      <view class="lc-comments" wx:if='{{hasCom}}'>
+        <view class="lc-commentshead">
+          <image src="{{commentlist.memberHead? commentlist.memberHead:'/images/pic_Default_red.svg'}}"></image>
+          <text>{{item.memberCardNum}}</text>
+          <!-- <text>{{item.star_level? item.star_level:'超级棒'}} {{item.star}}分</text> -->
+          <text>{{item.star}}分</text>
+          <text>{{item.memberCommentDetail.create_time}}</text>
+        </view>
+        <view class="lc-commentcontent">
+          <text>{{item.memberCommentDetail.comment_text}}</text>
+        </view>
+      </view>
+    </block>
+    <view class="comments-bottom" wx:if='{{item.length >= 8}}'>
+      <text>- {{footText}} -</text>
+    </view>
+  </view>
+</view>

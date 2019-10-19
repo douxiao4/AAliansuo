@@ -1,0 +1,60 @@
+<import src="../../wetoast/wetoast.wxml"/>
+
+<view class="container">
+<view class="swiper-tab">  
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">常住</view>  
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">收藏</view>  
+</view>  
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 31}}px" bindchange="bindChange">
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:{{winHeight - 31}}px" bindscrolltoupper="upper" bindscrolltolower="lower" scroll-top="0" wx:if="{{getMemUsuHotel.length>0}}">
+
+        <view class="my-hotel-box" wx:for="{{getMemUsuHotel}}" wx:key="{{index}}" 
+        data-id="{{item.hotel_id}}" bindtap="openHotelDetail">
+            <view class="my-hotel-img">
+              <image src="{{item.hotel_picture?item.hotel_picture:'../../images/logo_red@2x.png'}}"></image>
+            </view>
+            <view class="my-hotel-main">
+              <text class="my-hotel-title">{{item.hotel_name}}</text>
+              <view class="my-hotel-details">
+                <text class="red">{{item.hotel_star?item.hotel_star:'暂无评'}}分</text>
+                <text class="red min-price" wx:if="{{item.hotel_price_min}}">￥{{item.hotel_price_min}}<text class="gray">起</text></text>
+              </view>
+              <text class="gray font14" wx:if="{{item.distanceD>0}}">距您{{item.distanceD}}公里</text>
+            </view>
+        </view>
+
+      </scroll-view>
+      <block wx:if="{{getMemUsuHotel.length<1}}">
+        <image class="order-info-null" src="http://m.ihotels.cc/app/images/miniapp/null.png"></image>
+        <view class="order-null-text">您还没有常住!</view>
+      </block>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:{{winHeight - 31}}px" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-top="0" wx:if="{{colGet.length>0}}">
+
+      <view class="my-hotel-box" wx:for="{{colGet}}" wx:key="{{index}}" data-id="{{item.hotel_id}}" bindtap="openHotelDetail">
+        <view class="my-hotel-img">
+            <image src="{{item.hotel_picture?item.hotel_picture:'../../images/logo_red@2x.png'}}"></image>
+        </view>
+        <view class="my-hotel-main">
+            <text class="my-hotel-title">{{item.hotel_name}}</text>
+            <view class="my-hotel-details">
+                <text class="red">{{item.hotel_star?item.hotel_star:'暂无评'}}分</text>
+                <text class="red" wx:if="{{item.hotel_price_min}}">￥{{item.hotel_price_min}}<text class="gray">起</text></text>
+            </view>
+            <text class="gray font14" wx:if="{{item.distanceD>0}}">距您{{item.distanceD}}公里</text>
+        </view>
+      </view>
+      </scroll-view>
+        <block wx:if="{{colGet.length<1}}">
+          <image class="order-info-null" src="http://m.ihotels.cc/app/images/miniapp/null.png"></image>
+          <view class="order-null-text">您还没有收藏!</view>
+        </block>
+    </swiper-item> 
+</swiper> 
+
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}"/>

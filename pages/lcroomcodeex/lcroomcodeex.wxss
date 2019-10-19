@@ -1,0 +1,20 @@
+/* pages/lcroomcodeex/lcroomcodeex.wxss */
+.getroomcode {
+  border-bottom: 2px solid #ccc;
+  width: 350rpx;
+  height: 70rpx;
+  padding-left: 20rpx;
+  margin-bottom: 60rpx;
+  margin-left: 154rpx;
+  margin-top: 50rpx;
+}
+
+.conformBtn {
+  width: 40%;
+  height: 70rpx;
+  line-height:70rpx;
+  background-color: #F05442;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: bold;
+}

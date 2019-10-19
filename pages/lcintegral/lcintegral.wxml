@@ -1,0 +1,57 @@
+<view class="container">
+    <view class="lcst-head">
+        <view class="lcsth-left">
+            <text>积分总额</text>
+            <!-- <image src='/images/icon_explain@2x.png' catchtap='showStorageRule1'></image> -->
+        </view>
+        <!-- <view class="lcsth-right" catchtap='gotoExchange'>
+            <text>积分兑换优惠券 ></text>
+        </view> -->
+    </view>
+    <view class="lcst-time">
+        <view>
+            <!-- <text>{{integral}}</text> -->
+            <text>{{integral.curIngetral}}</text>
+            <text>分</text>
+            <view class="">
+                <!-- <text class="ChangeTx"  catchtap='gotoExchange'>兑换优惠券</text> -->
+                <text class="ChangeTx noTap">暂不可兑换</text>
+                <view class='noTapTip'>此功能调整中，待完善后开放</view>
+            </view>
+            <!-- <view class="ChangeTxBox">
+                <view class="ChangeTx">暂不可兑换</view>
+            </view> -->
+        </view>
+
+    </view>
+    <view class="lcst-infohead">
+        <text>积分明细</text>
+        <!-- <view>
+          <text class="{{total? 'bgColor':''}}" bindtap='getTotal'>全部</text>
+          <text class="{{income? 'bgColor':''}}" bindtap='getIncome'>收入</text>
+          <text class="{{expend? 'bgColor':''}}" bindtap='getExpend'>支出</text>
+      </view> -->
+    </view>    
+    <view class="lcst-info" wx:if='{{integral.data.dataList && integral.data.dataList.length>0}}'>
+    <!-- <view class="lcst-info" wx:if='{{recodeInfo.length>0}}'> -->
+        <block wx:for='{{integral.data.dataList}}' wx:key='{{index}}'>
+            <view class="lcst-infotext">
+                <view class="lcstif-left">
+                    <text>{{item.causes}}</text>
+                    <text wx:if='{{item.hotelName}}'>{{item.hotelName}}</text>
+                    <view class="lcstif-btm">
+                        <text>获取日期：{{item.creationTime}}</text>
+                        <!-- <text>有效期：{{item.endDate}}</text> -->
+                    </view>
+                </view>
+                <!-- <text class="{{item.opt == 1? 'redColor': 'greenColor'}}">{{item.opt == 1? '+'+item.intergal : -1*item.intergal}}</text> -->
+                <text class="{{item.type == 0? 'redColor': 'greenColor'}}">{{item.type == 0? '+'+item.integralBudget : -1*item.integralBudget}}</text>
+                <!-- <text class="{{item.integralBudget >0? 'redColor': 'greenColor'}}">{{item.integralBudget}}</text> -->
+            </view>
+        </block>
+    </view>
+    <view class="lcst-info1" wx:if='{{recodeInfo.length<=0}}'>
+        <image class="order-info-null" src="http://m.ihotels.cc/app/images/miniapp/null.png"></image>
+        <view class="order-null-text">您还没有积分的该信息!</view>
+    </view>
+</view>

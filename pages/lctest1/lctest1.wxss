@@ -1,0 +1,39 @@
+/* pages/lctest1/lctest1.wxss */
+.container {
+    background-color: #ccc;
+    height: 100%;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    perspective: 2000rpx;
+    transition: 2s linear;
+    transform-style: preserve-3d;
+}
+.before,.after {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.before {
+    background-color: yellow;
+    transition: all 2s;
+    backface-visibility: hidden;
+}
+.after {
+    background-color: green;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+.rotate {
+    transform: rotateY(180deg);
+}
+.dian {
+    position: absolute;
+    top: 0;
+    right: 0;
+}

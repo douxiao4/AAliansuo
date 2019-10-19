@@ -1,0 +1,555 @@
+@import '../../template/stars-template.wxss';
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 750rpx;
+  overflow: hidden;
+  /* background-color: #F0F2F6; */
+  padding-bottom:110rpx;
+}
+
+.swiper {
+  width: 750rpx;
+  height: 400rpx;
+}
+.swiper image {
+  width: 750rpx;
+  height: 400rpx;
+}
+.hotel-title {
+  width: 100%;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  color: #2a3342;
+  padding: 0 50rpx;
+}
+.tags-price {
+  width: 100%;
+  padding: 0 50rpx;
+  display: flex;
+  padding-bottom: 40rpx;
+  border-bottom: 1px solid #EBEDF0;
+}
+.tags-price .tags {
+  flex: 2;
+}
+.tags-price .tags text {
+  font-size: 18rpx;
+  border: 1px solid #c6c7ca;
+  padding: 4px;
+  border-radius: 4px;
+  margin-right: 4px;
+}
+.tags-price .price {
+  flex: 1;
+  color: #F05442;
+}
+.hotel-detail-phone {
+  display: flex;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  padding: 20rpx 0;
+}
+.hotel-detail-phone text {
+  flex: 1;
+  text-align: center;
+}
+.hotel-detail-phone text:first-child {
+  border-right: 1px solid #c6c7ca;
+}
+.maps {
+  border-top: 20rpx solid #EEEEEE;
+  /*height: 200rpx;*/
+}
+.maps map {
+  width: 100%;
+  /*height: 200rpx;*/
+}
+.address {
+  width: 100%;
+  color: #798394;
+  padding: 0 50rpx;
+  line-height: 100rpx;
+  font-size: 26rpx;
+  border-bottom: 20rpx solid #EEEEEE;
+}
+
+/* .room-type {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  display: flex;
+  background: #FAFAFA;
+  color: #999;
+}
+.room-type view {
+  flex: 1;
+  text-align: center;
+}
+.room-type .active {
+  background: #fff;
+  color: #000;
+} */
+.room-type {
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  display: flex;
+  background: #EEEEEE;
+  color: #A2A7AA;
+}
+.room-type view {
+  flex: 1;
+  text-align: center;
+  color: #455055;
+}
+.room-type .active {
+  background: #fff;
+  color: #040000;
+  font-weight: bold;
+  font-size: 28rpx;
+}
+
+.room-list-wrap {
+
+}
+.select-day {
+  width: 100%;
+  /*height: 100rpx;*/
+  /*line-height: 100rpx;*/
+  /*text-align: center;*/
+  /* border-bottom: 1px solid #EBEDF0; */
+}
+.room-list {
+
+}
+.room-item {
+  width: 100%;
+  border-bottom: 1px solid #EBEDF0;
+}
+.room-type-name {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  font-size: 30rpx;
+}
+.room-type-name .title {
+  flex: 5;
+  text-align: left;
+  margin-left: 50rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.room-type-name .price {
+  flex: 5;
+  color: #F05442; 
+}
+.room-type-name .price text {
+  /* font-size: 26rpx; */
+  font-size: 22rpx;
+  color: #798394;
+}
+.room-type-name .switch-more {
+  flex: 1;
+  margin-right: 50rpx;
+  text-align: right;
+  color: #C8C8CC;
+}
+.room-level-price {
+  background-color: #F6F8FB;
+}
+.level-item {
+  width: 100%;
+  display: flex;
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #E6E7E8;
+}
+.level-item text {
+  font-size: 30rpx;
+}
+.level-item .level-name {
+  flex: 5;
+  color: #000;
+  font-size: 25rpx;
+  margin-left: 60rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.level-item .level-price {
+  flex: 2;
+  color: #F05442;
+}
+.level-item .level-btn {
+  flex: 2;
+  color: #fff;
+  background-color: #F05442;
+  border-radius: 4px;
+  text-align: center;
+  margin: 20rpx 50rpx;
+  line-height: 60rpx;
+  font-size: 26rpx;
+}
+.level-item .level-btn.disabled-btn {
+  background-color: #aaa;
+}
+.show-more-btn {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #798394;
+}
+.comment {
+  width: 100%;
+  font-size: 30rpx;
+  padding: 30rpx;
+  border-top: 20rpx solid #EEEEEE;
+}
+
+.comment-top {
+  width: 100%;
+  display: flex;
+}
+.user-avatar {
+  flex: 1;
+}
+.user-avatar .img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.user-avatar .img image {
+  width: 100rpx;
+  height: 100rpx;
+}
+.user-info {
+  flex: 7;
+  padding-left: 40rpx;
+  line-height: 50rpx;
+}
+.user-info-top {
+  width: 100%;
+  display: flex;
+}
+.user-name {
+  flex: 2;
+  text-align: left;
+  color: #F05442;
+}
+.user-date {
+  flex: 3;
+  color: #848484;
+}
+.star {
+  width: 100%;
+}
+.comment-text {
+  width: 100%;
+  line-height: 100rpx;
+  border-bottom: 1px solid #ECECEC;
+}
+.comment-count {
+  width: 100%;
+  color: #F05442;
+  line-height: 100rpx;
+}
+.more-hotel {
+  width: 600rpx;
+  margin: 0 auto 50rpx;
+  background: #F05442;
+  color: #fff;
+  border-radius: 4px;
+}
+/*钟点房*/
+.room-type-name .switch-more-hour {
+  flex: 2;
+}
+.level-btn-hour {
+  color: #fff;
+  background-color: #F05442;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 26rpx;
+  padding: 10rpx 20rpx;
+}
+.level-btn-hour.disabled-btn {
+  background-color: #AAAAAA;
+}
+
+/* 更新版头部开始 */
+
+.lc-head {
+  width: 100%;
+  background-color: #fff;
+  /* border-top: 1px solid #F0F2F6; */
+  /* height: 440rpx; */
+  /* padding: 15rpx 30rpx; */
+  /* box-sizing: border-box; */
+  border-bottom: 22rpx solid #efefef;
+}
+.lc-headline {
+  padding: 15rpx 30rpx;
+  border-bottom: 1px solid #F0F2F6;
+}
+.lc-headimgs {
+  height: 200rpx;
+  /* background-color: yellow; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+.lc-headimgs>image {
+  width: 212rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+}
+.lc-collect {
+  width: 64rpx;
+  height: 64rpx;
+  position: absolute;
+  top: 6rpx;
+  right: 8rpx;
+}
+.lc-collect image {
+  width: 64rpx;
+  height: 64rpx;
+}
+.lc-imgnum {
+  width: 88rpx;
+  height: 44rpx;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  border-radius: 22rpx;
+  top: 150rpx;
+  right: 10rpx;
+  text-align: center;
+  line-height: 40rpx;
+  box-sizing: border-box;
+  /* opacity: 0.3; */
+}
+.lc-imgnum image {
+  width: 20rpx;
+  height: 20rpx;
+  vertical-align: middle;
+  margin-right: 8rpx;
+  opacity: 2;
+}
+.lc-imgnum text {
+  color: #fff;
+  font-size: 18rpx;
+  opacity: 2;
+  font-weight: bold;
+}
+.lc-headname {
+  padding-top: 20rpx;
+}
+.lc-headname>text {
+  width: 100%;
+  height: 80rpx;
+  /* line-height: 80rpx; */
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #000;
+  margin-top: 20rpx;
+}
+.lc-headname .lchl-r1push {
+  padding: 3rpx 9rpx;
+  background-color: #F05442;
+  color: #fff;
+  font-size: 22rpx;
+  border-radius: 8rpx;
+  margin-right: 15rpx;
+}
+.lc-headaddress {
+  /* height: 110rpx; */
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.lc-adr {
+  flex: 3;
+  padding: 11rpx 38rpx;
+  border-right: 1px solid #F0F2F6;
+  /* box-sizing: border-box; */
+}
+.lc-adr>image {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 21rpx;
+}
+.lc-adr>text {
+  width: 480rpx;
+  display: block;
+  padding-left: 35rpx;
+  overflow: hidden;
+  /* white-space: nowrap; */
+  text-overflow: ellipsis;
+  color: #455055;
+  font-size: 24rpx;
+}
+.lc-adr>text:first-of-type {
+  margin-top: 10rpx;
+}
+.lc-adr>text:last-of-type {
+  font-size: 20rpx;
+  color: #A2A7AA;
+  /* margin-top: 9rpx; */
+}
+.lc-consult {
+  flex: 1;
+  position: relative;
+  padding: 10rpx;
+}
+/* .lc-consult>text {
+  display: block;
+  text-align: center;
+  margin-top: 8rpx;
+  color: #A2A7AA;
+} */
+.lc-consult>image {
+  width: 44rpx;
+  height: 44rpx;
+  /* position: absolute; */
+  margin-left: 50%;
+  margin-top: 20rpx;
+  transform: translateX(-50%);
+}
+/* 更新版头部结束 */
+/* 更新评论部分开始 */
+.lc-comment {
+  /* padding: 0rpx 30rpx; */
+  border-top: 22rpx solid #eee;
+  border-bottom: 12rpx solid #eee;
+  /* border-bottom: 20rpx solid #EBEDF0; */
+}
+.lc-commenthead {
+  height: 82rpx;
+  border-bottom: 1px solid #F0F2F6;
+  line-height: 82rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 30rpx;
+}
+.lc-commenthead>text:first-of-type {
+  font-size: 28rpx;
+  color: #455055;
+  font-weight: bold;
+}
+.lc-commenthead>text:last-of-type {
+  font-size: 20rpx;
+  color: #A2A7AA;
+}
+.lc-commentstar {
+  height: 130rpx;
+  text-align: center;
+  font-size: 48rpx;
+  color: #F5A623;
+  box-sizing: content-box;
+  border-bottom: 1px solid #eee;
+}
+.lc-stars {
+  display: inline-block;
+  overflow: hidden;
+}
+.lc-commentstar>text {
+  display: block;
+  margin-top: 13rpx;
+  margin-bottom: -13rpx;
+}
+.lc-stars>image {
+  width: 24rpx;
+  height: 24rpx;
+  float: left;
+  margin-right: 15rpx;
+}
+.lc-comments {
+  height: 180rpx;
+  padding: 0 30rpx;
+}
+.lc-commentshead {
+  height: 85rpx;
+  line-height: 85rpx;
+
+}
+.lc-commentshead>image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 16rpx;
+}
+.lc-commentshead>text:nth-of-type(1) {
+  color: #A2A7AA;
+  font-size: 24rpx;
+  margin-right: 15rpx;
+}
+.lc-commentshead>text:nth-of-type(2) {
+  color: #F5A623;
+  font-size: 20rpx;
+}
+.lc-commentshead>text:nth-of-type(3) {
+  color: #A2A7AA;
+  font-size: 24rpx;
+  float: right;
+}
+.lc-commentcontent {
+  padding: 0rpx 30rpx;
+  /* box-sizing: content-box; */
+}
+.lc-commentcontent>text {
+  color: #455055;
+  font-size: 24rpx;
+  width: 650rpx;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  padding-left: 16rpx;
+}
+.lc-noComments {
+  text-align: center;
+  display: block;
+  height: 198rpx;
+  line-height: 190rpx;
+  font-size: 24rpx;
+  color: #DDD;
+}
+.lcComment-gray {
+  display: none;
+}
+/* 更新评论部分结束 */
+
+/* 仿tabBar */
+.copytabBar{
+  position:fixed;
+  bottom: 0;
+  left:0;  
+  z-index:10;
+  width:100%;
+  text-align:center;  
+  border-top: 0.6px solid #ABACAF;
+  background: #fff;
+  display: flex;
+  font-size:25rpx;  
+  color: #909095;  
+  padding-top:4px;
+  margin-bottom:-1px;
+}
+.copytabBar>view{
+  flex:1;    
+}
+.copytabBar>view>image{
+  width:30px;
+  height:30px;
+  margin-bottom:-3px;
+}

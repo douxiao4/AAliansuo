@@ -1,0 +1,104 @@
+page {
+  background: #EFEFF4;
+}
+.container {
+  font-size: 30rpx;
+}
+.topinfo {
+  text-align: center;
+  padding-top: 50rpx;
+  background: #fff;
+}
+.topinfo image {
+  width: 188rpx;
+  height: 148rpx;
+}
+.success-text {
+  margin-top: 20rpx;
+}
+.pay-price {
+  line-height: 100rpx;
+  color: #848484;
+}
+.pay-price text {
+  font-size: 40rpx;
+  color: #F05442;
+}
+.order-detail {
+  display: flex;
+  margin-top: 20rpx;
+  line-height: 100rpx;
+  padding-left: 50rpx;
+  background: #fff;
+  display: none;
+}
+.order-detail text {
+  flex: 1;
+}
+.order-detail .right-icon {
+  text-align: right;
+  padding-right: 50rpx;
+  color: #C8C8CD;
+}
+.payment {
+  margin-top: 20rpx;
+  background: #fff;
+}
+.payment-title {
+  line-height: 100rpx;
+  padding-left: 50rpx;
+  border-bottom: 1px solid #E6E7E8;
+}
+.we-pay {
+  display: flex;
+  padding-top: 20rpx;
+  border-bottom: 1px solid #E6E7E8;
+}
+.we-pay-img {
+  padding-left: 50rpx;
+}
+.we-pay-img image {
+  width: 100rpx;
+  height: 100rpx;
+}
+.we-pay-des {
+  padding-left: 20rpx;
+  line-height: 50rpx;
+}
+.we-pay-des-top {
+  vertical-align: top;
+}
+.we-pay-des-bottom {
+  font-size: 28rpx;
+  color: #848484;
+  vertical-align: bottom;
+}
+.user-rights {
+  background: #fff;
+  padding: 40rpx;
+  border-top: 20rpx solid #EFEFF4;
+  color: #8d8d8d;
+  font-size: 26rpx;
+}
+.list {
+  padding: 20rpx;
+  font-size: 30rpx;
+  color: #000;
+  display: flex;
+}
+.item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.item image {
+  flex: 1;
+  width: 57rpx;
+  height: 54rpx;
+  margin: 0 auto;
+  margin-bottom: 30rpx;
+}
+.item text {
+  flex: 1;
+}

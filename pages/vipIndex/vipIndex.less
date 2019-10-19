@@ -1,0 +1,847 @@
+.page {
+  // padding-bottom: 10rpx;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  background: #f1f1f1;
+}
+
+// 扫码进入
+// 酒店详情
+.detail-box {
+  min-height: 100%;
+  padding-bottom: 10rpx;
+
+  .topBox {
+    width: 100%;
+    position: relative;
+
+    // 酒店标题
+    .title {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 11;
+      padding: 20rpx 30rpx;
+      text-align: center;
+      color: #fff;
+      // font-weight: 900;
+      font-size: 24rpx;
+      line-height: 34rpx;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    // 酒店标题end
+    // banner轮播
+    .banner-box {
+      width: 100%;
+      height: 320rpx;
+      overflow: hidden;
+      background: #fff;
+
+      image {
+        width: 100%;
+        height: 320rpx;
+      }
+    }
+
+    // banner轮播end
+  }
+
+  // 地址
+  .address-box {
+    position: relative;
+    top: -18px;
+    left: 32rpx;
+    display: flex;
+    width: 688rpx;
+    padding: 14rpx 30rpx;
+
+    background: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+
+    .left,
+    .right {
+      display: flex;
+      align-items: center;
+
+      text {
+        color: #d0021b;
+      }
+    }
+
+    .left:active,
+    .right:active {
+      opacity: 0.6;
+    }
+
+    .left {
+      width: 110rpx;
+      text-align: left;
+      font-size: 24rpx;
+      flex-direction: row;
+
+      image {
+        display: block;
+        width: 30rpx;
+        height: 30rpx;
+        margin-right: 10rpx;
+      }
+    }
+
+    .right {
+      width: 74rpx;
+      text-align: right;
+      font-size: 20rpx;
+
+      text {
+        width: 74rpx;
+        height: 44rpx;
+        line-height: 40rpx;
+        display: inline-block;
+        border: 1px solid #d0021b;
+        border-radius: 4px;
+        text-align: center;
+      }
+    }
+
+    .center {
+      flex: 1;
+      width: 100%;
+      padding: 0 20rpx;
+      overflow: hidden;
+      border-left: 1px solid #f0f2f6;
+
+      text {
+        display: block;
+        width: 100%;
+        min-height: 52rpx;
+        line-height: 52rpx;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: #333;
+        font-size: 24rpx;
+      }
+    }
+  }
+
+  // 地址end
+  // 质检 房态
+  .room-nav {
+    margin-top: -16rpx;
+    width: 100%;
+    padding: 0 30rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .room-nav-item {
+      width: 338rpx;
+      height: 120rpx;
+      box-shadow: 0 2px 4px 0 rgba(188, 187, 150, 0.5);
+      border-radius: 8px;
+
+      image {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .room-nav-item:active {
+      opacity: 0.6;
+    }
+  }
+
+  // 质检 房态end
+  // 导航
+  // .nav-box-down {
+  //   width: 686rpx;
+  //   margin: 20rpx 30rpx 10rpx;
+  //   padding: 20rpx 0;
+  //   display: flex;
+  //   flex-flow: row;
+  //   flex-wrap: wrap;
+  //   background: #fff;
+  //   justify-content: flex-start;
+  //   text-align: center;
+  //   border-radius: 4px;
+
+  //   .nav-item {
+  //     width: 25%;
+  //     text-align: center;
+
+  //     .nav-icon {
+  //       display: flex;
+  //       justify-content: center;
+  //       align-items: center;
+
+  //       image {
+  //         display: block;
+  //         width: 74rpx;
+  //         height: 74rpx;
+  //       }
+  //     }
+
+  //     .nav-name {
+  //       margin-top: 10rpx;
+  //       height: 34rpx;
+  //       line-height: 34rpx;
+  //       font-size: 24rpx;
+  //       text-align: center;
+  //       color: #333;
+  //     }
+  //   }
+
+  //   .nav-item:active {
+  //     opacity: 0.6;
+  //   }
+  // }
+
+  // 导航end
+  // wifi
+  .border-box {
+    width: 100%;
+    margin: 10rpx 0;
+
+    .con-box {
+      width: 686rpx;
+      margin: 0 auto;
+      background: #fff;
+      color: #333;
+      border-radius: 4rpx;
+
+      .con-title {
+        border-bottom: 1px solid #efefef;
+
+        .title-box {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          padding-left: 20rpx;
+          line-height: 64rpx;
+          height: 64rpx;
+          text-align: left;
+
+          .titleIconBox {
+            min-width: 40rpx;
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            image {
+              display: block;
+              width: 36rpx;
+              height: 30rpx;
+            }
+          }
+
+          text {
+            margin-left: 16rpx;
+            color: #333333;
+            font-weight: 900;
+            font-size: 26rpx;
+            line-height: 64rpx;
+          }
+        }
+      }
+
+      .con-list {
+        width: 100%;
+
+        .con-item {
+          width: 100%;
+          min-height: 50rpx;
+          line-height: 34rpx;
+          display: flex;
+          flex-flow: row;
+          padding: 8rpx 30rpx;
+          font-size: 24rpx;
+          color: #333;
+
+          .conItemIcon {
+            width: 52rpx;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            image {
+              display: block;
+              width: 32rpx;
+            }
+          }
+
+          .con-left,
+          .con-center {
+            padding: 8rpx 0;
+            // line-height: 34rpx;
+          }
+
+          .con-center {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            word-break: break-all;
+            // padding: 0 10rpx;
+            padding: 8rpx 10rpx;
+          }
+
+          .con-right {
+            min-width: 40rpx;
+            height: 44rpx;
+
+            text {
+              min-width: 40rpx;
+              line-height: 40rpx;
+              padding: 0 10rpx;
+              font-size: 20rpx;
+              color: #d0021b;
+              border: 1rpx solid #d0021b;
+              border-radius: 4px;
+            }
+
+            image {
+              width: 100%;
+            }
+          }
+
+          .con-right:active {
+            opacity: 0.6;
+          }
+        }
+      }
+
+      .con-list-flex {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        padding: 8rpx 30rpx;
+
+        .con-item-left,
+        .con-item-rigth {
+          min-height: 60rpx;
+          line-height: 60rpx;
+          .con-item{
+            padding: 0;
+          }
+        }
+
+        .con-item-left {
+          flex: 1;
+          font-size: 24rpx;
+          color: #333;
+        }
+
+        .con-item-rigth {
+          min-width: 90rpx;
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          align-items: center;
+
+          .copyBtn {
+            min-width: 50rpx;
+            line-height: 24rpx;
+            padding: 10rpx;
+            font-size: 24rpx;
+            color: #d0021b;
+            border: 1rpx solid #d0021b;
+            border-radius: 4px;
+          }
+        }
+
+      }
+
+      .moreWifi {
+        text-align: center;
+        color: #d0021b;
+
+        .more {
+          padding-bottom: 10rpx;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .icon {
+            display: block;
+            width: 34rpx;
+          }
+
+          .moreUp {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+
+  // 酒店信息
+  .hotleMsgBox {
+    .con-left {
+      min-width: 130rpx;
+    }
+  }
+
+  // 酒店信息end
+}
+
+// 酒店详情end
+// 扫码进入end
+
+// 非扫码进入
+.inline-box {
+  height: 100%;
+
+  // 置顶
+  .topBox {
+    width: 100%;
+    height: 80rpx;
+    line-height: 64rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .left,
+    .right {
+      padding: 8rpx 0;
+      flex: 1;
+      text-align: center;
+      font-size: 26rpx;
+      color: #fffbfa;
+
+      .txt {
+        display: inline-block;
+        width: 100%;
+        line-height: 64rpx;
+        height: 64rpx;
+      }
+    }
+
+    .left {
+      background-image: linear-gradient(-127deg, #ff9567 0%, #ff4e4a 100%);
+
+      .txt {
+        border-right: 1px solid #fffbfa;
+      }
+    }
+
+    .right {
+      background-image: linear-gradient(143deg, #ff9567 0%, #ff4e4a 100%);
+    }
+
+    .left:active,
+    .right:active {
+      opacity: 0.6;
+    }
+  }
+
+  // 置顶end
+  // 原banner
+  .sloganBox {
+    width: 100%;
+    padding-bottom: 98rpx;
+
+    .upBox {
+      width: 100%;
+
+      image {
+        display: block;
+        margin: 0 auto;
+        width: 640rpx;
+      }
+    }
+
+    .downBox {
+      margin-top: 76rpx;
+      width: 100%;
+
+      .titleBox {
+        width: 100%;
+        padding-left: 68rpx;
+        padding-right: 55rpx;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 26rpx;
+        color: #D6B16A;
+
+        .txt {
+          flex: 1;
+          font-size: 26rpx;
+          color: #D6B16A;
+        }
+
+        .buttonBox {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          min-width: 145rpx;
+          padding-left: 16rpx;
+          padding-right: 10rpx;
+          height: 44rpx;
+          line-height: 44rpx;
+          background-image: linear-gradient(55deg, #D0A95E 0%, #EED39A 100%);
+          border-radius: 4rpx;
+
+          .btnTxt {
+            padding-right: 10rpx;
+            height: 33rpx;
+            line-height: 33rpx;
+            font-size: 24rpx;
+            color: #FFFFFF;
+          }
+
+          image {
+            display: block;
+            width: 29rpx;
+            height: 20rpx;
+          }
+        }
+      }
+
+      .imageBox {
+        image {
+          margin: 18rpx auto 0;
+          display: block;
+          width: 658rpx;
+        }
+      }
+    }
+  }
+
+  // 原banner end
+  .conBox {
+    width: 100%;
+    flex: 1;
+    overflow-y: auto;
+
+    // banner
+    // .bannerBox {
+    //   width: 100%;
+    //   image {
+    //     display: block;
+    //     width: 100%;
+    //   }
+    // }
+    // banner end
+    // 会员卡
+    .vipCardBox {
+      width: 100%;
+      padding: 10rpx 35rpx 0;
+      background: #fff;
+
+      // 图片区
+      .vipImgBox {
+        margin: 0 auto;
+        position: relative;
+        width: 680rpx;
+        height: 360rpx;
+
+        .cardImg {
+          display: block;
+          width: 680rpx;
+          height: 360rpx;
+        }
+
+        .cardMsgBox {
+          position: absolute;
+          top: 24rpx;
+          left: 0;
+          padding: 0 30rpx;
+          width: 100%;
+          height: 74rpx;
+          line-height: 74rpx;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+
+          .logoImg {
+            margin-right: 20rpx;
+            display: block;
+            width: 74rpx;
+            height: 74rpx;
+            overflow: hidden;
+            border-radius: 999px;
+            border: 2px solid #eee;
+          }
+
+          .cardName {
+            flex: 1;
+            height: 74rpx;
+            line-height: 74rpx;
+            text-align: left;
+            font-size: 24rpx;
+            color: #ffffff;
+          }
+
+          .vipLevel {
+            padding: 0 8rpx;
+            display: inline-block;
+            line-height: 40rpx;
+            font-size: 20rpx;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            border-radius: 4px;
+          }
+        }
+      }
+      
+      .vipImgBox2{
+        margin: 0 auto;
+        position: relative;
+        width: 680rpx;
+        .cardImg {
+          display: block;
+          width: 680rpx;
+        }
+        .cardMsgBox{
+          position: absolute;
+          top: 42rpx;
+          left: 0;
+          padding: 0 32rpx;
+          width: 100%;
+          height: 70rpx;
+          line-height: 70rpx;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+
+          .logoImg {
+            margin-right: 20rpx;
+            display: block;
+            width: 70rpx;
+            height: 70rpx;
+            overflow: hidden;
+            border-radius: 999px;
+            border: 2px solid #eee;
+          }
+
+          .vipLevel {
+            flex: 1;
+            padding: 0 8rpx;
+            display: inline-block;
+            font-size: 28rpx;
+            text-align: left;
+            color: #d4ae66;
+            font-weight: 600;
+          }
+        }
+      }
+
+      // 图片区end
+      .toBuyRoomBox {
+        margin-top: 30rpx;
+        width: 100%;
+        padding: 0 20rpx 26rpx;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #efefef;
+
+        .left {
+          height: 36rpx;
+          line-height: 36rpx;
+          font-size: 26rpx;
+          color: #333333;
+          text-align: left;
+        }
+
+        .right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          text-align: right;
+          height: 24rpx;
+          line-height: 24rpx;
+
+          .buyTxt {
+            height: 24rpx;
+            line-height: 24rpx;
+            font-size: 24rpx;
+
+            color: #999999;
+          }
+
+          image {
+            margin-left: 10rpx;
+            display: block;
+            width: 13rpx;
+            height: 21rpx;
+          }
+        }
+      }
+    }
+
+    // 会员卡end
+  }
+}
+
+// 非扫码进入end
+// 非会员非扫码
+.noVip-box {
+  .sloganBox {
+    background: #fff url(https://ucpic.aaroom.cc/2019-01-29_5c4fc5726c2cd.jpg) no-repeat left top;
+    background-size: 100% 100%;
+  }
+}
+
+// 非会员非扫码end
+// 会员非扫码
+.vip-box {
+
+  // 原banner
+  .sloganBox {
+    background: #fff url(https://ucpic.aaroom.cc/1.jpg) no-repeat left top;
+    background-size: 100% 100%;
+  }
+
+  // 原banner end
+  .conBox {
+
+    // 会员权益
+    .vipInterestsBox {
+      // position: relative;
+      width: 100%;
+      padding: 40rpx 36rpx;
+      background: #fff;
+
+      .conBox {
+        padding: 30rpx 0 16rpx;
+        width: 100%;
+        height: auto;
+
+        .titleBox {
+          width: 100%;
+          text-align: center;
+
+          .title {
+            display: inline-block;
+            padding: 0 10rpx;
+            line-height: 40rpx;
+            font-size: 24rpx;
+            color: #d6b16a;
+            border: 1px solid #d0a95e;
+            border-radius: 4px;
+          }
+        }
+
+        // 权益列表
+        .listBox {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          flex-wrap: wrap;
+
+          .itemBox {
+            display: flex;
+            flex-direction: column;
+            width: 30%;
+            margin-top: 60rpx;
+            justify-content: center;
+
+            image {
+              display: block;
+              margin: 0 auto;
+              width: 110rpx;
+              height: 110rpx;
+            }
+
+            .iconTit,
+            .iconTxt {
+              color: #d3ad65;
+              text-align: center;
+            }
+
+            .iconTit {
+              margin-top: 18rpx;
+              height: 34rpx;
+              line-height: 34rpx;
+              font-size: 24rpx;
+            }
+
+            .iconTxt {
+              height: 28rpx;
+              line-height: 28rpx;
+              font-size: 20rpx;
+            }
+          }
+        }
+
+        // 列表end
+        .vipDetail {
+          margin-top: 32rpx;
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+
+          .txt {
+            // display: inline-block;
+            height: 34rpx;
+            line-height: 34rpx;
+            font-size: 24rpx;
+            color: #d3ad65;
+          }
+
+          image {
+            // display: inline-block;
+            width: 26rpx;
+            height: 24rpx;
+          }
+        }
+      }
+    }
+
+    // 会员权益end
+  }
+}
+
+// 会员非扫码end
+.ls4 {
+  letter-spacing: 8rpx;
+}
+
+.mt10 {
+  margin-top: 20rpx !important;
+}
+
+.gray{
+  color: #888 !important;
+}
+
+view,
+text,
+image,
+picker,
+textarea,
+scroll-view,
+swiper,
+swiper-item {
+  box-sizing: border-box;
+}
+
+button {
+  background: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  border: 0;
+  border-radius: 0;
+  display: block;
+  line-height: 1;
+}
+
+button::after {
+  border: 0;
+  border-radius: 0;
+}

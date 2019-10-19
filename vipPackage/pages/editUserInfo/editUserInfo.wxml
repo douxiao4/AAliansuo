@@ -1,0 +1,30 @@
+<!-- vipPackage/pages/editUserInfo/editUserInfo.wxml -->
+<view class="page">
+  <view class="conBox">
+    <view class="item">
+      <view class="left title">姓名</view>
+      <view class="right title">
+        <input class="input" value="{{userName}}" name="name" bindinput="getName" placeholder="请输入姓名" />
+      </view>
+    </view>
+    <view class="item">
+      <view class="left title">出生日期:</view>
+      <picker class="picker right" mode="date" value="{{date}}" start="1900-09-01" end="{{end}}" bindchange="getDate">
+        <view class="">{{date}}</view>
+      </picker>
+    </view>
+    <view class="item">
+      <view class="left title">证件号码</view>
+      <view class="right title">
+        <input class="input" value="{{userId}}" name="idNumber" bindinput="getId" placeholder="请输入证件号码" />
+      </view>
+    </view>
+    <view class="item">
+      <view class="left title">邮箱</view>
+      <view class="right title">
+        <input class="input" value="{{userEmail}}" name="email" bindinput="getEmail" placeholder="请输入邮箱" />
+      </view>
+    </view>
+  </view>
+  <button class="saveBtn" bindtap="saveMsg">保存信息</button>
+</view>

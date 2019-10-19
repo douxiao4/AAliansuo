@@ -1,0 +1,17 @@
+<view class='container'>
+  <view class="headname">{{hotelname}}<!-- {{getHotelInfo.hotelName}} --></view>
+  <view class="main">
+    <view class='mainflex' wx:for="{{mainflex}}" id='{{item.flexid}}' catchtap='getservice'>
+      <image src='{{item.flexsrc}}' mode='widthFix'></image>
+      <view>{{item.flexname}}</view>
+    </view>   
+    <view class='mainflex' catchtap='getTips'>
+      <image src='https://ucpic.aaroom.cc/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190301105059.png' mode='widthFix'></image>
+      <view style='color:#A2A7AA;'>敬请期待</view>
+    </view>
+  </view>
+</view>
+<modal hidden="{{hiddenmodalput}}" class='modal' title="请输入房间号" confirm-text="确定" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+  <input type='number' placeholder="房间号" bindinput='getroom' value='{{firstinput}}'/>  
+</modal>
+

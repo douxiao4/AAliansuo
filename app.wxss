@@ -1,0 +1,134 @@
+@import "wetoast/wetoast.wxss";
+@import "./assets/iconfont.wxss";
+
+page {
+  font-family: Microsoft Yahei;
+  height: 100%;
+  font-size: 25rpx;
+}
+.toast-fail-wrap {
+  position: fixed;
+  top: 24%; 
+  left: 250rpx;
+  width: 250rpx;
+  height: 250rpx;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  z-index: 999;
+  text-align: center;
+}
+.toast-fail-wrap .icon {
+  margin-top: 60rpx;
+}
+.toast-fail-wrap .text {
+  color: #fff;
+  font-size: 34rpx;
+  margin-top: 20rpx;
+}
+.hide {
+  display: none;
+}
+
+.select-date {
+  display: flex;
+  font-size: 12px;
+  width: 100%;
+  padding: 7px 0;
+  /*border-top: 1px solid #efefef;*/
+  border-bottom: 1px solid #efefef;
+  position: relative;
+  box-sizing: border-box;
+}
+.select-checkIn {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 50rpx;
+  color: #A2A7AA;
+  padding-left: 50rpx;
+  font-size: 28rpx;
+}
+.select-checkIn .chIn,.select-checkOut .chOu {
+  margin-top: 10px;
+  display: flex;
+  font-size: 32rpx;
+  color: #000;
+  font-weight: bold;
+}
+.lc-countDay {
+  color: #040000;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+.count-days {
+  flex: 1;
+  text-align: center;
+  line-height: 116rpx;
+  color: #A2A7AA;
+}
+.select-checkOut {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 50rpx;
+  color: #A2A7AA;
+  padding-right: 28rpx;
+  font-size: 28rpx;
+}
+.lcselect-checkIn {
+  /* display: flex;
+  flex: 3;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px 0; */
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 50rpx;
+  padding-left: 52rpx;
+  margin-bottom: 4rpx;
+}
+.lcselect-checkIn>text {
+  color: #A2A7AA;
+  font-size: 28rpx;
+}
+.lcpicker {
+  /* margin-top: 21px;
+  display: flex;
+  font-size: 28rpx; */
+  margin-top: 10px;
+  display: flex;
+  font-size: 32rpx;
+  color: #000;
+  font-weight: bold;
+}
+.lc-clock image{
+  width: 39rpx;
+  height: 39rpx;
+  position: absolute;
+  top: 56rpx;
+  left: 28rpx;
+}
+.lc-today {
+  flex:3;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-left: 20px;
+  color: #A2A7AA;
+}
+
+/* 新增 */
+.scroll{
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+::-webkit-scrollbar {
+  display: none;
+}

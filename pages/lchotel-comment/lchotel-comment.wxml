@@ -1,0 +1,65 @@
+<view class="container">
+    <view class="comment-head">
+        <view class="head1">
+            <text>{{info[0]}}</text>
+        </view>
+        <view class="head2">
+            <text>{{info[1]}}</text>
+        </view>
+        <view class="head3">
+            <text>{{info[2]}}</text>
+        </view>
+    </view>
+    <view class="comment-content">
+        <view class="content1">
+            <text>尊贵的会员，请评价一下我们的服务吧～</text>
+        </view>
+        <view class="content2">
+            <view data-id='0' bindtap='getFace'>
+                <image src='{{face[0]==0? "/images/icon_BadGray@2x.png" : "/images/icon_BadRed@2x.png"}}'></image>
+                <text class="{{face[0]==0? '':'textred'}}">吐槽</text>
+            </view>
+            <view data-id='1' bindtap='getFace'>
+                <image src='{{face[1]==0? "/images/icon_GoodGray@2x.png" : "/images/icon_GoodRed@2x.png"}}'></image>
+                <text class="{{face[1]==0? '':'textred'}}">满意</text>
+            </view>
+            <view data-id='2' bindtap='getFace'>
+                <image src='{{face[2]==0? "/images/icon_VerygoodGray@2x.png" : "/images/icon_VerygoodRed@2x.png"}}'></image>
+                <text class="{{face[2]==0? '':'textred'}}">超赞</text>
+            </view>
+        </view>
+        <view class="content3">
+           <text class="{{red[0]==1? 'red':''}}"  data-id='0' data-value='干净卫生' bindtap='changeRed'>干净卫生</text>
+           <text class="{{red[1]==1? 'red':''}}"  data-id='1' data-value='服务态度好' bindtap='changeRed'>服务态度好</text>
+           <text class="{{red[2]==1? 'red':''}}"  data-id='2' data-value='免费早餐' bindtap='changeRed'>免费早餐</text>
+           <text class="{{red[3]==1? 'red':''}}"  data-id='3' data-value='出行方便' bindtap='changeRed'>出行方便</text>
+           <text class="{{red[4]==1? 'red':''}}"  data-id='4' data-value='再接再厉' bindtap='changeRed'>再接再厉</text>
+           <text class="{{red[5]==1? 'red':''}}"  data-id='5' data-value='环境好' bindtap='changeRed'>环境好</text>
+           <text class="{{red[6]==1? 'red':''}}"  data-id='6' data-value='设施齐全' bindtap='changeRed'>设施齐全</text>
+           <text class="{{red[7]==1? 'red':''}}"  data-id='7' data-value='入住快' bindtap='changeRed'>入住快</text>
+        </view>
+        <view class="content4">
+            <textarea 
+            placeholder='说说哪里好，鼓励一下我们吧~'
+            cursor-spacing = '130rpx'
+            placeholder-style="color:#D0D3D4;"
+            adjust-position = 'false'
+            bindfocus='bindFocus'
+            bindinput='bindInput'
+            ></textarea>
+        </view>
+        <view class='content5'>
+            <text>这次入住体验满意吗？</text>
+        </view>
+        <view class="star-item-icon">
+            <text class="star-icon star-hollow {{commentHyg<1?'':'star-full'}}" data-type="commentHyg" data-id="1" bindtap="tapStar"></text>
+            <text class="star-icon star-hollow {{commentHyg<2?'':'star-full'}}" data-type="commentHyg" data-id="2" bindtap="tapStar"></text>
+            <text class="star-icon star-hollow {{commentHyg<3?'':'star-full'}}" data-type="commentHyg" data-id="3" bindtap="tapStar"></text>
+            <text class="star-icon star-hollow {{commentHyg<4?'':'star-full'}}" data-type="commentHyg" data-id="4" bindtap="tapStar"></text>
+            <text class="star-icon star-hollow {{commentHyg<5?'':'star-full'}}" data-type="commentHyg" data-id="5" bindtap="tapStar"></text>
+        </view>
+    </view>
+    <view class="comment-config {{text == '提交'? 'ComRed':''}}" bindtap='commentConform'>
+        <text>{{text}}</text>
+    </view>
+</view>

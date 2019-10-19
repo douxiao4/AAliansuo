@@ -1,0 +1,12 @@
+<view class="container">
+    <view class="box {{num == 1? 'rotate':''}}">
+        
+        
+        <view class="after">后面
+            <button class="dian" bindtap='rotate' disabled='{{!num}}'>点我呀</button>
+        </view>
+        <view class="before">前面</view>
+        <button class="dian" bindtap='rotate' disabled='{{num}}'>点我</button>
+        <!-- 如果不能用button，就在点击事件里判断num的值，然后再确定是否直接return false -->
+    </view>
+</view>

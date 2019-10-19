@@ -1,0 +1,77 @@
+<view class="container {{!hasHotelList? 'con': ''}}">
+    <view >
+        <view class="lchl-header">
+            <view catchtap='getCapacityHotels'>
+                <text class="{{(CapacityOrder)? 'textRed':''}}">智能排序</text>
+                <view></view>
+            </view>
+            <view catchtap='getDistanceHotels'>
+                <text class="lc-01 {{(DistanceOrder)? 'textRed':''}}">距离排序</text>
+                <image src="{{DistanceOrder&&sortOpt === 2?'/images/icon_up_gray@2x.png':'/images/icon_down_gray@2x.png'}} "></image>
+                <view></view>
+            </view>
+            <view catchtap='getPriceHotels'>
+                <text class="lc-01 {{(PriceOrder)? 'textRed':''}}">价格排序</text>
+                <image src="{{PriceOrder&&sortOpt === 2?'/images/icon_up_gray@2x.png':'/images/icon_down_gray@2x.png'}}"></image>
+                <view></view>
+            </view>
+            <view catchtap='getAllHotels'>
+                <text class="{{(AllOrder)? 'textRed':''}}">综合筛选</text>
+            </view>
+        </view>
+        <!-- <view class="lchl-brand">
+            <scroll-view class="lc-brands" scroll-x style="width: auto;overflow:hidden">
+                <block wx:for="{{brands}}" wx:for-item="brand" wx:key="{{index}}">
+                    <text class="lc-brand {{brand.isChoose? 'lcselected':''}}" bindtap="chooseBrand" data-id="{{brand.id}}" data-index="{{index}}">{{brand.name}}</text>
+                </block>
+            </scroll-view>
+        </view> -->
+        <view class="lchl-list" wx:if='{{hasHotelList}}' bindscrolltolower='queryMoreHotelList'>
+            <block wx:for='{{hotelList}}' wx:key='index' wx:for-item='hotel'>
+                <view class="lchl-listTable" data-id='{{hotel.hotelId}}' 
+                data-distance='{{hotel.distance}}' 
+                data-areaName='{{hotel.areaName}}' 
+                data-iscollection='{{hotel.isCollection}}' catchtap='goToHotelDetail'>
+                    <view class="lchl-left">
+                        <image src='{{hotel.logo}}' class="lchl-lefthead"></image>
+                        <text wx:if='{{hotel.guaranteeSupport==1}}' class="lchl-leftnv" style="display:none">信用住</text>
+                        <view wx:if='{{hotel.isCollection==1}}' class="lchl-leftheat">
+                            <image src='/images/icon_heart@2x.png'></image>
+                        </view>
+                    </view>
+                    <view class="lchl-right">
+                        <view class="lchl-r1">
+                            <image src='/images/pic_lab@2x.png' class="lchl-r1push" wx:if='{{hotel.allowStorgeTime}}'></image>
+                            <!-- <text class="lchl-r1push" wx:if='{{hotel.allowStorgeTime}}'>时间储值</text> -->
+                            <text class="{{hotel.allowStorgeTime? 'lchl-r1name':'lchl-r1name1'}}">{{hotel.hotelName}}</text>
+                        </view>
+                        <view class="lchl-r2">
+                            <view>
+                                <image src='/images/icon_miles3@2x.png'></image>
+                                <text decode='{{true}}'>&nbsp;距您&nbsp;{{ hotel.distance <= 0 ? '0' : hotel.distance }}&nbsp;km |</text><text decode='{{true}}'>&nbsp;{{hotel.areaName}}</text>
+                            </view>
+                            <text class="lchl-r2yd" wx:if='{{!hotel.restMsg}}'>{{hotel.lastBookTime}}</text>
+                            <text class="lchl-r2rm" wx:if='{{hotel.restMsg}}'>{{hotel.restMsg}}</text>
+                        </view>
+                        <view class="lchl-r3">
+                            <text class="lchl-r3score">{{hotel.score}}分 {{hotel.comment}}</text>
+                            <text class="lchl-r3m1">¥<text class="lchl-r3m2">{{openType == 1? hotel.minPrice:hotel.clockPrice}}</text> <text class="lchl-r3m3"> 起</text></text>
+                        </view>
+                        <view class="lchl-r4">
+                            <block wx:for='{{hotel.serviceNames}}' wx:key='{{index}}'>
+                                <text>{{item}}</text>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+            </block>
+            <view class="lchl-footer" wx:if='{{hotelCount >= 5}}'>
+                <text>- {{footerText}} -</text>
+            </view>
+        </view>
+    </view>
+    <view class="no-data" wx:if="{{!hasHotelList}}">
+        <image class="order-info-null" src="http://m.ihotels.cc/app/images/miniapp/null.png"></image>
+        <view class="order-null-text">暂无酒店</view>
+    </view>
+</view>

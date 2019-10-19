@@ -1,0 +1,50 @@
+<!-- vipPackage/pages/qualityChecking/qualityChecking.wxml -->
+<view class="page">
+  <view class="box">
+    <view class="titleBig">AA客房质检功能即将上线！</view>
+    <view class="txt">床单被罩干净与否，一扫便知！</view>
+    <view class="txt">打开微信扫一扫</view>
+    <view class="txt">用的更放心，住的更安心！</view>
+    <!-- <image class="btn" catchtap="alert" mode="widthFix" src="{{showQCBtn?trueSrc:falseSrc}}"></image> -->
+    <view class="txt">AA酒店所有布草用品均选用五星酒店标准布草</view>
+    <view class="txtBig">
+      给您
+      <text class="big">A级干净、A级舒适</text>
+      的入住体验。
+    </view>
+    <view class="bottomBox">
+      <view class="left">
+        <view class="title">即将上线城市列表</view>
+        <view class="list">
+          <view class="itemBox">
+            <view class="item">上海</view>
+            <view class="item">深圳</view>
+            <view class="item">苏州</view>
+          </view>
+          <view class="itemBox">
+            <view class="item">青岛</view>
+            <view class="item">嘉兴</view>
+            <view class="item">济南</view>
+          </view>
+          <view class="itemBox">
+            <view class="item">扬州</view>
+            <view class="item">宜昌</view>
+            <view class="item">赣州</view>
+          </view>
+          <view class="itemBox">
+            <view class="item">宿迁</view>
+            <view class="item">临沂</view>
+            <view class="item">桂林</view>
+          </view>
+          <view class="itemBox jLeft">
+            <view class="item">无锡</view>
+          <view class="item">济宁</view>
+          </view>
+        </view>
+      </view>
+      <view class="right">
+        <image class="btn" mode="widthFix" src="https://ucpic.aaroom.cc/2019-01-31_5c52b874704fa.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

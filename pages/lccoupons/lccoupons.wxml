@@ -1,0 +1,12 @@
+<import src='/template/coupons-template.wxml' />
+<!-- <view class="container"> -->
+<view wx:if="{{page == 1}}" class="roomExchange" bindtap='roomExchange'>房券码兑换</view>
+<block wx:for='{{datas}}' wx:for-item='data' wx:key='index'>
+  <template is='coupon' data='{{...data}}' />
+</block>
+<block wx:if="{{datas.length<1}}">
+  <!-- <view wx:if="{{datas[0].page == 1}}" class="roomExchange" bindtap='roomExchange'>房券码兑换</view> -->
+  <image class="order-info-null" src="http://m.ihotels.cc/app/images/miniapp/null.png"></image>
+  <view class="order-null-text">您还没有可用的优惠券!</view>
+</block>
+<!-- </view> -->

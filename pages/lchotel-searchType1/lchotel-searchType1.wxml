@@ -1,0 +1,64 @@
+<view class='container'>
+  <view class='chooses'>
+    <view class="ch-left">
+      <view class="ch-types">
+        <!-- <block wx:for="{{types}}" wx:key="{{index}}"> -->
+        <block wx:for="{{types}}" wx:key="{{index}}" wx:if="{{index!==0}}">
+          <text  class="ch-type {{item.isChoose==true? 'bottom-red':''}}"
+           data-type="{{index}}" bindtap="chooseType" wx:if='{{index==2? isCity:"true"}}'><text class="dian" wx:if='{{choosedians[index]}}'>·</text>{{item.name}}</text>
+        </block>
+      </view>
+    </view>
+    <view class="ch-top">{{text}}</view>
+    <view class="ch-right1" wx:if='{{index == 0}}'>
+      <block wx:for='{{brandnames}}' wx:key='{{index}}'>
+        <image src="{{item.isSelected? item.colorImgSrc:item.grayImgSrc}}" 
+        bindtap='brandchangeSelect' data-id="{{index}}"></image>
+      </block>
+    </view>
+    <view class="ch-right2" wx:if='{{index == 1}}'>
+      <view class="ch-citys">
+        <block wx:for="{{citys}}" wx:key='{{index}}'>
+          <view class="ch-city">
+            <text>{{item.name}}</text>
+            <checkbox checked='{{item.isSelected}}' bindtap='citychangeselected' data-id="{{index}}"></checkbox>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="ch-right2" wx:if='{{index == 2}}'>
+      <view class="ch-citys">
+        <block wx:for="{{distances}}" wx:key='{{index}}'>
+          <view class="ch-city">
+            <text>{{item.name}}</text>
+            <checkbox checked='{{item.isSelected}}' bindtap='distancechangeselected' data-id="{{index}}"></checkbox>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="ch-right2" wx:if='{{index == 3}}'>
+      <view class="ch-citys">
+        <block wx:for="{{servicenames}}" wx:key='{{index}}'>
+          <view class="ch-city">
+            <text>{{item.name}}</text>
+            <checkbox checked='{{item.isSelected}}' bindtap='servicenamechangeselected' data-id="{{index}}"></checkbox>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="ch-right2" wx:if='{{index == 4}}'>
+        <view class="ch-citys">
+          <block wx:for="{{scores}}" wx:key='{{index}}'>
+            <view class="ch-city">
+              <text>{{item.name}}</text>
+              <checkbox checked='{{item.isSelected}}' bindtap='scorechangeselected' data-id="{{index}}"></checkbox>
+            </view>
+          </block>
+        </view>
+      </view>
+  </view>
+  <view class='conditions'>
+    <view class='empty' bindtap='removeChoose'>清空筛选</view>
+    <view class='confirm' bindtap='backList'>确定</view>
+  </view>
+</view>

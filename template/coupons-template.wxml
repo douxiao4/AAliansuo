@@ -1,0 +1,42 @@
+<template name='coupon'>
+    <view class="container" 
+    wx:if="{{page==2? isUseful==1&status==1:'true'}}">
+        <view class="lc-coupon {{status == 1?  '':'bgc-gray'}} {{isChoose? 'lc-bottomred':''}}" 
+       data-price='{{couPrice}}' 
+       data-coupons='{{coupons}}' 
+       data-page='{{page}}' data-index='{{index}}'  bindtap='chooseCoupons'>
+            <view class="lc-couponhead">
+                <view>
+                    <image class='lc-couponheadImage1' src="{{status == 1? '/images/logo_red@2x.png':'/images/logo_S_gray.svg'}} "></image>
+                    <text class="{{status == 1?  '':'color-gray'}}">{{assigner}}</text>
+                </view>
+                <text class="lc-couponheadUse {{isgary? 'color-gray' : 'lc-red'}}" wx:if='{{status == 1}}'>{{time}}</text>
+                <!-- <text class="lc-couponheadUse" wx:if='{{status == 1&&isNew == 1}}'>NEW</text> -->
+                <image class='lc-couponheadImage2' wx:if='{{status == 2}}' src='/images/icon_used@2x.png'></image>
+                <image class='lc-couponheadImage2' wx:if='{{status == 3}}' src='/images/icon_overdue@2x.png'></image>
+                <image class="lc-couponheadImage3" wx:if='{{isNew == 1 && status == 1}}' src='/images/new_right@2x.png'></image>
+            </view>
+            <view class="lc-couponCircleLeft"></view>
+            <view class="lc-couponCircleRight"></view>
+            <view class="lc-couponbottom">
+                <view class="lc-couponBleft">
+                    <text class="{{status == 1?  '':'color-gray'}}">¥</text>
+                    <text class="{{status == 1?  '':'color-gray'}}">{{couPrice}}</text>
+                </view>
+                <view class="lc-couponBright">
+                    <text>券号：{{coupons}}</text>
+                    <view class="lc-couponBrB">
+                        <view class="lc-cbrr">
+                            <text>使用规则:</text>
+                        </view>
+                        <view class="lc-cbll">
+                            <text>  1. 截止日期至{{eDate}} 
+                                    2. {{isWeekStr}}</text>
+                        </view>
+                    </view>
+        
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

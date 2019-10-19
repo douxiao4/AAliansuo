@@ -1,0 +1,167 @@
+<import src="../../wetoast/wetoast.wxml"/>
+
+<view class="container" wx:if="{{!showInvoiceWrap}}">
+  <view class="hotel-info wrap-box">
+    <view class="hotel-title">{{hotelName}}</view>
+    <!-- <view class="hotel-roomtype-name">{{getRoomType[0].roomTypeName}}</view> -->
+    <view class="hotel-roomtype-name">{{getRoomType.room_type_name}}</view>
+    <view class="checkday-count">
+      <view class="checkin">入住 <text>{{checkIn}}</text></view>
+      <view class="checkout" wx:if="{{openType==1}}">离店 <text>{{checkOut}}</text></view>
+      <view wx:if="{{openType==1}}">{{countDays}}晚</view>
+    </view>
+  </view>
+  <view class="room-info wrap-box">
+    <view class="room-count box-line">
+      <view class="box-left">房间数</view>
+      <view class="box-right">
+        <text class="room-num-btn add {{roomNums<=1?'disabled':''}}" bindtap="changeRoomNums" data-type="1">-</text>
+        {{roomNums}}
+        <text class="room-num-btn minus {{roomNums>=maxRoomNums?'disabled':''}}" bindtap="changeRoomNums" data-type="2">+</text>
+      </view>
+    </view>
+    <view class="check-user box-line">
+      <view class="box-left">入住人</view>
+      <view class="box-right">
+        <input type="text" value="{{customerName}}" placeholder="入住人姓名" bindinput="bindCustomerName" />
+      </view>
+    </view>
+    <view class="check-phone box-line">
+      <view class="box-left">手机号</view>
+      <view class="box-right">
+        <input type="number" value="{{phone}}" placeholder="用于接受通知" bindinput="bindPhone" style="width: 300rpx;" />
+        <view class="vcode-btn {{vcodeBtnStatus?'':'noactive'}}" wx:if="{{!loginStatus}}" bindtap="sendVcode">{{vcodeBtnText}}</view>
+      </view>
+    </view>
+    <!-- <view class="check-phone box-line" wx:if="{{!loginStatus}}">
+      <view class="box-left">验证码</view>
+      <view class="box-right">
+        <input type="number" value="{{vcode}}" placeholder="6位数字" bindinput="bindVcode" />
+      </view>
+    </view> -->
+  </view>
+  <view class="other-info wrap-box">
+    <view class="arrive-time box-line">
+      <view class="box-left">到店时间</view>
+      <view class="box-right">
+        <picker bindchange="selectArrivateTime" range="{{getArrivateTime}}">
+          <view class="picker fontGray">
+            <!-- {{getArrivateTime[arrivateTimeIndex]}} -->
+            {{arriveTime}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="invoice box-line">
+    <!-- <view class="invoice box-line" wx:if="{{loginStatus}}"> -->
+      <view class="box-left">发票</view>
+      <view class="box-right fontGray invoice-box" bindtap="openInvoicePage">{{invoiceHead?invoiceHead:'不需要'}}</view>
+    </view>
+    <view class="remark box-line">
+      <view class="box-left">备注</view>
+      <view class="box-right">
+        <input type="text" value="{{memo}}" bindinput="bindMemo" placeholder="需要告知酒店的特殊要求" />
+      </view>
+    </view>
+  </view>
+  <view class="tips wrap-box">
+    <view class="left-icon">
+      <text>注</text>
+    </view>
+    <!-- <view class="right-text">请于入住日中午12：00后办理入住，如提前到店，视酒店空房情况安排。</view> -->
+    <view class="right-text">
+      <view>请于入住日中午12：00后办理入住，如提前到店，视酒店空房情况安排。</view>
+      <view>本订单最晚取消时间为入住当天18:00；当超过最晚取消时间后，AA旅行将不接受您的取消请求，同时已支付的预付款项不予退还，优惠券订单一经取消后无法恢复。</view>
+    </view>
+  </view>
+  <view class="footer-bar">
+    <view class="count-price">￥{{totalPriceAct}}元</view>
+    <view class="price-detail-btn" bindtap="switchShowPriceDetail">明细</view>
+    <view class="pay-btn" bindtap="paybtn">去支付</view>
+  </view>
+</view>
+
+<!-- 价格明细 -->
+<view class="price-detail-wrap" wx:if="{{showPriceDetail}}">
+  <view class="price-detail-inner">
+    <view class="price-detail-title">明细</view>
+    <!-- <view class="price-detail-item" wx:for="{{priceList}}" wx:key="">
+      <view class="price-detail-date">{{item.date}}（{{item.nums}}间）</view>
+      <view class="price-detail-y">￥{{item.price*item.nums}}</view>
+    </view> -->
+    <view class="price-detail-item" wx:for="{{getRoomType.room_type_prices}}" wx:key="">
+      <view class="price-detail-date">{{item.start}}（{{roomNums}}间）</view>
+      <view class="price-detail-y">￥{{levelNum==='v1'? item.price*roomNums: levelNum==='v2'?item.aa_plus_price*roomNums:item.aa_pro_price*roomNums}}</view>
+    </view>
+  </view>
+</view>
+
+<!-- 发票模块 -->
+<view class="invoice-wrap" wx:if="{{showInvoiceWrap}}">
+  <div wx:if="{{showInvoiceSwitch}}">
+    <view class="room-info wrap-box">
+      <view class="room-count box-line">
+        <view class="box-left">需要发票</view>
+        <view class="box-right invoice-right">
+          <switch checked bindchange="switchNeedInvoice" color="#F05442" wx:if="{{needInvoice}}"/>
+          <switch bindchange="switchNeedInvoice" color="#F05442" wx:else/>
+        </view>
+      </view>
+    </view>
+    <view class="room-info wrap-box" wx:if="{{needInvoice}}">
+      <view class="room-count box-line">
+        <view class="box-left">发票抬头</view>
+        <view class="box-right invoice-right invoice-box" bindtap="openMyInvoiceList">{{invoiceHead?invoiceHead:'请选择'}} > </view>
+      </view>
+      <view class="room-count box-line">
+        <view class="box-left">发票明细</view>
+        <view class="box-right invoice-right">住宿费</view>
+      </view>
+      <view class="room-count box-line">
+        <view class="box-left">领取方式</view>
+        <view class="box-right invoice-right">请至前台自行领取</view>
+      </view>
+    </view>
+    <view class="tips wrap-box invoice">
+      <view class="left-icon">
+        <text>注</text>
+      </view>
+      <view class="right-text">预留发票抬头，领取发票更便捷</view>
+    </view>
+    <button class="invoice-confirm-btn" bindtap="confirmInvoice">完成</button>
+  </div>
+  <div wx:if="{{!showInvoiceSwitch}}">
+    <view style="line-height: 100rpx;text-align: center;">常用抬头</view>
+
+    <view class="room-info wrap-box">
+      <view class="room-count box-line" wx:for="{{invoiceGet}}" wx:key="">
+        <!-- <view class="box-left invoice-box">{{item.invoiceHead}}</view> -->
+        <view class="box-left invoice-box">{{item.company_name}}</view>
+        <view class="box-right invoice-add" bindtap="selectInvoiceBtn" data-head="{{item.company_name}}" data-id="{{item.company_number}}">
+          选择
+        </view>
+      </view>
+
+    </view>
+    <!-- <view style="line-height: 100rpx;text-align: center;">添加新常用抬头</view> -->
+    <view class="btn-area" wx:if="{{invoiceGet.length==0 || !invoiceGet}}">
+        <button class="back" bindtap='goToAdd'>添加新常用抬头</button>
+    </view>
+
+    <!-- <view class="room-info wrap-box">
+      <form bindsubmit="addNewInvoice">
+        <view class="room-count box-line">
+            <input type="text" name="invoiceHead" value="" placeholder="请输入抬头"></input>
+            <view class="box-right invoice-add">
+              <button formType="submit" class="add-invoice-btn">添加</button>
+            </view>
+        </view>
+      </form>
+    </view> -->
+
+  </div>
+</view>
+
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}"/>

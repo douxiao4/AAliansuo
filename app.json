@@ -1,0 +1,102 @@
+{
+  "pages": [
+   "pages/index/index",   
+    "pages/test/test",
+   
+    "pages/vipIndex/vipIndex",
+    "pages/minecenter/minecenter",
+    "pages/login-width-sms/login-width-sms",
+    "pages/login/login",
+    "pages/play-around/play-around",
+    "pages/hotel-comment/hotel-comment",
+    "pages/lchotel-comment/lchotel-comment",
+    "pages/hotel-detail/hotel-detail",
+    "pages/order-list/order-list",
+    "pages/my-info/my-info",
+    "pages/hotel-list/hotel-list",
+    "pages/switchcity/switchcity",
+    "pages/write-order/write-order",
+    "pages/payment/payment",
+    "pages/payment-success/payment-success",
+    "pages/order-details/order-details",
+    "pages/mycenter/mycenter",
+    "pages/forgetpassword/forgetpassword",
+    "pages/pormptly/pormptly",
+    "pages/common-info/common-info",
+    "pages/my-assess/my-assess",
+    "pages/my-hotel/my-hotel",
+    "pages/cancel-order/cancel-order",
+    "pages/add-common-info/add-common-info",
+    "pages/edit-common-info/edit-common-info",
+    "pages/search-by-hotelid/search-by-hotelid",
+    "pages/brand-web-view/brand-web-view",
+    "pages/lchotel-list/lchotel-list",
+    "pages/lchotel-searchType/lchotel-searchType",
+    "pages/lccoupons/lccoupons",
+    "pages/lchotel-introduce/lchotel-introduce",
+    "pages/lctime-storage/lctime-storage",
+    "pages/lctest/lctest",
+    "pages/lctest1/lctest1",
+    "pages/lchotel-searchType1/lchotel-searchType1",
+    "pages/lcusercomment/lcusercomment",
+    "pages/lcmycomment/lcmycomment",
+    "pages/lccalender/index",
+    "pages/reside-service/reside-service",
+    "pages/lcintegral/lcintegral",
+    "pages/lcexchange/lcexchange",
+    "pages/lcroomcodeex/lcroomcodeex",
+    "pages/goToEquity/goToEquity",
+    "pages/contact/contact"
+  ],
+  "subpackages": [
+    {
+      "root": "vipPackage",
+      "pages": [
+        "pages/vipEquity/vipEquity",
+        "pages/qualityChecking/qualityChecking",
+        "pages/suggestionList/suggestionList",
+        "pages/tips/tips",
+        "pages/feedback/feedback",
+        "pages/goClothDetail/goClothDetail",
+        "pages/goRoomCheck/goRoomCheck",
+        "pages/editUserInfo/editUserInfo"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarTitleText": "AA连锁酒店",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#909095",
+    "selectedColor": "#F05442",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "订房",
+        "iconPath": "images/home_gray.png",
+        "selectedIconPath": "images/home.png"
+      },
+      {
+        "pagePath": "pages/vipIndex/vipIndex",
+        "text": "会员",
+        "iconPath": "images/vip_gray.png",
+        "selectedIconPath": "images/vip.png"
+      },
+      {
+        "pagePath": "pages/minecenter/minecenter",
+        "text": "我的",
+        "iconPath": "images/my_gray.png",
+        "selectedIconPath": "images/my_red.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息用于本小程序的位置效果显示"
+    }
+  },
+  "debug": false
+}

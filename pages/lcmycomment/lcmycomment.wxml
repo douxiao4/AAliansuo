@@ -1,0 +1,34 @@
+<view class="container">
+  <view class="mycomment">
+    <view class="lc-comments" wx:if='{{!hasCom}}'>
+      <text class="lc-noComments">暂无用户评论</text>
+    </view>
+    <block wx:for='{{commentlist}}' wx:key='index'>
+      <view class="lc-comments" wx:if='{{hasCom}}'>
+        <view class="lc-commentshead">
+          <image src="{{memberInfo.memberHead? memberInfo.memberHead:'/images/pic_Default_red.svg'}}"></image>
+          <text>{{memberInfo.cardNum}}</text>
+          <text>{{item.memberCommentDetail.utility}}分</text>
+          <text>{{item.memberCommentDetail.createTime}}</text>
+        </view>
+        <view class="lc-commentcontent">
+          <text class="{{id == index && short? 'lc-short':''}}{{id != index || isbegin?'lc-short':''}}">
+												{{item.memberCommentDetail.comment_text}}
+										</text>
+        </view>
+        <view class="lc-letshort" wx:if="{{item.memberCommentDetail.comment_text.length>=81}}">
+          <text bindtap='changeshort' data-id='{{index}}'>{{text}}</text>
+        </view>
+        <view class="lc-hotel" bindtap="goToHotel" data-id='{{item.memberCommentDetail.hotel_id}}'>
+          <view class="lc-image">
+            <image src='{{item.memberCommentDetail.pic? item.memberCommentDetail.pic:"/images/logo_red@2x.png"}}'></image>
+          </view>
+          <view class="lc-name">
+            <text class="lc-headname">{{item.hotelName}}</text>
+            <text class="lc-area">距您 {{item.distance}} km | {{item.areaName}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

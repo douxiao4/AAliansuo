@@ -1,0 +1,8 @@
+<!--pages/test/test.wxml-->
+<!-- <view wx:if="{{hasPhone===true}}" > -->
+<view class="test">
+  <button bindtap="toPay">支付</button>
+  <button bindtap="getMemberEquity">会员权益</button>
+</view>
+<!-- <getPhone wx:if="{{hasPhone===false}}" bindgetPhone="getPhone"></getPhone> -->
+<getPhone bindgetPhone="getPhone"></getPhone>

@@ -1,0 +1,301 @@
+<!-- pages/vipIndex/vipIndex.wxml -->
+<getPhone wx:if="{{hasPhone===false}}" bindgetPhone="getPhone"></getPhone>
+<!-- 会员非扫码 -->
+<view class="vip-box inline-box page" wx:if="{{ !haveHid}}">
+  <!-- 置顶 -->
+  <view class="topBox">
+    <view class="left toHotelList" catchtap="toHotelList" data-type="会员频道-topbar-查看推荐酒店">
+      <view class="txt">查看推荐酒店</view>
+    </view>
+    <view class="right toEquity" catchtap="tapVipEquity" data-type="会员频道-topbar-查看会员权益">
+      <view class="txt">了解AA会员</view>
+    </view>
+  </view>
+  <!-- 置顶end -->
+  <!-- 内容区 -->
+  <view class="conBox scroll">
+    <!-- slogan -->
+    <view class="sloganBox toBuyRoom">
+    <!-- <view class="sloganBox toBuyRoom" data-type="广告位（会员）"> -->
+      <view class="upBox">
+        <image mode="widthFix" src="https://ucpic.aaroom.cc/2.png"></image>
+      </view>
+      <view class="downBox" catchtap="toBuyRoom" data-type="广告位（会员）">
+        <view class="titleBox">
+          <!-- <view class="txt">超低房价 {{inlineMsg.minPrice}}元/起</view> -->
+          <view class="txt">超低房价</view>
+          <view class="buttonBox">
+            <view class="btnTxt">立即抢购</view>
+            <image class="iconRight" mode="aspectFill" src="../../images/right2.png"></image>
+          </view>
+        </view>
+        <view class="imageBox">
+          <image mode="widthFix" src="https://ucpic.aaroom.cc/3.png"></image>
+        </view>
+      </view>
+    </view>
+    <!-- slogan end -->
+    <!-- 会员卡 -->
+    <view class="vipCardBox">
+      <!-- <view class="vipImgBox toEquity" catchtap="tapVipEquity" data-type="会员频道-会员非扫码-会员卡">
+        <image class="cardImg" mode="scaleToFill" src="https://ucpic.aaroom.cc/2019-02-22_5c6fbb990bcc1.png"></image>
+        <view class="cardMsgBox">
+          <open-data class="logoImg" type="userAvatarUrl"></open-data>
+          <view class="vipLevel">{{nowEquity.levelName}}</view>
+        </view>
+      </view> -->
+      <view class="vipImgBox2 toEquity" catchtap="tapVipEquity" data-type="会员频道-会员非扫码-会员卡">
+        <image class="cardImg" mode="widthFix" src="https://ucpic.aaroom.cc/2019-04-02_5ca3081de1f91.png"></image>
+        <view class="cardMsgBox">
+          <open-data class="logoImg" type="userAvatarUrl"></open-data>
+          <view class="vipLevel">您当前是尊贵的{{nowEquity.levelName}}</view>
+        </view>
+      </view>
+      <view class="toBuyRoomBox toBuyRoom" catchtap="toBuyRoom" data-type="去预定按钮">
+        <view class="left">尊贵的{{nowEquity.levelName}}，马上享受折扣订房</view>
+        <view class="right">
+          <view class="buyTxt">去订房</view>
+          <image mode="scaleToFill" src="../../images/icon_open@2x.png"></image>
+        </view>
+      </view>
+    </view>
+    <!-- 会员卡end -->
+    <!-- 会员权益 -->
+    <!-- <view class="vipInterestsBox toEquity" catchtap="tapVipEquity" data-type="会员频道-会员非扫码-会员权益">
+      <view class="conBox" style="background: url(https://ucpic.aaroom.cc/5.png) no-repeat; background-size:100% 100%;">
+        <view class="titleBox">
+          <view class="title">{{nowEquity.levelName}}权益</view>
+        </view> -->
+        <!-- 权益列表 -->
+        <!-- <view class="listBox">
+          <view class="itemBox">
+            <image class="iconImg" mode="scaleToFill" src="../../images/fangjiazhekou@2x.png"></image>
+            <view class="iconTit">房价折扣</view>
+            <view class="iconTxt">订房{{nowEquity.discountPrice}}折</view>
+          </view>
+          <view class="itemBox">
+            <image class="iconImg" mode="scaleToFill" src="../../images/shengri@2x.png"></image>
+            <view class="iconTit">生日礼包</view>
+            <view class="iconTxt">{{nowEquity.birthIntegral}}积分</view>
+          </view>
+          <view class="itemBox">
+            <image class="iconImg" mode="scaleToFill" src="../../images/jifen@2x.png"></image>
+            <view class="iconTit">积分抵扣</view>
+            <view class="iconTxt">小程序专享</view>
+          </view>
+          
+          <view class="itemBox">
+            <image class="iconImg" mode="scaleToFill" src="../../images/tsyh@2x.png"></image>
+            <view class="iconTit">同时优惠</view>
+            <view class="iconTxt">享{{nowEquity.meanwhileIptimizeNum}}间</view>
+          </view>
+          <view class="itemBox">
+            <image class="iconImg" mode="scaleToFill" src="../../images/yanshi@2x.png"></image>
+            <view class="iconTit">延时退房</view>
+            <view class="iconTxt">延时至{{nowEquity.delay}}</view>
+          </view>
+          
+          <view class="itemBox">
+            <image class="iconImg" mode="scaleToFill" src="../../images/baoliu@2x.png"></image>
+            <view class="iconTit">预定保留</view>
+            <view class="iconTxt">保留至{{nowEquity.preRetain}}</view>
+          </view>
+        </view> -->
+        <!-- 权益列表end -->
+        <!-- <view class="vipDetail">
+          <view class="txt">会员等级详情</view>
+          <image class="iconImg" mode="scaleToFill" src="../../images/you2@2x.png"></image>
+        </view>
+      </view>
+    </view> -->
+    <!-- 会员权益end -->
+  </view>
+  <!-- 内容区end -->
+</view>
+<!-- 会员非扫码end -->
+<!-- 扫码进入 -->
+<!-- 酒店详情 -->
+<view class="vipIndex-box page detail-box" wx:if="{{ haveHid}}">
+  <!-- 标题 banner -->
+  <view class="topBox">
+    <view class="title">{{bodyMsg.name}}</view>
+    <swiper class="banner-box" autoplay="{{true}}" duration="{{500}}" interval="{{4000}}">
+      <!-- 默认 -->
+      <swiper-item wx:if="{{bannerList.length==0}}">
+        <!-- <image mode="aspectFit" src="../../images/logo_red@2x.png"></image> -->
+        <image mode="aspectFit" src="https://ucpic.aaroom.cc/2019-03-12_5c874ba0139da.png"></image>
+      </swiper-item>
+      <!-- 酒店banner -->
+      <swiper-item wx:if="{{bannerList.length>0}}" wx:for="{{bannerList}}" wx:for-index="index" wx:for-item="item" wx:key="{{index}}">
+        <image mode="scaleToFill" src="{{item.photo_url}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- banner end -->
+  <!-- 地址 -->
+  <view class="address-box">
+    <view class="left openMap tapAddBox" data-addmsg="{{bodyMsg}}" bindtap="openMap">
+      <image mode="scaleToFill" src="../../images/daohang@2x.png"></image>
+      <text>导航</text>
+    </view>
+    <view class="center">
+      <text class="text openMap">{{ bodyMsg.address }}</text>
+    </view>
+    <view class="right tapAddBox" data-addtxt="{{bodyMsg.address}}" bindtap="copyAdd">
+      <text>复制</text>
+    </view>
+  </view>
+  <!-- 地址end -->
+  <!-- 原质检 房态 现住店 权益 -->
+  <view class="room-nav">
+    <view class="room-nav-item quality" catchtap="tapBuyRoom">
+      <image mode="scaleToFill" src="../../images/zhudian.png"></image>
+    </view>
+    <view class="room-nav-item roomStatus toEquity" catchtap="tapVipEquity" data-type="会员频道-扫码进入-我的权益">
+      <image mode="scaleToFill" src="../../images/quanyiB.png"></image>
+    </view>
+  </view>
+  <!-- 原质检 房态 现住店 权益end -->
+  <!-- 酒店WI-FI -->
+  <view class="border-box wifi-box">
+    <view class="con-box">
+      <view class="con-title">
+        <view class="title-box">
+          <view class="titleIconBox">
+            <image mode="widthFix" src="../../images/wifi.png"></image>
+          </view>
+          <text>酒店WI-FI</text>
+        </view>
+      </view>
+      <view class="con-list con-list-flex">
+        <view class="con-item-left">
+          <view class="con-item">
+            <view class="conItemIcon">
+              <image mode="widthFix" src="../../images/mingcheng@2x.png"></image>
+            </view>
+            <view class="con-left">名称：</view>
+            <view class="con-center">{{ bodyMsg.wifiName ? bodyMsg.wifiName : "暂无信息" }}</view>
+          </view>
+          <view class="con-item pr33" data-wifi="{{bodyMsg.wifiPassword}}" bindtap="copyWifi">
+            <view class="conItemIcon">
+              <image mode="widthFix" src="../../images/mima@2x.png"></image>
+            </view>
+            <view class="con-left">密码：</view>
+            <view class="con-center">
+              {{ bodyMsg.wifiPassword ? bodyMsg.wifiPassword : "暂无信息" }}
+            </view>
+          </view>
+        </view>
+        <view class="con-item-rigth">
+          <text wx:if="{{bodyMsg.wifiPassword}}" class="copyBtn copyWifi tapCopyWifi" data-wifi="{{bodyMsg.wifiPassword}}" bindtap="copyWifi">复制密码</text>
+        </view>
+      </view>
+      <!-- 更多wifi -->
+      <view class="moreWifi">
+      <!-- <view class="moreWifi" wx:if="{{WiFiList.length>0}}"> -->
+        <view catchtap="tapShowMoreWifi" wx:if="{{!showMoreWifi}}" class="more">
+          <image class="icon" mode="widthFix" src="../../images/xia.png"></image>
+        </view>
+        <view wx:if="{{showMoreWifi}}" class="moreWifiList">
+          <view class='more gray' wx:if="{{WiFiList.length==0}}">没有更多了</view>
+          <!-- more wifi item -->
+          <view class="con-list con-list-flex" wx:key="{{item.id}}" wx:for="{{WiFiList}}" wx:for-index="index" wx:for-item="item">
+            <view class="con-item-left">
+              <view class="con-item">
+                <view class="conItemIcon">
+                  <image mode="widthFix" src="../../images/mingcheng@2x.png"></image>
+                </view>
+                <view class="con-left">名称：</view>
+                <view class="con-center">{{ item.wifiName ? item.wifiName : "暂无信息" }}</view>
+              </view>
+              <view class="con-item pr33">
+                <view class="conItemIcon">
+                  <image mode="widthFix" src="../../images/mima@2x.png"></image>
+                </view>
+                <view class="con-left">密码：</view>
+                <view class="con-center">{{ item.wifiPassword ? item.wifiPassword : "暂无信息" }}</view>
+              </view>
+            </view>
+            <view class="con-item-rigth">
+              <text wx:if="{{item.wifiPassword}}" class="copyBtn copyWifi tapCopyWifi" data-wifi="{{item.wifiPassword}}" bindtap="copyWifi">复制密码</text>
+            </view>
+          </view>
+          <!-- more wifi item end -->
+        </view>
+        <view catchtap="tapNoMoreWifi" wx:if="{{showMoreWifi && WiFiList.length>0}}" class="more">
+          <image class="icon moreUp" mode="widthFix" src="../../images/xia.png"></image>
+        </view>
+      </view>
+      <!-- 更多wifi end -->
+    </view>
+  </view>
+  <!-- 酒店WI-FI end -->
+  <!-- 酒店信息 -->
+  <view class="border-box hotleMsgBox">
+    <view class="con-box">
+      <view class="con-title">
+        <view class="title-box">
+          <view class="titleIconBox">
+            <image mode="widthFix" src="../../images/hotel.png"></image>
+          </view>
+          <text>酒店信息</text>
+        </view>
+      </view>
+      <view class="con-list pr33">
+        <view class="con-item copyWifi tapPhone" id="tel" data-tel="{{bodyMsg.phone}}" bindtap="tapPhone">
+          <view class="conItemIcon">
+            <image mode="widthFix" src="../../images/jiudianqiantai@2x.png"></image>
+          </view>
+          <view class="con-left">酒店前台：</view>
+          <view class="con-center">{{ bodyMsg.phone ? bodyMsg.phone : "暂无信息" }}</view>
+          <view class="con-right">
+            <text>拨号</text>
+          </view>
+        </view>
+        <view class="con-item">
+          <view class="conItemIcon">
+            <image mode="widthFix" src="../../images/ruzhushijian@2x.png"></image>
+          </view>
+          <view class="con-left">入住时间：</view>
+          <view class="con-center">{{ bodyMsg.checkinTime ? bodyMsg.checkinTime : "暂无信息" }}</view>
+          <!-- <view class="con-right"> </view> -->
+        </view>
+        <view class="con-item">
+          <view class="conItemIcon">
+            <image mode="widthFix" src="../../images/tuifangshijian@2x.png"></image>
+          </view>
+          <view class="con-left">退房时间：</view>
+          <view class="con-center">{{ bodyMsg.checkoutTime ? bodyMsg.checkoutTime : "暂无信息" }}</view>
+          <!-- <view class="con-right"> </view> -->
+        </view>
+        <view class="con-item">
+          <view class="conItemIcon">
+            <image mode="widthFix" src="../../images/zaocanfuwu@2x.png"></image>
+          </view>
+          <view class="con-left">早餐服务：</view>
+          <view class="con-center">{{ bodyMsg.breakfast ? bodyMsg.breakfast : "暂无信息" }}</view>
+          <!-- <view class="con-right"> </view> -->
+        </view>
+        <view class="con-item">
+          <view class="conItemIcon">
+            <image mode="widthFix" src="../../images/tingchechang@2x.png"></image>
+          </view>
+          <view class="con-left ls4">停车场：</view>
+          <view class="con-center">{{ bodyMsg.parking_lot ? bodyMsg.parking_lot : "暂无信息" }}</view>
+          <!-- <view class="con-right"> </view> -->
+        </view>
+        <view class="con-item">
+          <view class="conItemIcon">
+            <image mode="widthFix" src="../../images/songcanfuwu@2x.png"></image>
+          </view>
+          <view class="con-left">送餐服务：</view>
+          <view class="con-center">
+            {{ bodyMsg.food_delivery ? bodyMsg.food_delivery : "暂无信息" }}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 酒店信息end -->
+</view>
+<!-- 酒店详情end -->

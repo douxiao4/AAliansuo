@@ -1,0 +1,21 @@
+<import src="../../wetoast/wetoast.wxml"/>
+
+<view class="container">
+  <view class="cancel-info">
+    <image src="http://m.ihotels.cc/app/images/miniapp/order_cancel_ill.png" class="cancel-icon"></image>
+    <view class="cancel-text">
+      <p>酒店审核通过后，该订单所使用的积分、红包、储存金额将全部返回</p>
+      <p>已支付金额将返还原支付渠道，退款约7-15个工作日到账</p>
+    </view>
+  </view>
+  <view class="cancel-list">
+    <p>1.订单取消后无法恢复</p>
+    <p>2.已使用优惠券（包括促销券及早餐券）不再返还</p>
+  </view>
+  <view class="cancel-btn-wrap">
+    <button class="cancel-btn" bindtap="cancelBtn">确定取消订单</button>
+  </view>
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}"/>

@@ -1,0 +1,29 @@
+<import src="../../wetoast/wetoast.wxml"/>
+
+<view class="container">
+
+  <view class="my-hotel-box" wx:for="{{commentListMebGet}}" wx:key="" data-id="{{item.hotelId}}" bindtap="openHotelDetail">
+    <view class="my-hotel-img">
+      <image src="{{item.logo}}"></image>
+    </view>
+    <view class="my-hotel-main">
+      <text class="my-hotel-title">{{item.hotelName}}</text>
+      <view class="my-hotel-details">
+        <view>评分{{item.score}}</view>
+      </view>
+      <view class="my-assess-price"> 
+        <view class="my-assess-ding"><image src="http://m.ihotels.cc/app/images/miniapp/home_location_ic@2x.png"></image>{{(item.distance<0)?(0):(item.distance/1000)}}km</view>
+        <text class="red">￥<text class="font18">{{item.minPrice}}</text>元起</text>
+      </view>
+    </view>
+  </view>
+
+  <block wx:if="{{commentListMebGet.length<1}}">
+    <image class="order-info-null" src="http://m.ihotels.cc/app/images/miniapp/null.png"></image>
+    <view class="order-null-text">暂无评价!</view>
+  </block>
+
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}"/>

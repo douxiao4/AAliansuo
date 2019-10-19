@@ -1,0 +1,217 @@
+<getPhone wx:if="{{hasPhone===false}}" bindgetPhone="getPhone"></getPhone>
+<view class="page minecenterPage" wx:if="{{hasPhone===true}}">
+  <!-- 顶部头像 -->
+  <view class="topBox" style="background: url(https://ucpic.aaroom.cc/2019-01-23_5c47fd63ec27d.png) no-repeat; background-size:100% 100%;">
+    <!-- 头像 -->
+    <view bindtap='openUserInfo' class="imgBox">
+      <!-- <image bindtap='openUserInfo' src="{{loginStatus? '../../images/pic_Default_red.svg':'../../images/pic_Default.svg'}}"></image> -->
+      <!-- <image bindtap='openUserInfo' src="../../images/pic_Default.svg"></image> -->
+      <open-data class="logo" type="userAvatarUrl"></open-data>
+    </view>
+    <!-- 手机 -->
+    <view class="telBox">
+      <!-- <view class="tel">{{phoneNum?phoneNum:'******'}}</view> -->
+      <!-- <view class="tel" bindtap='toEdit'>{{memberInfo.name?memberInfo.name:'请完善个人信息'}}</view> -->
+      <view class="tel" bindtap='{{memberInfo.name?"openUserInfo":"toEdit"}}'>{{memberInfo.name?memberInfo.name:'请完善个人信息'}}</view>
+    </view>
+    <!-- 等级/登陆 -->
+    <view class="levelBox">
+      <!-- <view class="level" bindtap='openUserInfo'>{{loginStatus? memberName:'点击登录'}}</view> -->
+      <view class="level" bindtap='openUserInfo'>{{cardLevel}}</view>
+    </view>
+    <!-- 折扣 -->
+    <view class="ratePositionBox">
+      <view class="rateBox">
+        <view class="left">
+          <image mode="scaleToFill" src="../../images/vip@2x.png"></image>
+        </view>
+        <!-- <view class="right">{{loginStatus? memberInfo.rightInfo[0].memo:'享低折优惠'}}</view> -->
+        <view class="right">享房价{{discountPrice}}折优惠</view>
+      </view>
+    </view>
+  </view>
+  <!-- 顶部头像end -->
+  <!-- 我的订单 -->
+  <view class="orderBox cardBox mt38">
+    <view class="orderTitle cardTitle">
+      <view class="iconShu"></view>
+      <view class="titleTxt">我的订单</view>
+    </view>
+    <view class="orderConBox">
+      <view class="orderItem" catchtap='openOrderList' data-currentTab='0'>
+        <image mode="scaleToFill" src="../../images/all_order@2x.png"></image>
+        <view class="orderTxt">全部订单</view>
+      </view>
+      <view class="orderItem" catchtap='openOrderList' data-currentTab='1'>
+        <image mode="scaleToFill" src="../../images/daifu@2x.png"></image>
+        <view class="orderTxt">待付款</view>
+      </view>
+      <view class="orderItem" catchtap='openOrderList' data-currentTab='2'>
+        <image mode="scaleToFill" src="../../images/daiping@2x.png"></image>
+        <view class="orderTxt">待评价</view>
+      </view>
+    </view>
+  </view>
+  <!-- 我的订单end -->
+  <!-- 我的资产 -->
+  <view class="assetsBox cardBox mt10">
+    <view class="orderTitle cardTitle">
+      <view class="iconShu"></view>
+      <view class="titleTxt">我的资产</view>
+    </view>
+    <view class="cardListBox">
+      <!-- 积分 -->
+      <view class="cardListItem" catchtap='openIntegral'>
+        <view class="left">
+          <view class="listImg">
+            <image mode="widthFix" src="../../images/jifen_user@2x.png"></image>
+          </view>
+          <view class="listTitle">积分</view>
+        </view>
+        <view class="right">
+          <!-- <view class="listTxt" wx:if='{{loginStatus}}'>{{memberInfo.availableRewardsNum}}分</view> -->
+          <view class="listRightIcon">
+            <image mode="widthFix" src="../../images/icon_open@2x.png"></image>
+          </view>
+        </view>
+      </view>
+      <!-- 积分end -->
+      <!-- 卡劵 -->
+      <view class="cardListItem" catchtap='goToCoupons'>
+        <view class="left">
+          <view class="listImg">
+            <image mode="widthFix" src="../../images/kajuan@2x.png"></image>
+          </view>
+          <view class="listTitle">卡劵</view>
+        </view>
+        <view class="right">
+          <!-- <view class="listTxt" wx:if='{{loginStatus}}'>{{memberInfo.couponCount}}张</view> -->
+          <view class="listRightIcon">
+            <image mode="widthFix" src="../../images/icon_open@2x.png"></image>
+          </view>
+        </view>
+      </view>
+      <!-- 卡劵end -->
+    </view>
+  </view>
+  <!-- 我的资产end -->
+  <!-- 我的酒店 -->
+  <view class="assetsBox cardBox mt10">
+    <view class="orderTitle cardTitle">
+      <view class="iconShu"></view>
+      <view class="titleTxt">我的酒店</view>
+    </view>
+    <view class="cardListBox">
+      <!-- 常住 -->
+      <view class="cardListItem" catchtap='openMyHotel' data-id='0'>
+        <view class="left">
+          <view class="listImg">
+            <image mode="widthFix" src="../../images/changzhu@2x.png"></image>
+          </view>
+          <view class="listTitle">常住</view>
+        </view>
+        <view class="right">
+          <view class="listRightIcon">
+            <image mode="widthFix" src="../../images/icon_open@2x.png"></image>
+          </view>
+        </view>
+      </view>
+      <!-- 常住end -->
+      <!-- 收藏 -->
+      <view class="cardListItem" catchtap='openMyHotel' data-id='1'>
+        <view class="left">
+          <view class="listImg">
+            <image mode="widthFix" src="../../images/shoucang@2x.png"></image>
+          </view>
+          <view class="listTitle">收藏</view>
+        </view>
+        <view class="right">
+          <view class="listRightIcon">
+            <image mode="widthFix" src="../../images/icon_open@2x.png"></image>
+          </view>
+        </view>
+      </view>
+      <!-- 收藏end -->
+      <!-- 评价 -->
+      <view class="cardListItem" catchtap='goToComments'>
+        <view class="left">
+          <view class="listImg">
+            <image mode="widthFix" src="../../images/pingjia@2x.png"></image>
+          </view>
+          <view class="listTitle">评价</view>
+        </view>
+        <view class="right">
+          <view class="listRightIcon">
+            <image mode="widthFix" src="../../images/icon_open@2x.png"></image>
+          </view>
+        </view>
+      </view>
+      <!-- 评价end -->
+    </view>
+  </view>
+  <!-- 我的酒店end -->
+  <!-- 常用信息 -->
+  <view class="assetsBox cardBox mt10">
+    <view class="orderTitle cardTitle">
+      <view class="iconShu"></view>
+      <view class="titleTxt">常用信息</view>
+    </view>
+    <view class="cardListBox">
+      <!-- 旅客 -->
+      <view class="cardListItem" catchtap='setCommonInfo' data-id='0'>
+        <view class="left">
+          <view class="listImg">
+            <image mode="widthFix" src="../../images/lvke@2x.png"></image>
+          </view>
+          <view class="listTitle">旅客</view>
+        </view>
+        <view class="right">
+          <view class="listRightIcon">
+            <image mode="widthFix" src="../../images/icon_open@2x.png"></image>
+          </view>
+        </view>
+      </view>
+      <!-- 旅客end -->
+      <!-- 地址 -->
+      <view class="cardListItem" catchtap='setCommonInfo' data-id='1'>
+        <view class="left">
+          <view class="listImg">
+            <image mode="widthFix" src="../../images/dizhi@2x.png"></image>
+          </view>
+          <view class="listTitle">地址</view>
+        </view>
+        <view class="right">
+          <view class="listRightIcon">
+            <image mode="widthFix" src="../../images/icon_open@2x.png"></image>
+          </view>
+        </view>
+      </view>
+      <!-- 地址end -->
+      <!-- 发票 -->
+      <view class="cardListItem" catchtap='setCommonInfo' data-id='2'>
+        <view class="left">
+          <view class="listImg">
+            <image mode="widthFix" src="../../images/fapiao@2x.png"></image>
+          </view>
+          <view class="listTitle">发票</view>
+        </view>
+        <view class="right">
+          <view class="listRightIcon">
+            <image mode="widthFix" src="../../images/icon_open@2x.png"></image>
+          </view>
+        </view>
+      </view>
+      <!-- 发票end -->
+    </view>
+  </view>
+  <!-- 常用信息end -->
+  <!-- 客服电话 -->
+  <view class="helpTelBox cardBox mt10" catchtap='callToService'>
+    <view class="left">
+      <image mode="widthFix" src="../../images/kefudianhua@2x.png"></image>
+      <view class="telTitle">客服电话</view>
+    </view>
+    <view class="right">4006-456-999</view>
+  </view>
+  <!-- 客服电话end -->
+</view>

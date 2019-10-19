@@ -1,0 +1,72 @@
+<view class="container">
+  <view class="integral" wx:for='{{integrals}}' wx:key='index'>
+    <view class="integral-head">
+      <view class="head-left">
+        <text>{{item.couponValue}}</text>
+        <text>元优惠券</text>
+      </view>
+      <view class="head-right">
+        <text>{{item.integrate}}积分起兑</text>
+      </view>
+    </view>
+    <view class="integral-mid">
+      <text>{{item.memo}}</text>
+    </view>
+    <view>
+      <view class="button" bindtap='exchange' data-intergrate='{{item.integrate}}' data-money='{{item.couponValue}}' data-id='{{item.couponTypeId}}'>兑换</view>
+    </view>
+  </view>
+  <!-- <view class="integral">
+    <view class="integral-head">
+      <view class="head-left">
+        <text>10</text>
+        <text>元优惠券</text>
+      </view>
+      <view class="head-right">
+        <text>800积分起兑</text>
+      </view>
+    </view>
+    <view class="integral-mid">
+      <text>1. 优惠券仅通过尚美会APP和尚美会小程序预订，且预付 房费时使用; 
+        2. 一个间夜只能用一张优惠券; 
+        3. 优惠券为通用优惠券，不限使用门店; 
+        4. 优惠券自兑换之日起顺延180天有效; 
+        5. 最终解释权归集团所有。
+      </text>
+    </view>
+    <view>
+      <view class="button">兑换</view>
+    </view>
+  </view> -->
+  <view class="toast" wx:if='{{isShow}}'>
+    <view class="middle">
+      <view class="middle-head">
+        <view class="mh-top">
+          <text>兑换{{money}}元优惠券</text>
+        </view>
+        <view class="mh-middle">
+          <view class="md-num">
+            <text decode="{{true}}">兑换张数:&nbsp;&nbsp;&nbsp; {{copnum}} 张</text>
+            <view class="clm {{copnum>1? 'red':''}}" bindtap='clmnum' wx:if='{{isGrOne}}'> - </view>
+            <view class="num" wx:if='{{isGrOne}}'> {{copnum}} </view>
+            <view class="add {{copnum >= maxnum? '':'red'}}" bindtap='addnum' wx:if='{{isGrOne}}'> + </view>
+          </view>
+          <view class="md-xh">
+            <text decode="{{true}}">消耗积分:&nbsp;&nbsp;&nbsp; {{copnum * intergrate}} 分</text>
+          </view>
+          <view class="md-sy">
+            <text decode="{{true}}">剩余积分:&nbsp;&nbsp;&nbsp; {{integral*1 - (copnum * intergrate)<=0? 0:integral*1 - (copnum * intergrate)}} 分</text>
+          </view>
+        </view>
+      </view>
+      <view class="bottom">
+        <view class="btn-cancle" bindtap='fristcancle'>取消</view>
+        <view class="btn-conform" bindtap='exchangeConform'>立即兑换</view>
+      </view>
+    </view>
+  </view>
+  <view class="lcst-info1" wx:if='{{integrals.length<=0}}'>
+    <image class="order-info-null" src="http://m.ihotels.cc/app/images/miniapp/null.png"></image>
+    <view class="order-null-text">活动已结束，暂无可兑换的优惠券!</view>
+</view>
+</view>

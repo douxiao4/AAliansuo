@@ -1,0 +1,41 @@
+<!-- 全日房 -->
+<template name="selectdate">
+
+  <view class="select-date" bindtap="bindViewTap" >
+    <view class="lc-clock">
+      <image src='/images/clock.png'></image>
+    </view>
+    <view class="select-checkIn">
+      <text>入住日期</text>
+      <!-- <picker mode="date" value="{{checkIn}}" start="{{startDay}}" end="{{endDay}}" bindchange="setCheckIn"> -->
+      <view class="chIn">
+        <text class="picker">{{checkIn}}</text>
+      </view>
+    </view>
+    <text class="count-days">共 <text class="lc-countDay">{{countDay}}</text> 晚</text>
+    <view class="select-checkOut">
+      <text>离店日期</text>
+      <!-- <picker mode="date" value="{{checkOut}}" start="{{startDay1}}" end="{{endDay1}}" bindchange="setCheckOut"> -->
+      <view class="chOu">
+        <text class="picker">{{checkOut}}</text>
+      </view>
+    </view>
+  </view>
+</template>
+<!-- 钟点房 -->
+<template name="selecthourdate">
+  <view class="select-date" bindtap='checkHour'>
+      <view class="lc-clock">
+          <image src='/images/clock.png'></image>
+      </view>
+    <view class="lcselect-checkIn">
+      <text>入住日期</text>
+      <view>
+        <text class="lcpicker">{{checkInHour}}</text>
+      </view>
+    </view>
+    <view class="lc-today">
+      <text wx:if='{{lcisToday}}'>今天</text>
+    </view>
+  </view>
+</template>

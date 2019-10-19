@@ -1,0 +1,72 @@
+<import src="../../wetoast/wetoast.wxml"/>
+
+
+<view class="container">
+  <view class="comment-top">
+    <view class="comment-img-wrap">
+      <image src="http://m.ihotels.cc/app/images/miniapp/illustraion_comment.png" class="comment-img"></image>
+    </view>
+    <view class="hotel-name">{{store_title}}</view>
+  </view>
+  <view class="select-travel-type">
+    <text class="travel-type-title">出游类型</text>
+    <view class="travel-type-text">
+      <picker bindchange="selectTravelType" value="{{index}}" range="{{travelTypeTitleArr}}">
+        <view>
+          {{travelTypeTitle}} >
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="stars-list">
+    <view class="star-item"> 
+      <view class="star-item-title">房间卫生</view>
+      <view class="star-item-icon">
+        <text class="star-icon star-hollow {{commentHyg<1?'':'star-full'}}" data-type="commentHyg" data-id="1" bindtap="tapStar"></text>
+        <text class="star-icon star-hollow {{commentHyg<2?'':'star-full'}}" data-type="commentHyg" data-id="2" bindtap="tapStar"></text>
+        <text class="star-icon star-hollow {{commentHyg<3?'':'star-full'}}" data-type="commentHyg" data-id="3" bindtap="tapStar"></text>
+        <text class="star-icon star-hollow {{commentHyg<4?'':'star-full'}}" data-type="commentHyg" data-id="4" bindtap="tapStar"></text>
+        <text class="star-icon star-hollow {{commentHyg<5?'':'star-full'}}" data-type="commentHyg" data-id="5" bindtap="tapStar"></text>
+      </view>
+    </view>
+    <view class="star-item">
+      <view class="star-item-title">周围环境</view>
+      <view class="star-item-icon">
+        <text class="star-icon star-hollow {{commentEnv<1?'':'star-full'}}" data-type="commentEnv" data-id="1" bindtap="tapStar"></text>
+        <text class="star-icon star-hollow {{commentEnv<2?'':'star-full'}}" data-type="commentEnv" data-id="2" bindtap="tapStar"></text>
+        <text class="star-icon star-hollow {{commentEnv<3?'':'star-full'}}" data-type="commentEnv" data-id="3" bindtap="tapStar"></text>
+        <text class="star-icon star-hollow {{commentEnv<4?'':'star-full'}}" data-type="commentEnv" data-id="4" bindtap="tapStar"></text>
+        <text class="star-icon star-hollow {{commentEnv<5?'':'star-full'}}" data-type="commentEnv" data-id="5" bindtap="tapStar"></text>
+      </view>
+    </view>
+    <view class="star-item">
+      <view class="star-item-title">酒店服务</view>
+      <view class="star-item-icon">
+        <text class="star-icon star-hollow {{commentSer<1?'':'star-full'}}" data-type="commentSer" data-id="1" bindtap="tapStar"></text>
+        <text class="star-icon star-hollow {{commentSer<2?'':'star-full'}}" data-type="commentSer" data-id="2" bindtap="tapStar"></text>
+        <text class="star-icon star-hollow {{commentSer<3?'':'star-full'}}" data-type="commentSer" data-id="3" bindtap="tapStar"></text>
+        <text class="star-icon star-hollow {{commentSer<4?'':'star-full'}}" data-type="commentSer" data-id="4" bindtap="tapStar"></text>
+        <text class="star-icon star-hollow {{commentSer<5?'':'star-full'}}" data-type="commentSer" data-id="5" bindtap="tapStar"></text>
+      </view>
+    </view>
+    <view class="star-item">
+      <view class="star-item-title">设施服务</view>
+      <view class="star-item-icon">
+        <text class="star-icon star-hollow {{utility<1?'':'star-full'}}" data-type="utility" data-id="1" bindtap="tapStar"></text>
+        <text class="star-icon star-hollow {{utility<2?'':'star-full'}}" data-type="utility" data-id="2" bindtap="tapStar"></text>
+        <text class="star-icon star-hollow {{utility<3?'':'star-full'}}" data-type="utility" data-id="3" bindtap="tapStar"></text>
+        <text class="star-icon star-hollow {{utility<4?'':'star-full'}}" data-type="utility" data-id="4" bindtap="tapStar"></text>
+        <text class="star-icon star-hollow {{utility<5?'':'star-full'}}" data-type="utility" data-id="5" bindtap="tapStar"></text>
+      </view>
+    </view>
+  </view>
+  <view class="comment-main">
+    <textarea placeholder="写下您的入住体验，帮助千万用户挑选到心仪的酒店" style="height: 100rpx;" value="{{commentText}}" bindblur="bindTextAreaBlur" />
+  </view>
+  <view class="submit-btn-wrap">
+    <button class="submit-btn" bindtap="submitBtn">提交</button>
+  </view>
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}"/>

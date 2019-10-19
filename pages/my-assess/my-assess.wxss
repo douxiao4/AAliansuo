@@ -1,0 +1,86 @@
+.my-hotel-box{
+    border-bottom: 1px solid #dcdcdc;
+    overflow: hidden;
+    padding-top: 13px;
+    padding-bottom: 5px;
+    display: flex;
+}
+.my-hotel-img{
+    padding: 10px;
+    flex: 1;
+}
+.my-hotel-main{
+    flex: 3;
+}
+.my-hotel-img image{
+    width: 100px;
+    height: 100px;
+}
+.my-assess-ding image{
+    width: 10px;
+    height: 13px;
+    margin-right: 5px;
+}
+.my-hotel-title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    width: 95%;
+    font-size: 16px;
+    margin-top: 10px;
+}
+.my-hotel-details{
+    font-size: 14px;
+    margin: 18px 0;
+    display: flex;
+    font-size: 14px;
+    color: #798394;
+}
+.my-assess-xing image{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+.my-assess-price{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    font-size: 14px;
+    color: #798394;
+    line-height: 50rpx;
+}
+.red{
+    color: #F05442;
+}
+.font14{
+    font-size: 14px;
+}
+.font18{
+    font-size: 18px;
+}
+@media screen and (max-width:360px){
+    .my-hotel-details{
+        width: 70%;
+    }
+    .my-hotel-title{
+        width: 70%;
+    }
+    .my-assess-price{
+        width: 70%;
+    }
+}
+
+.order-info-null{
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 35%;
+}
+.order-null-text{
+    text-align: center;
+    margin-top: 20px;
+    color: #798394;
+    font-size: 16px;
+}

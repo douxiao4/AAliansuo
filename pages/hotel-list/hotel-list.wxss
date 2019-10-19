@@ -1,0 +1,203 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100rpx;
+}
+.items {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-top: 1px solid #EBECED;
+  margin-bottom: 20px;
+}
+.topinfo {
+  position: relative;
+}
+.price-wrap {
+  position: absolute;
+  top: 40rpx;
+  left: 40rpx;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.mini-price {
+  background: #F05442;
+  color: #fff;
+  padding: 10rpx;
+  font-size: 30rpx;
+}
+.price-text {
+  background: #fff;
+  color: #F05442;
+  padding: 4px;
+  font-size: 26rpx;
+  text-align: center;
+}
+.hotel-logo {
+  width: 750rpx;
+  height: 500rpx;
+}
+.collect {
+  position: absolute;
+  bottom: -40rpx;
+  right: 40rpx;
+  width: 100rpx;
+  height: 100rpx;
+  z-index: 2;
+}
+.collect.active {
+
+}
+.collect image {
+  width: 100rpx;
+  height: 100rpx;
+}
+.hotel-name {
+  padding: 2px 10px;
+  font-size: 30rpx;
+  color: #2a3342;
+}
+.score-dist {
+  padding: 2px 10px;
+  font-size: 30rpx;
+  display: flex;
+}
+.score-dist text {
+  margin-right: 20px;
+  color: #798394;
+}
+.score-dist .scores {
+  flex: 1;
+  text-align: left;
+}
+.score-dist .distance {
+  flex: 1;
+  text-align: right;
+}
+.tags {
+  padding: 2px 10px;
+}
+.tags text {
+  font-size: 18rpx;
+  border: 1px solid #c6c7ca;
+  padding: 4px;
+  border-radius: 4px;
+  margin-right: 4px;
+}
+.filter-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 750rpx;
+  height: 100rpx;
+  background: #2F353B;
+  color: #fff;
+  z-index: 3;
+  display: flex;
+}
+.filter-btn .filter-btn-item {
+  flex: 1;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 30rpx;
+}
+.sort-wrap {
+  position: fixed;
+  left: 0;
+  bottom: 100rpx;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 4;
+}
+.sort-inner {
+  position: fixed;
+  left: 0;
+  bottom: 100rpx;
+  width: 750rpx;
+  height: auto;
+  background: #fff;
+  z-index: 5;
+}
+.sort-item, .sort-cancel {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-bottom: 1px solid #F2F2F2;
+  font-size: 30rpx;
+}
+.active {
+  color: rgb(67, 174, 231);
+}
+.sort-cancel {
+  border-top: 10px solid #F2F2F2;
+}
+/*筛选*/
+.hotel-search-type {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  z-index: 6;
+}
+.brand {
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+.brand-title {
+  line-height: 50rpx;
+}
+.brand-wrap {
+
+}
+.brand-item {
+  float: left;
+  width: 150rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  padding: 10rpx 0;
+  font-size: 24rpx;
+  text-align: center;
+  border: 1px solid #efefef;
+  border-radius: 4rpx;
+}
+.brand-item.active {
+  border: 1px solid #F05442;
+  color: #F05442;
+}
+.brand-image {
+
+}
+.brand-icon {
+
+}
+.brand-text {
+
+}
+.brand-btn-wrap {
+  padding: 20rpx 50rpx;
+}
+.brand-button {
+  background: #F05442;
+  color: #fff;
+  font-size: 30rpx;
+}
+.no-data {
+
+}
+.order-info-null{
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 35%;
+}
+.order-null-text{
+    text-align: center;
+    margin-top: 20px;
+    color: #798394;
+    font-size: 16px;
+}

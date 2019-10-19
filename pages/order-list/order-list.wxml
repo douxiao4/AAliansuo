@@ -1,0 +1,112 @@
+<import src="../../wetoast/wetoast.wxml"/>
+
+<view class="container">
+<view class="swiper-tab">  
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">全部订单</view>  
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">待付款</view>  
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">待评价</view>  
+</view>  
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight}}px" bindchange="bindChange">
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:{{winHeight}}px" scroll-top="0" wx:if="{{searchOrderByMemNo1.length>0}}">
+        <view class="order-list-main" wx:for="{{searchOrderByMemNo1}}" wx:key="{{item.order_no}}">
+          <view class="order-main-info" data-pay="{{item.pay_status}}" data-id="{{item.order_no}}" data-cid="{{item.channel_order_no}}" data-hid="{{item.hotel_code}}" bindtap="openOrderDetail">
+            <view class="order-info-title">{{item.hotel_name}}</view>
+            <view class="order-info-text">
+              <image class="order-info-img" src="http://m.ihotels.cc/app/images/miniapp/message_location_ic@2x.png"></image>
+              <text class="order-info-time">{{item.address}}</text>
+            </view>
+            <view class="order-info-text">
+              <image class="order-info-img2" src="http://m.ihotels.cc/app/images/miniapp/message_zip_ic@2x.png"></image>
+              <text class="order-info-time">{{item.begin_time}}<text wx:if="{{item.openType==1}}">至{{item.end_time}}   {{item.days}}晚</text> / {{item.room_num}}间</text>
+            </view>
+          </view>
+          <view class="order-list-state">
+            <text class="order-state-left" wx:if="{{item.pay_status==1}}">待支付</text>
+            <text class="order-state-left" wx:if="{{item.pay_status==2}}">待评价</text>
+            <text class="order-state-left" wx:if="{{item.pay_status==3}}">已评价</text>
+            <text class="order-state-left" wx:if="{{item.pay_status==4}}">已支付</text>
+            <text class="order-state-left" wx:if="{{item.pay_status==5}}">已取消</text>
+            <view class="order-state-right">￥<text>{{item.price_total}}</text></view>
+          </view>
+          <view class="order-list-btn">
+            <button class="btn-cancel" wx:if="{{item.pay_status==1 || item.pay_status==4}}" data-hid="{{item.hotel_code}}" data-id="{{item.order_no}}" data-cid="{{item.channel_order_no}}" bindtap="openCancelDetail">取消</button>
+            <button class="btn-pay" wx:if="{{item.pay_status==1}}" bindtap="payBtn" data-price="{{item.price_total}}" data-id="{{item.order_no}}" data-cid="{{item.channel_order_no}}">支付</button>
+            <button class="btn-comment" wx:if="{{item.comment_status==2}}" data-id="{{item.order_no}}" data-cid="{{item.channel_order_no}}" data-hotelname="{{item.hotel_name}}" data-typename='{{item.room_type_name}}' data-address="{{item.address}}" data-hotelid="{{item.hotel_code}}" bindtap="openCommentDetail">评价</button>
+          </view>
+        </view>
+      </scroll-view>
+      <block wx:if="{{searchOrderByMemNo1.length<1}}">
+        <image class="order-info-null" src="http://m.ihotels.cc/app/images/miniapp/null.png"></image>
+        <view class="order-null-text">您还没有订单!</view>
+      </block>
+    </swiper-item>
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:{{winHeight - 31}}px" bindscrolltoupper="" bindscrolltolower="" bindscroll="" scroll-top="0" wx:if="{{searchOrderByMemNo2.length>0}}">
+      <!-- <scroll-view scroll-y="true" style="height:{{winHeight - 31}}px" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-top="0" wx:if="{{searchOrderByMemNo2.length>0}}"> -->
+        <view class="order-list-main" wx:for="{{searchOrderByMemNo2}}" wx:key="{{item.order_no}}">
+          <view class="order-main-info" data-pay="{{item.pay_status}}" data-hid="{{item.hotel_code}}" data-id="{{item.order_no}}" data-cid="{{item.channel_order_no}}" bindtap="openOrderDetail">
+            <view class="order-info-title">{{item.hotel_name}}</view>
+            <view class="order-info-text">
+              <image class="order-info-img" src="http://m.ihotels.cc/app/images/miniapp/message_location_ic@2x.png"></image>
+              <text class="order-info-time">{{item.address}}</text>
+            </view>
+            <view class="order-info-text">
+              <image class="order-info-img2" src="http://m.ihotels.cc/app/images/miniapp/message_zip_ic@2x.png"></image>
+              <text class="order-info-time">{{item.begin_time}}<text wx:if="{{item.openType==1}}">至{{item.end_time}}   {{item.days}}晚</text> / {{item.room_num}}间</text>
+            </view>
+          </view>
+          <view class="order-list-state">
+            <text class="order-state-left" wx:if="{{item.pay_status==1}}">待支付</text>
+            <view class="order-state-right">￥<text>{{item.price_total}}</text></view>
+          </view>
+          <view class="order-list-btn">
+            <button class="btn-cancel" wx:if="{{item.pay_status==1}}" data-hid="{{item.hotel_code}}" data-id="{{item.order_no}}" data-cid="{{item.channel_order_no}}" bindtap="openCancelDetail">取消</button>
+            <button class="btn-pay" wx:if="{{item.pay_status==1}}" bindtap="payBtn" data-price="{{item.price_total}}" data-id="{{item.order_no}}" data-cid="{{item.channel_order_no}}">支付</button>
+          </view>
+        </view>
+      </scroll-view>
+      <block wx:if="{{searchOrderByMemNo2.length<1}}">
+        <image class="order-info-null" src="http://m.ihotels.cc/app/images/miniapp/null.png"></image>
+        <view class="order-null-text">您还没有待付款订单!</view>
+      </block>
+    </swiper-item>
+    <swiper-item>
+        <scroll-view scroll-y="true" style="height:{{winHeight - 31}}px" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-top="0" wx:if="{{searchOrderByMemNo3.length>0}}">
+          <view class="order-list-main" wx:for="{{searchOrderByMemNo3}}" wx:key="{{item.order_no}}">
+            <view class="order-main-info" data-pay="{{item.pay_status}}" data-id="{{item.order_no}}" data-cid="{{item.channel_order_no}}" data-hid="{{item.hotel_code}}" bindtap="openOrderDetail">
+              <view class="order-info-title">{{item.hotel_name}}</view>
+              <view class="order-info-text">
+                <image class="order-info-img" src="http://m.ihotels.cc/app/images/miniapp/message_location_ic@2x.png"></image>
+                <text class="order-info-time">{{item.address}}</text>
+              </view>
+              <view class="order-info-text">
+                <image class="order-info-img2" src="http://m.ihotels.cc/app/images/miniapp/message_zip_ic@2x.png"></image>
+                <text class="order-info-time">{{item.begin_time}}<text wx:if="{{item.openType==1}}">至{{item.end_time}}   {{item.days}}晚</text> / {{item.room_num}}间</text>
+              </view>
+            </view>
+            <view class="order-list-state">
+              <!-- <text class="order-state-left">{{item.status}}</text> -->
+              <text class="order-state-left" wx:if="{{item.pay_status==1}}">待支付</text>
+              <text class="order-state-left" wx:if="{{item.pay_status==2}}">待评价</text>
+              <text class="order-state-left" wx:if="{{item.pay_status==3}}">已评价</text>
+              <text class="order-state-left" wx:if="{{item.pay_status==4}}">已支付</text>
+              <text class="order-state-left" wx:if="{{item.pay_status==5}}">已取消</text>
+              <view class="order-state-right">￥<text>{{item.price_total}}</text></view>
+            </view>
+            <view class="order-list-btn">
+              <button class="btn-comment" wx:if="{{item.pay_status==2}}" data-id="{{item.order_no}}" data-cid="{{item.channel_order_no}}" data-typename="{{item.room_type_name}}" data-address = "{{item.address}}" data-hotelname="{{item.hotel_name}}" data-hotelid="{{item.hotel_code}}" bindtap="openCommentDetail">评价</button>
+            </view>
+          </view>
+        </scroll-view>
+        <block wx:if="{{searchOrderByMemNo3.length<1}}">
+          <image class="order-info-null" src="http://m.ihotels.cc/app/images/miniapp/null.png"></image>
+          <view class="order-null-text">您还没有待评价订单!</view>
+        </block>
+    </swiper-item>  
+</swiper> 
+
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}"/>

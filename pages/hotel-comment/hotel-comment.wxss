@@ -1,0 +1,83 @@
+.container {
+  font-size: 30rpx;
+}
+.comment-top {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.comment-img-wrap {
+  width: 100%;
+  text-align: center;
+  padding-top: 30rpx;
+}
+.comment-img {
+  width: 204rpx;
+  height: 112rpx;
+}
+.hotel-name {
+  width: 100%;
+  text-align: center;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+}
+.select-travel-type {
+  display: flex;
+  border-top: 20rpx solid #EFEFF4;
+  line-height: 100rpx;
+}
+.travel-type-title {
+  padding-left: 20rpx;
+  flex: 1;
+}
+.travel-type-text {
+  flex: 1;
+  color: #798394;
+  text-align: right;
+  padding-right: 20rpx;
+}
+.stars-list {
+  border-top: 20rpx solid #EFEFF4;
+  padding-bottom: 20rpx;
+}
+.star-item {
+  padding: 0 20rpx;
+}
+.star-item-title {
+  line-height: 80rpx;
+}
+.star-item-icon {}
+.star-item-icon image {
+  width: 40rpx;
+  height: 40rpx;
+}
+.star-icon {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+}
+.star-hollow {
+  background: url('http://m.ihotels.cc/app/images/miniapp/star-hollow.png');
+  background-size: 40rpx;
+}
+.star-full {
+  background: url('http://m.ihotels.cc/app/images/miniapp/star-full.png');
+  background-size: 40rpx;
+}
+.comment-main {
+  height: 100rpx;
+  padding: 20rpx;
+  border-top: 1px solid #ECECEC;
+}
+.comment-main textarea {
+  height: 100rpx;
+  color: #798394;
+}
+.submit-btn-wrap {
+  padding: 20rpx;
+}
+.submit-btn {
+  font-size: 30rpx;
+  color: #ffffff;
+  background: #F05442;
+}

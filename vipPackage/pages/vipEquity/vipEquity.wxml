@@ -1,0 +1,95 @@
+<!-- vipPackage/pages/vipEquity/vipEquity.wxml -->
+<view class="page vipEquityPage">
+  <!-- 当前权益 -->
+  <view class="nowBox" wx:if="{{nowEquity.levelNum==='v1'}}">
+    <!-- <image wx:if="{{nowEquity.levelNum==='v1'}}" class="bgCard" mode="widthFix" src="https://ucpic.aaroom.cc/2019-03-21_5c930a01d7e6c.jpg"></image> -->
+    <!-- <image wx:if="{{nowEquity.levelNum==='v1'}}" class="bgCard" mode="widthFix" src="https://ucpic.aaroom.cc/2019-04-02_5ca2f5498dd09.png	"></image> -->
+    <image class="bgCard" mode="widthFix" src="https://ucpic.aaroom.cc/2019-04-02_5ca2f869e8c91.png"></image>
+    <!-- <image wx:if="{{nowEquity.levelNum==='v2'}}" class="bgCard" mode="widthFix" src="https://ucpic.aaroom.cc/2019-02-22_5c6fbb990bcc1.png"></image> -->
+    <!-- <view class="cardBox {{nowEquity.levelNum==='v1'?'v1':'v2'}}"> -->
+    <view class="cardBox">
+      <view class="up">
+        <open-data class="userLogo" type="userAvatarUrl"></open-data>
+        <!-- <view class="level">您当前是尊贵的{{nowEquity.levelName}}</view> -->
+      </view>
+      <!-- <view class="down" wx:if="{{nowEquity.levelNum==='v1'}}">
+        <view class="row1">
+          <view class="item">
+            <view class="iconBox">
+              <image class="icon" src="https://ucpic.aaroom.cc/2019-03-21_5c9328167d2c0.png"></image>
+            </view>
+            <view class="txt">房价折扣{{nowEquity.discountPrice}}折</view>
+          </view>
+          <view class="item">
+            <view class="iconBox">
+              <image class="icon" src="	https://ucpic.aaroom.cc/2019-03-21_5c932ce2c9680.png"></image>
+            </view>
+            <view class="txt">生日礼包{{nowEquity.birthIntegral}}积分</view>
+          </view>
+          <view class="item">
+            <view class="iconBox">
+              <image class="icon" src="https://ucpic.aaroom.cc/2019-03-21_5c93288160d64.png"></image>
+            </view>
+            <view class="txt">小程序专享</view>
+          </view>
+        </view>
+        <view class="row2">
+          <view class="item">
+            <view class="iconBox">
+              <image class="icon" src="	https://ucpic.aaroom.cc/2019-03-21_5c932d6b73869.png"></image>
+            </view>
+            <view class="txt">预订保留{{nowEquity.preRetain}}</view>
+          </view>
+          <view class="item">
+            <view class="iconBox">
+              <image class="icon" src="https://ucpic.aaroom.cc/2019-03-21_5c932d86486fe.png"></image>
+            </view>
+            <view class="txt">同时优惠{{nowEquity.meanwhileIptimizeNum}}间</view>
+          </view>
+          <view class="item">
+            <view class="iconBox">
+              <image class="icon" src="https://ucpic.aaroom.cc/2019-03-21_5c932daa00902.png"></image>
+            </view>
+            <view class="txt">延时退房{{nowEquity.delay}}</view>
+          </view>
+        </view>
+      </view> -->
+    </view>
+  </view>
+  <!-- 当前权益end -->
+  <!-- 购买下级权益 -->
+  <!-- <view class="buyNextBox" wx:if="{{nowEquity.levelNum==='v1'}}">
+    <image class="buyBg" src="https://ucpic.aaroom.cc/2019-03-21_5c930a55e6948.jpg" mode="widthFix"></image>
+    <view class="left relative">
+      <image class="usseLogo" src="../../../images/king.png"></image>
+    </view>
+    <view class="center relative">
+      <view class="up">AAplus会员</view>
+      <view class="down">预计全年为您节省
+        <text class="red">398</text>元</view>
+    </view>
+    <view class="right relative">
+      <view class="up">¥ 28</view>
+      <view class="down" bindtap="tapBuy">购买升级</view>
+    </view>
+  </view> -->
+  <view class="lookNextBox" wx:if="{{nowEquity.levelNum==='v1'}}">
+    <image bindtap="tapBuy" src="https://ucpic.aaroom.cc/2019-04-02_5ca2f41c1dbb6.png	" mode="widthFix"></image>
+  </view>
+  <!-- 购买下级权益end -->
+  <!-- 展示下级权益 -->
+  <view class="lookNextBox">
+    <image src="https://ucpic.aaroom.cc/2019-04-02_5ca2f2cc5078d.png" mode="widthFix"></image>
+  </view>
+  <!-- 展示下级权益end -->
+  <!-- banner -->
+  <view class="bannerBox">
+    <image src="https://ucpic.aaroom.cc/2019-04-02_5ca2f3884ed35.png" mode="widthFix"></image>
+  </view>
+  <!-- banner -->
+  <!-- 全部权益对比 -->
+  <view class="allBox">
+    <image src="https://ucpic.aaroom.cc/2019-04-02_5ca2f3219ee86.png" mode="widthFix"></image>
+  </view>
+  <!-- 全部权益对比end -->
+</view>

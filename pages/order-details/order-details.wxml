@@ -1,0 +1,130 @@
+<import src="../../wetoast/wetoast.wxml" />
+<view class="container">
+		<view class="details-main">
+				<view class="details-bg">
+						<view>
+								<block wx:if="{{searcOrderByOrdNo.payStatus!=5}}">
+										<image class="details-img" src="http://m.ihotels.cc/app/images/miniapp/illustration_order.png"></image>
+										<text class="details-state">恭喜您预订成功</text>
+										<text class="details-price">￥{{searcOrderByOrdNo.price_total}}</text>
+								</block>
+								<block wx:if="{{searcOrderByOrdNo.payStatus==5}}">
+										<image class="details-img" src="http://m.ihotels.cc/app/images/miniapp/illustration_order.png"></image>
+										<text class="details-state">已取消</text>
+								</block>
+						</view>
+						<view class="details-content details-bg">
+								<image class="details-img2" src="http://m.ihotels.cc/app/images/miniapp/order_detail_cost.png"></image>
+								<view class="details-content-time">
+										<view class="details-time-text" wx:for="{{searcOrderByOrdNo.price_list}}" wx:key="">
+												<!-- <view>{{item.date}}({{item.num}}{{item.openType == 1? '晚':'间'}})</view> -->
+												<view>{{item.start}}({{searcOrderByOrdNo.room_num}}间)</view>
+												<view class="font12">
+														￥
+														<text class="font18">{{item.price * searcOrderByOrdNo.room_num}}</text>
+												</view>
+										</view>
+								</view>
+						</view>
+						<view class="keep-time" wx:if="{{openType==1}}">
+								<text>房间保留 19：00</text>
+								<text>延时退房 14：00</text>
+						</view>
+				</view>
+				<!-- <image class="details-btmimg" src="http://m.ihotels.cc/app/images/miniapp/order_fill_bg.png"></image> -->
+		</view>
+		<view class="details-info details-bg">
+				<view class="details-info-main borderrbtm" bindtap="openHotelDetail" data-hotelid="{{searcOrderByOrdNo.hotel_code}}">
+						<view class="details-info-left">
+								<text class="font18">{{searcOrderByOrdNo.hotel_name}}</text>
+								<text class="gray">
+										{{searcOrderByOrdNo.room_type_name}} {{searcOrderByOrdNo.room_num}}间
+								</text>
+						</view>
+						<view class="arrow"></view>
+				</view>
+				<view class="details-info-main2 borderrbtm">
+						<view class="dblock">
+								<text class="width76">入住时间：</text>
+								<text class="gray">{{searcOrderByOrdNo.arrival}}前</text>
+						</view>
+						<view class="dblock" wx:if="{{openType==1}}">
+								<text class="width76">离店时间：</text>
+								<text class="gray">{{searcOrderByOrdNo.end}}</text>
+						</view>
+						<view class="dblock">
+								<text class="width76">支付状态：</text>
+								<!-- <text class="gray" wx:if="{{searcOrderByOrdNo.payStatus==1}}">待支付</text>
+                <text class="gray" wx:if="{{searcOrderByOrdNo.payStatus==2}}">待评价</text>
+                <text class="gray" wx:if="{{searcOrderByOrdNo.payStatus==3}}">已评价</text>
+                <text class="gray" wx:if="{{searcOrderByOrdNo.payStatus==5}}">已取消</text> -->
+								<text class="gray" wx:if="{{payStatus==1}}">待支付</text>
+								<text class="gray" wx:if="{{payStatus==2}}">待评价</text>
+								<text class="gray" wx:if="{{payStatus==3}}">已评价</text>
+								<text class="gray" wx:if="{{payStatus==4}}">已支付</text>
+								<text class="gray" wx:if="{{payStatus==5}}">已取消</text>
+								<text class="pay-btn" wx:if="{{payStatus==1}}" bindtap="payBtn">支付</text>
+						</view>
+				</view>
+				<view class="details-info-main2">
+						<view class="dblock">
+								<text class="width76">入 住 人 ：</text>
+								<text class="gray">{{searcOrderByOrdNo.customer_name}}</text>
+						</view>
+						<view class="dblock">
+								<text class="width76">联系电话：</text>
+								<text class="gray">{{searcOrderByOrdNo.customer_phone}}</text>
+						</view>
+				</view>
+		</view>
+		<view class="details-info details-bg">
+				<view class="details-info-main2">
+						<view class="dblock">
+								<text class="width76">发<text class="width28"></text>票：</text>
+								<!-- <text class="gray">{{searcOrderByOrdNo.invoiceHead?searcOrderByOrdNo.invoiceHead:'无'}}</text> -->
+								<text class="gray">{{invoiceHead?invoiceHead:'无'}}</text>
+						</view>
+						<view class="dblock">
+								<text class="width76">备<text class="width28"></text>注：</text>
+								<text class="gray">{{searcOrderByOrdNo.remark?searcOrderByOrdNo.remark:'无'}}</text>
+						</view>
+				</view>
+		</view>
+		<view class="details-info details-bg">
+				<view class="details-info-main2">
+						<view class="dblock">
+								<text class="width76">订 单 号：</text>
+								<text class="gray">{{searcOrderByOrdNo.order_no}}</text>
+						</view>
+						<view class="dblock">
+								<text class="width76">地<text class="width28"></text>址：</text>
+								<text class="gray">{{searcOrderByOrdNo.address}}</text>
+						</view>
+						<view class="dblock">
+								<text class="width76">电<text class="width28"></text>话：</text>
+								<text class="gray">{{searcOrderByOrdNo.telephone}}</text>
+						</view>
+				</view>
+		</view>
+		<view class="details-info details-bg" wx:if="{{payStatus==1 || payStatus==4}}">
+				<view class="details-info-main2 notify">
+						<p class="notify-title">取消须知：</p>
+						<p class="notify-main">
+								本订单最晚取消时间为入住当天18:00；当超过最晚取消时间后，AA旅行将不接受您的取消请求，同时已支付的预付款项不予退还，优惠券订单一经取消后无法恢复；
+						</p>
+				</view>
+				<view class="cancel-wrap">
+						<button class="cancel-btn" bindtap="openCancelDetail">取消</button>
+				</view>
+		</view>
+		<view class="details-info details-bg" wx:if="{{payStatus==2}}">
+				<view class="cancel-wrap">
+						<button class="cancel-btn" data-id="{{searcOrderByOrdNo.order_no}}" data-typename='{{searcOrderByOrdNo.room_type_name}}' data-address="{{searcOrderByOrdNo.address}}" data-hotelname="{{searcOrderByOrdNo.hotel_name}}" data-hotelid="{{searcOrderByOrdNo.hotel_code}}" bindtap="openCommentDetail">
+								评价
+						</button>
+						<!-- data-id="{{item.orderNo}}" data-typename='{{item.roomTypeName}}' data-address = "{{item.hotelAddress}}" data-hotelname="{{item.hotelName}}" data-hotelid="{{item.hotelId}}" -->
+				</view>
+		</view>
+</view>
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}" />

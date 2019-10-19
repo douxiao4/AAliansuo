@@ -1,0 +1,76 @@
+/* pages/pormptly/pormptly.wxss */
+/* pages/kangkang/praces.wxss */
+.img-tu{
+	width: 100%;
+  height: 320rpx;
+  margin-bottom: 15rpx;
+	display:flex;
+}
+.login-input{
+	padding: 17px 0;
+	padding-left: 15px;
+	padding-left: 15px;
+	position: relative;
+	display: flex;
+}
+.login-input label{
+	width: 100px;
+  display: inline-block;
+  font-size: 15px;
+  box-sizing: border-box;
+  height: 28px;
+  line-height: 28px;
+}
+.underline{
+	width: 100%;
+  height: 1px;
+  background-color: #EFEFEF;
+  display: block;
+}
+.login-ipt{
+	width: 69%;
+  font-size: 13px;
+  height: 28px;
+}
+.login-eye{
+	width: 30rpx;
+	height: 20rpx;
+	margin-top: 10px;
+}
+.login-btn{
+	width: 90%!important;
+	margin: 0 auto!important;
+}
+.login-submit{
+  background-color: #F05442;
+  width: 100%;
+  margin: 0 auto;
+  margin-top:20px;
+  height: 40px;
+  border-radius: 5px;
+  border: 0px;
+  color: #fff;
+  font-size: 16px;
+  display: block;
+  text-align: center;
+}
+.login-text{
+	display: block;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.login-view{
+	display: flex;
+	margin: 50px auto;
+	justify-content: center;
+}
+.login-view-text{
+  padding: 0px 10px;
+  color: #2a3342;
+  opacity: 0.4;
+  font-size: 14px;
+}
+.checkcode {
+  color: #F05442;
+}

@@ -1,0 +1,132 @@
+.container{
+    background-color: #efeff4;
+    /* height: 100%; */
+    /* padding-bottom: 30rpx; */
+}
+/*tab头部样式*/
+.swiper-tab{  
+    width: 100%;  
+    border-bottom: 1px solid #dcdcdc;
+    text-align: center;
+    display: flex;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}  
+.swiper-tab-list{
+    flex-grow:1;
+    padding: 15px 0;
+    font-size: 15px;
+    color: #798394;
+    margin: 0 20px;
+}  
+.on{    
+    border-bottom: 2px solid #F05442;
+    color: #F05442;
+}  
+.swiper-box{ 
+    display: block; 
+    /* height: 100%;  */
+    width: 100%; 
+    /* overflow: hidden; */
+    margin-top: 96rpx; 
+    /* box-sizing: border-box; */
+    /* padding-bottom: 20rpx; */
+}  
+/*tab内容样式*/
+.order-list-main{
+    width: 92%;
+    margin: 4% auto;
+    background: #fff;
+    overflow: hidden;
+    padding-bottom: 15px;
+}
+.order-main-info{
+    margin:0 15px;
+    border-bottom: 1px solid #f0f2f5;
+    padding-bottom:15px;
+    margin-bottom: 15px;
+}
+.order-info-img{
+    width: 12px;
+    height: 15px;
+    margin-right: 10px;
+}
+.order-info-img2{
+    width:12px;
+    height:10px;
+    margin-right: 10px;
+}
+.order-info-title{
+    line-height: 20px;
+    margin-top: 10px;
+    font-size:18px;
+    text-align: left;
+    color: #000;
+}
+.order-info-text{
+    color: rgba(0,0,0,.6);
+    font-size: 15px;
+    line-height: 20px;
+    margin-top: 10px;
+}
+.order-list-state{
+    display:flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    font-size: 14px;
+}
+.order-state-left{
+    color: #8d8d8d;
+}
+.order-state-right{
+    color: #e9413d;
+    font-size: 12px;
+}
+.order-state-right text{
+    font-size: 16px;
+}
+.order-info-null{
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 35%;
+}
+.order-null-text{
+    text-align: center;
+    margin-top: 20px;
+    color: #798394;
+    font-size: 16px;
+}
+.order-list-btn {
+  text-align: right;
+}
+.order-list-btn button {
+  display: inline;
+  width: 25%;
+  font-size: 30rpx;
+  padding: 5px 20px;
+  background: #fff;
+  margin-right: 30rpx;
+}
+.btn-cancel {
+  color: #8d8d8d;
+}
+.btn-pay {
+  border: 1px solid #F05442;
+  color: #F05442;
+}
+.btn-comment {
+  border: 1px solid #F05442;
+  color: #F05442;
+}
+.scroll-view-item {
+  /*height: 300rpx;*/
+  /*background-color: #efefef;*/
+}
+.btn-pay:after,.btn-comment:after {
+    border: none;
+}

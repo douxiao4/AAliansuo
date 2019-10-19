@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="120px" viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.2 (51160) - http://www.bohemiancoding.com/sketch -->
+    <title>pic_Default </title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#E45C1C" stop-opacity="0.9" offset="0%"></stop>
+            <stop stop-color="#F55160" offset="100%"></stop>
+        </linearGradient>
+        <circle id="path-2" cx="57.1428571" cy="57.1428571" r="57.1428571"></circle>
+        <circle id="path-4" cx="57.1428571" cy="57.1428571" r="57.1428571"></circle>
+        <filter x="-4.4%" y="-4.4%" width="108.8%" height="108.8%" filterUnits="objectBoundingBox" id="filter-5">
+            <feGaussianBlur stdDeviation="4" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="2" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.725490196   0 0 0 0 0.145098039   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="91.2940087%" id="radialGradient-6">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.8" offset="100%"></stop>
+        </radialGradient>
+        <circle id="path-7" cx="57.1428571" cy="98.0952381" r="41.9047619"></circle>
+        <filter x="-7.2%" y="-7.2%" width="114.3%" height="114.3%" filterUnits="objectBoundingBox" id="filter-8">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.866953479   0 0 0 0 0.851601957  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <linearGradient x1="50%" y1="5.24281566%" x2="50%" y2="96.2344738%" id="linearGradient-9">
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+        <ellipse id="path-10" cx="57.1428571" cy="38.0952381" rx="15.2380952" ry="22.8571429"></ellipse>
+        <filter x="-19.7%" y="-13.1%" width="139.4%" height="126.2%" filterUnits="objectBoundingBox" id="filter-11">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.866953479   0 0 0 0 0.851601957  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="我的-个人中心-已登录" transform="translate(-61.000000, -182.000000)">
+            <g id="1" transform="translate(0.000000, 148.000000)">
+                <g id="pic_Default-" transform="translate(61.000000, 34.000000)">
+                    <g id="Default-" stroke-width="1" fill-rule="evenodd" transform="translate(2.857143, 2.857143)">
+                        <mask id="mask-3" fill="white">
+                            <use xlink:href="#path-2"></use>
+                        </mask>
+                        <use id="Mask" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                        <g id="Mask" mask="url(#mask-3)">
+                            <use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-4"></use>
+                            <use fill="black" fill-opacity="1" filter="url(#filter-5)" xlink:href="#path-4"></use>
+                            <circle stroke="#FFFFFF" stroke-width="2" cx="57.1428571" cy="57.1428571" r="56.1428571"></circle>
+                        </g>
+                        <g id="Mask" mask="url(#mask-3)">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-7"></use>
+                            <use fill="url(#radialGradient-6)" fill-rule="evenodd" xlink:href="#path-7"></use>
+                        </g>
+                        <g id="Mask" mask="url(#mask-3)">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-11)" xlink:href="#path-10"></use>
+                            <use fill="url(#linearGradient-9)" fill-rule="evenodd" xlink:href="#path-10"></use>
+                        </g>
+                    </g>
+                    <circle id="Oval" stroke="#FFDDD9" stroke-width="6" cx="60" cy="60" r="57"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,26 @@
+<import src="../../wetoast/wetoast.wxml"/>
+
+<view class="container">
+  <view class="topinfo">
+    <image src="http://m.ihotels.cc/app/images/miniapp/illustration_comment.png"></image>
+    <view class="success-text">恭喜您支付成功</view>
+    <view class="pay-price">前台验证身份领取房卡直接入住</view>
+  </view>
+  <view class="user-rights">
+    <view>请于入住日中午12:00后办理入住，如提前到店，视酒店空房情况安排。</view>
+    <view>本次入住后将享受一下权益：</view>
+    <view class="list">
+      <view class="item">
+        <image src="http://m.ihotels.cc/app/images/miniapp/check_room_ic.png"></image>
+        <view>房间保留{{time}}</view>
+      </view>
+      <view class="item">
+        <image src="http://m.ihotels.cc/app/images/miniapp/check_delay_ic.png"></image>
+        <view>延时退房{{time1}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}"/>

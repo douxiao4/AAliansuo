@@ -1,0 +1,124 @@
+<import src="../../wetoast/wetoast.wxml" />
+<import src="../../template/template.wxml" />
+<import src='../../template/stars-template.wxml' />
+<getPhone wx:if="{{hasPhone===false}}" bindgetPhone="getPhone"></getPhone>
+<!-- <view wx:if="{{hasPhone===true}}" class="container"> -->
+<view wx:if="{{hasPhone!==null}}" class="container">
+  <swiper class='bannerBox' wx:if='{{bannerPic}}' autoplay='ture' interval='4000' indicator-dots='{{false}}' indicator-active-color='#F05442' indicator-color='#999' circular='{{true}}' style="height: 380rpx">
+    <swiper-item class="swbanner" wx:for='{{bannerPic}}' wx:key='index'>
+      <image catchtap="tapBanner" data-event="{{item.event}}" src='{{item.picture}}' style="height: 320rpx"></image>
+    </swiper-item>
+  </swiper>
+  <!-- 新增套壳 -->
+  <view class="roomBox">
+    <!-- 全日房/钟点房 -->
+    <view class="room-type">
+      <view class="left {{(openType==1)?'active':''}}" bindtap="changeRoomType" data-type="1">
+        全日房
+      </view>
+      <view class="border {{(openType==1)?'actLeft':'actRight'}}"></view>
+      <view class="right {{(openType==2)?'active':''}}" bindtap="changeRoomType" data-type="2">
+        钟点房
+      </view>
+    </view>
+    <view class="position">
+      <!-- <view class="lc-address">
+        <image src='/images/address.png'></image>
+      </view> -->
+      <view class="position-text" bindtap='changeCity'>{{cityName}}</view>
+      <view class="position-btn" bindtap="getLocation">
+        <text>我的位置</text>
+        <image src='/images/dingwei@2x.png'></image>
+      </view>
+    </view>
+    <!-- 时间选择器 -->
+    <template is="selectdate" data="{{...selectDate}}" wx:if="{{openType==1}}" />
+    <template is="selecthourdate" data="{{...selectDate}}" wx:if="{{openType==2}}" />
+    <form class="lcform">
+      <view class="area-btn">
+        <input class="picker" placeholder-style='color: #A2A7AA; font-size: 28rpx;' placeholder="品牌/酒店名称" bindinput='getInputWord' bindfocus="bindHotelFocus">
+        </input>
+        <!-- </picker> -->
+      </view>
+      <view class='lc-selectbtn'>
+        <view class="select-btn" bindtap="openHotelList">
+          <button id='searchBtn' formType='reset'>查询酒店</button>
+        </view>
+      </view>
+    </form>
+    <!-- 导航条 -->
+    <view class='navBox'>
+      <view class='navItem' catchtap="tapNav" data-name="会员权益">
+        <image class='navIcon' mode='widthFix' src='../../images/quanyi.png'></image>
+        <view class='navTitle'>会员权益</view>
+      </view>
+      <view class='navItem' catchtap="tapNav" data-name="我的收藏">
+        <image class='navIcon' mode='widthFix' src='../../images/shoucang.png'></image>
+        <view class='navTitle'>我的收藏</view>
+      </view>
+      <view class='navItem' catchtap="tapNav" data-name="我的订单">
+        <image class='navIcon' mode='widthFix' src='../../images/dingdan.png'></image>
+        <view class='navTitle'>我的订单</view>
+      </view>
+      <view class='navItem' catchtap="tapNav" data-name="房间质检">
+        <image class='navIcon' mode='widthFix' src='../../images/room.png'></image>
+        <view class='navTitle'>房间质检</view>
+      </view>
+    </view>
+    <!-- 导航条end -->
+  </view>
+  <!-- 套壳end -->
+  
+  <!-- 推荐酒店 -->
+  <view class="hotelListBox">
+    <view class="listTitle">推荐酒店</view>
+    <!-- 加载中 -->
+    <view class="loadingBox" wx:if="{{list.length==0 || !list}}">
+      <view class="skype-loader">
+        <view class="dot">
+          <view class="first"></view>
+        </view>
+        <view class="dot"></view>
+        <view class="dot"></view>
+        <view class="dot"></view>
+      </view>
+      <view class="txt">加载中</view>
+    </view>
+    <!-- 加载中end -->
+    <scroll-view scroll-x wx:else>
+      <view class="item tapHotelItem" data-index="{{index}}" data-item="{{item}}" catchtap="toBuyRoom" wx:for="{{list}}" wx:key="index" wx:for-index="index" wx:for-item="item">
+        <view class="titleBox">
+          <view class="title">{{item.name}}</view>
+          <view class="distance">
+            <image class="iconImg" mode="scaleToFill" src="../../images/dingwei@1x.png"></image>
+            <view class="txt">距离您{{item.distance}}KM</view>
+          </view>
+        </view>
+        <view class="bannerBox">
+          <image class="bannerImg" mode="scaleToFill" src="{{item.picture}}"></image>
+        </view>
+        <view class="tagBox">
+          <view class="tag" wx:for="{{item.labels}}" wx:key="idxTag" wx:for-index="idxTag" wx:for-item="tag">
+            {{tag.label}}
+          </view>
+        </view>
+        <view class="serviceBox">
+          <view class="serviceItems">{{item.serviceItems}}</view>
+        </view>
+        <view class="bottomBox">
+          <view class="starBox">
+            <template is='starsTemplate' data='{{...item}}'></template>
+          </view>
+          <view class="priceBox" wx:if="{{item.price}}">￥{{item.price}}起</view>
+          <view class="btnBox">
+            <button class="buy">立即预定</button>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 推荐酒店end -->
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}" />

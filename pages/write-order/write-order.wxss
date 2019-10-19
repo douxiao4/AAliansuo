@@ -1,0 +1,229 @@
+page {
+  background-color: #EFEFF4;
+  font-size: 30rpx;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 750rpx;
+  overflow: hidden;
+  padding-bottom: 100rpx;
+}
+.wrap-box {
+  width: 100%;
+  border-bottom: 20rpx solid #EFEFF4;
+  background-color: #fff;
+}
+.hotel-info {
+  padding: 40rpx;
+}
+.hotel-title {
+  /*line-height: 100rpx;*/
+}
+.hotel-roomtype-name {
+  line-height: 100rpx;
+  color: #8d8d8d;
+}
+.checkday-count {
+  color: #798394;
+  display: flex;
+}
+.checkday-count view {
+  flex: 1;
+  /*text-align: center;*/
+}
+.box-line {
+  line-height: 100rpx;
+  margin: 0 40rpx;
+  border-bottom: 1px solid #EFEFEF;
+  display: flex;
+}
+.box-left {
+  width: 150rpx;
+}
+.invoice-box {
+  width: 550rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.box-right {
+  flex: 1;
+}
+.tips {
+  display: flex;
+  padding: 40rpx 0;
+}
+.tips .left-icon {
+  width: 100rpx;
+  padding-left: 40rpx;
+}
+.tips .left-icon text {
+  background-color: #f00;
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+}
+.tips .right-text {
+  flex: 1;
+  padding-right: 40rpx;
+  line-height: 48rpx;
+}
+.footer-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid #E6E7E8;
+  background: #fff;
+  display: flex;
+  font-size: 30rpx;
+}
+.footer-bar .count-price {
+  flex: 2;
+  height: 100rxp;
+  line-height: 100rpx;
+  padding-left: 20rpx;
+  color: #F05442;
+}
+.footer-bar .price-detail-btn {
+  flex: 1;
+  height: 100rxp;
+  line-height: 100rpx;
+  padding-right: 40rpx;
+  color: #798394;
+  text-align: right;
+}
+.footer-bar .pay-btn {
+  flex: 2;
+  height: 100rxp;
+  line-height: 100rpx;
+  background-color: #F05442;
+  text-align: center;
+  color: #fff;
+}
+.box-line input {
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.check-phone .box-right {
+  display: flex;
+}
+.vcode-btn {
+  color: #F05442;
+  margin-left: 20rpx;
+}
+.check-phone .noactive {
+  color: #000;
+  text-align: right;
+}
+.fontGray {
+  color: #798394;
+}
+.box-right.invoice-right {
+  text-align: right;
+  color: #A9A9A9;
+}
+.tips.invoice {
+  padding: 20rpx;
+}
+.invoice-confirm-btn {
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #fff;
+  background: #F05442;
+  font-size: 28rpx;
+  margin-top: 40rpx;
+}
+.invoice-add {
+  text-align: right;
+}
+.add-invoice-btn {
+  background: #fff;
+  border: 1px solid #fff;
+  font-size: 30rpx;
+  width: 150rpx;
+  margin: 0;
+  margin-top: 5px;
+  padding: 0;
+  display: inline;
+}
+.add-invoice-btn:after {
+  content: none;
+}
+/*价格明细*/
+.price-detail-wrap {
+  position: fixed;
+  bottom: 100rpx;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background: rgba(0,0,0,.6);
+  z-index: 2;
+}
+.price-detail-title {
+  line-height: 100rpx;
+  padding-left: 40rpx;
+  border-bottom: 1px solid #E6E7E8;
+}
+.price-detail-inner {
+  position: fixed;
+  bottom: 100rpx;
+  width: 100%;
+  height: auto;
+  left: 0;
+  background: #fff;
+  line-height: 100rpx;
+  border-bottom: 1px solid #E6E7E8;
+}
+.price-detail-item {
+  display: flex;
+}
+.price-detail-date {
+  flex: 2;
+  padding-left: 40rpx;
+}
+.price-detail-y {
+  flex: 1;
+  padding-right: 40rpx;
+  text-align: right;
+}
+.room-num-btn {
+  border-radius: 50%;
+  border: 1px solid #F05442;
+  color: #F05442;
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+}
+.room-num-btn.add {
+  margin-right: 20rpx;
+}
+.room-num-btn.minus {
+  margin-left: 20rpx;
+}
+.room-num-btn.disabled {
+  color: #798394;
+  border-color: #798394;
+}
+.btn-area {
+  margin-top: 56rpx;
+  font-size: 28rpx;
+  height: 36rpx;
+  border-radius: 10rpx;
+  width: 100%;
+  text-align: center;
+}
+.btn-area button {
+  width: 678rpx;
+  color: #fff;
+  background-color: #F05442;
+  margin-bottom: 15rpx;
+}

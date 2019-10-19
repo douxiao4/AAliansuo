@@ -1,0 +1,183 @@
+view,
+text,
+image,
+picker,
+textarea,
+scroll-view,
+swiper,
+swiper-item {
+  box-sizing: border-box;
+}
+button {
+  background: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  border: 0;
+  border-radius: 0;
+  display: block;
+  line-height: 1;
+}
+button::after {
+  border: 0;
+  border-radius: 0;
+}
+.page {
+  padding: 20rpx 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  background: #fff;
+}
+.page .nowBox {
+  width: 100%;
+  min-height: 380rpx;
+  position: relative;
+}
+.page .nowBox .bgCard {
+  width: 100%;
+  display: block;
+}
+.page .nowBox .v1.cardBox {
+  color: #d4ae66;
+}
+.page .nowBox .v2.cardBox {
+  color: #fff;
+}
+.page .nowBox .cardBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  font-size: 24rpx;
+}
+.page .nowBox .cardBox .up {
+  display: flex;
+  flex-flow: row;
+  padding: 30rpx 45rpx 0;
+  align-items: center;
+}
+.page .nowBox .cardBox .up .userLogo {
+  display: block;
+  width: 80rpx;
+  height: 80rpx;
+  overflow: hidden;
+  border-radius: 999px;
+  border: 2px solid #eee;
+}
+.page .nowBox .cardBox .down {
+  width: 100%;
+}
+.page .nowBox .cardBox .down .row1 {
+  margin-top: 25rpx;
+  padding-left: 30rpx;
+  display: flex;
+  flex-flow: row;
+}
+.page .nowBox .cardBox .down .row2 {
+  margin-top: 61rpx;
+  padding-left: 30rpx;
+  display: flex;
+  flex-flow: row;
+}
+.page .nowBox .cardBox .down .item {
+  display: flex;
+  flex-flow: row;
+  flex: 1;
+  font-size: 20rpx;
+}
+.page .nowBox .cardBox .down .item .iconBox {
+  margin-right: 10rpx;
+  width: 48rpx;
+  height: 48rpx;
+}
+.page .nowBox .cardBox .down .item .iconBox .icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.page .nowBox .cardBox .down .item .txt {
+  flex: 1;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.page .buyNextBox {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 46rpx 27rpx 0 33rpx;
+  height: 210rpx;
+}
+.page .buyNextBox .buyBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 710rpx;
+}
+.page .buyNextBox .relative {
+  position: relative;
+  z-index: 3;
+}
+.page .buyNextBox .left {
+  margin-right: 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+.page .buyNextBox .left .usseLogo {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.page .buyNextBox .center {
+  flex: 1;
+}
+.page .buyNextBox .center .up {
+  height: 52rpx;
+  line-height: 52rpx;
+  font-size: 28rpx;
+  color: #742521;
+  font-weight: 600;
+}
+.page .buyNextBox .center .down {
+  height: 21rpx;
+  line-height: 21rpx;
+  font-size: 21rpx;
+  color: #2f2f2f;
+  line-height: 1.2;
+}
+.page .buyNextBox .center .down .red {
+  color: #742521;
+  line-height: 21rpx;
+}
+.page .buyNextBox .right {
+  color: #2f2f2f;
+}
+.page .buyNextBox .right .up {
+  font-size: 30rpx;
+  text-align: center;
+}
+.page .buyNextBox .right .down {
+  min-width: 96rpx;
+  min-height: 24rpx;
+  line-height: 24rpx;
+  font-size: 24rpx;
+  border: 1px solid #2f2f2f;
+  border-radius: 8rpx;
+  padding: 10rpx 24rpx;
+  text-align: center;
+}
+.page .lookNextBox,
+.page .bannerBox,
+.page .allBox {
+  width: 100%;
+}
+.page .lookNextBox image,
+.page .bannerBox image,
+.page .allBox image {
+  display: block;
+  width: 100%;
+}

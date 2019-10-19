@@ -1,0 +1,228 @@
+view,
+text,
+image,
+picker,
+textarea,
+scroll-view,
+swiper,
+swiper-item {
+  box-sizing: border-box;
+}
+
+button {
+  background: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  border: 0;
+  border-radius: 0;
+  display: block;
+  line-height: 1;
+}
+
+button::after {
+  border: 0;
+  border-radius: 0;
+}
+
+.page {
+  // padding-bottom: 10rpx;
+  padding: 20rpx 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  background: #fff;
+
+  // 当前
+  .nowBox {
+    width: 100%;
+    min-height: 380rpx;
+    position: relative;
+
+    .bgCard {
+      width: 100%;
+      display: block;
+    }
+
+    .v1.cardBox{
+      color: #d4ae66;
+    }
+    .v2.cardBox{
+      color: #fff;
+    }
+    .cardBox {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-flow: column;
+      font-size: 24rpx;
+      // color: #333;
+
+      .up {
+        display: flex;
+        flex-flow: row;
+        padding: 30rpx 45rpx 0;
+        align-items: center;
+
+        .userLogo {
+          // margin-right: 20rpx;
+          display: block;
+          width: 80rpx;
+          height: 80rpx;
+          overflow: hidden;
+          border-radius: 999px;
+          border: 2px solid #eee;
+        }
+      }
+
+      // .center {
+      //   margin-top: 20rpx;
+      //   width: 100%;
+      //   text-align: center;
+      //   font-size: 28rpx;
+
+      //   .title {
+      //     display: inline-block;
+      //     padding: 0 10rpx;
+      //     min-height: 40rpx;
+      //     line-height: 40rpx;
+      //     border: 1px solid #fff;
+      //     border-radius: 8rpx;
+      //   }
+      // }
+
+      .down {
+        width: 100%;
+
+        .row1 {
+          margin-top: 25rpx;
+          padding-left: 30rpx;
+          display: flex;
+          flex-flow: row;
+        }
+
+        .row2 {
+          margin-top: 61rpx;
+          padding-left: 30rpx;
+          display: flex;
+          flex-flow: row;
+        }
+
+        .item {
+          display: flex;
+          flex-flow: row;
+          flex: 1;
+          font-size: 20rpx;
+
+          .iconBox {
+            margin-right: 10rpx;
+            width: 48rpx;
+            height: 48rpx;
+
+            .icon {
+              display: block;
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .txt {
+            flex: 1;
+            height: 50rpx;
+            line-height: 50rpx;
+          }
+        }
+      }
+    }
+  }
+
+  // 购买下级权益
+  .buyNextBox {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding: 46rpx 27rpx 0 33rpx;
+    height: 210rpx;
+    .buyBg{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 710rpx;
+    }
+
+    .relative{
+      position: relative;
+      z-index: 3;
+    }
+    .left {
+      margin-right: 20rpx;
+      width: 100rpx;
+      height: 100rpx;
+
+      .usseLogo {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .center {
+      flex: 1;
+
+      .up {
+        height: 52rpx;
+        line-height: 52rpx;
+        font-size: 28rpx;
+        color: rgb(116, 37, 33);
+        font-weight: 600;
+      }
+
+      .down {
+        height: 21rpx;
+        line-height: 21rpx;
+        font-size: 21rpx;
+        color: rgb(47, 47, 47);
+        line-height: 1.2;
+
+        .red {
+          color: rgb(116, 37, 33);
+          line-height: 21rpx;
+        }
+      }
+    }
+
+    .right {
+      color: rgb(47, 47, 47);
+
+      .up {
+        font-size: 30rpx;
+        text-align: center;
+      }
+
+      .down {
+        min-width: 96rpx;
+        min-height: 24rpx;
+        line-height: 24rpx;
+        font-size: 24rpx;
+        border: 1px solid rgb(47, 47, 47);
+        border-radius: 8rpx;
+        padding: 10rpx 24rpx;
+        text-align: center;
+      }
+    }
+  }
+
+  // 查看下级权益
+  .lookNextBox,.bannerBox,.allBox{
+    width: 100%;
+    image{
+      display: block;
+      width: 100%;
+    }
+  }
+
+}

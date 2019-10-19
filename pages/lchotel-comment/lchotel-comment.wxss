@@ -1,0 +1,136 @@
+.container {
+    height: 105%;
+    background-color: #fff;
+}
+
+.comment-head {
+    height: 186rpx;
+    border-bottom: 1px solid #F0F2F6;
+    padding-left: 36rpx;
+}
+.comment-head .head1 {
+    font-size: 32rpx;
+    color: #455055;
+    margin: 28rpx 0;
+    font-weight: bold;
+}
+.comment-head .head2,
+.comment-head .head3 {
+    font-size: 24rpx;
+    color: #A2A7AA;
+    margin-bottom: 20rpx;
+}
+
+.comment-content {
+    padding-top: 36rpx;
+}
+.comment-content .content1 {
+    width: 100%;
+    text-align: center;
+    color: #040000;
+    font-size: 32rpx;
+    margin-bottom: 48rpx;
+}
+.comment-content .content2 {
+    display: flex;
+    flex-direction: row;
+}
+.comment-content .content2 image {
+    width: 58rpx;
+    height: 58rpx;
+    margin-bottom: 20rpx;
+}
+.comment-content .content2 text {
+    display: block;
+    font-size: 24rpx;
+    color: #A2A7AA;
+}
+.comment-content .content2 view {
+    margin-right: 100rpx;
+}
+.comment-content .content2 view:first-of-type {
+    margin-left: 188rpx;
+}
+.comment-content .content3 {
+    padding: 36rpx 36rpx 16rpx 36rpx;
+}
+.comment-content .content3 text {
+    display: inline-block;
+    border: 1px solid #F0F2F6;
+    font-size: 24rpx;
+    padding: 15rpx 20rpx;
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+    box-sizing: border-box;
+}
+.red {
+    color: #F05442 !important; 
+    border: 1px solid #F05442 !important;
+}
+.textred {
+    color: #F05442 !important;
+}
+.content4 {
+    padding: 0 36rpx;
+    box-sizing: border-box;
+}
+.content4 textarea {
+    background-color: rgba(240,242,246,0.5);
+    width: 100%;
+    padding: 28rpx;
+    box-sizing: border-box;
+    height: 202rpx;
+    font-size: 28rpx;
+}
+.content5 {
+    margin-top: 47rpx;
+    text-align: center;
+}
+.content5 text {
+    font-size: 32rpx;
+    color: #040000;
+    font-weight: bold;
+}
+
+.star-item-icon {
+    text-align: center;
+    margin-top: 47rpx;
+}
+.star-item-icon image {
+  width: 44rpx;
+  height: 44rpx;
+}
+.star-icon {
+  display: inline-block;
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 36rpx;
+}
+.star-hollow {
+  background-image: url('http://picture.ethank.com.cn/20180718/black.png');
+  background-size: 44rpx;
+}
+.star-full {
+  background-image: url('http://picture.ethank.com.cn/20180718/color.png');
+  background-size: 44rpx;
+}
+
+.comment-config {
+    margin-top: 68rpx;
+    width: 678rpx;
+    height: 78rpx;
+    background-color: #DDDDDD;
+    border-radius: 10rpx;
+    color: #fff;
+    font-size: 28rpx;
+    text-align: center;
+    margin-left: 36rpx;
+}
+.comment-config text {
+    display: inline-block;
+    height: 78rpx;
+    line-height: 78rpx;
+}
+.ComRed {
+    background-color: #F05442 !important;
+}

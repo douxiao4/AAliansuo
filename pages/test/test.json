@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "getPhone": "../../components/getPhone/getPhone"
+  }
+}

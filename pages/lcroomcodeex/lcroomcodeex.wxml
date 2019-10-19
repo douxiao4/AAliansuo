@@ -1,0 +1,8 @@
+<view class="container">
+
+  <view>
+    <input type="text" placeholder="请输入正确的房券码" class="getroomcode" bindinput='getroomcode' value="{{roomcode}}"/>
+    <button class="conformBtn" bindtap='roomcodeex' disabled='{{!roomcode}}'>确定兑换</button>
+  </view>
+
+</view>

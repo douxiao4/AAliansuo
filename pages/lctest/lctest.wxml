@@ -1,0 +1,7 @@
+<view class="container">
+    <view class="closs" catchtap='changeview'>
+        <text>X</text>
+    </view>
+    <view class="test0 {{num == ''? '': num==1? 'goTo1':'goTo0'}}">这是正面</view>
+    <view class="test1 {{num == ''? '': num==1? 'goTo0':'goTo1'}}" style='opacity:0'>这是反面</view>
+</view>

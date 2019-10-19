@@ -1,0 +1,54 @@
+.container {
+    background-color: #fff;
+    border-top: 1px solid #F0F2F6;
+    padding: 0 20rpx 20rpx;
+}
+.lcbrandName {
+    display: inline-block;
+    height: 80rpx;
+    line-height: 80rpx;
+    color: #000;
+    font-size: 30rpx;
+    /* font-weight: bold; */
+}
+.lcbrandName-list {
+    padding: 0 30rpx;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.lcbrandName-list text {
+    width: 24%;
+    box-sizing: border-box;
+    border: 1px solid #F0F2F6;
+    text-align: center;
+    padding: 8rpx;
+    margin-right: 8rpx;
+    margin-bottom: 8rpx;
+    color: #000;
+    font-size: 23rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border-radius: 7rpx;
+}
+.lcbrandName-list text:nth-of-type(4n){
+    margin-right: 0 !important;
+}
+.lcselected {
+    color: #F05442 !important;
+    border: 1px solid #F05442 !important;
+}
+.lcsearchButton {
+    width: 100%;
+    text-align: center;
+    background-color: #F05442;
+    height: 70rpx;
+    color: #fff;
+    font-size: 29rpx;
+    border-radius: 8rpx;
+    line-height: 70rpx;
+    font-weight: bold;
+    letter-spacing: 5rpx;
+    margin-top: 40rpx;
+}

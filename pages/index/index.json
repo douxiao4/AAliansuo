@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "getPhone": "../../components/getPhone/getPhone"
+  },
+  "navigationBarTitleText": "查询酒店"
+}

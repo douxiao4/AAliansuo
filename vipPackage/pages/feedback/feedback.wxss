@@ -1,0 +1,164 @@
+view,
+text,
+image,
+picker,
+textarea,
+scroll-view,
+swiper,
+swiper-item {
+  box-sizing: border-box;
+}
+page {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  background: #f1f1f1;
+}
+page .page {
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+  padding: 20rpx 30rpx 0;
+  flex-flow: column;
+}
+page .page .con-box {
+  width: 100%;
+  padding: 20rpx;
+  background: #fff;
+  border: 6rpx solid #e6e6e6;
+  border-radius: 12rpx;
+}
+page .page .con {
+  width: 100%;
+}
+page .page .con .con-tit {
+  font-size: 16px;
+  color: #333;
+}
+page .page .con .msg-box {
+  width: 100%;
+  color: #333;
+}
+page .page .con .msg-box .input-box {
+  width: 100%;
+  padding-top: 20rpx;
+  display: flex;
+  flex-flow: row;
+}
+page .page .con .msg-box .input-box .input-name {
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+}
+page .page .con .msg-box .input-box .input {
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+  height: 30px;
+  line-height: 30px;
+}
+page .page .con .msg-box .input-box .input input {
+  padding: 0 10rpx;
+  height: 28px;
+  line-height: 28px;
+  border: 1px solid #e6e6e6;
+  border-radius: 8rpx;
+  font-size: 14px;
+}
+page .page .con .msg-box textarea {
+  display: block;
+  width: 100%;
+  margin-top: 20rpx;
+  padding: 20rpx;
+  height: 300rpx;
+  background: #f2f2f2;
+  font-size: 14px;
+  color: #333;
+}
+page .page .con .day-box {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 20rpx;
+}
+page .page .con .day-box .day {
+  margin: 10rpx 0;
+  width: 30%;
+  line-height: 30px;
+  font-size: 14px;
+  text-align: center;
+  border: 4rpx solid #e6e6e6;
+  border-radius: 4px;
+  color: #333;
+}
+page .page .con .day-box radio {
+  display: none;
+}
+page .foot-box {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 40rpx 60rpx;
+  z-index: 3;
+}
+page .foot-box .stay-btn {
+  margin: 0 auto;
+  background: #F05442;
+  color: #fff;
+  font-size: 16px;
+  line-height: 40px;
+  border-radius: 12rpx;
+  text-align: center;
+}
+page .backIndexShow {
+  position: fixed;
+  width: 100rpx;
+  height: 100rpx;
+  bottom: 40rpx;
+  left: -50rpx;
+  background: #e0481f;
+  border-radius: 999px;
+  overflow: hidden;
+  text-align: center;
+  z-index: 9;
+}
+page .backIndexShow .icon {
+  line-height: 100rpx;
+  font-size: 60rpx;
+  color: #fff;
+}
+page .backIndex {
+  position: fixed;
+  width: 100rpx;
+  height: 100rpx;
+  bottom: 40rpx;
+  left: -50rpx;
+  background: #e0481f;
+  border-radius: 999px;
+  overflow: hidden;
+  text-align: center;
+  z-index: 8;
+}
+page .backIndex .icon {
+  line-height: 100rpx;
+  font-size: 60rpx;
+  color: #fff;
+}
+page .mt10 {
+  margin-top: 20rpx;
+}
+page .red {
+  color: red;
+}
+page .yellow {
+  color: #fff !important;
+  border-color: #F05442 !important;
+  background: #F05442 !important;
+}
+page .last {
+  margin-bottom: 80px;
+}

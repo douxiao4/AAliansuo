@@ -1,0 +1,38 @@
+<view class="container">
+    <view class="lcst-head">
+        <view class="lcsth-left">
+            <text>时间储值</text>
+            <image src='/images/icon_explain@2x.png' catchtap='showStorageRule1'></image>
+        </view>
+        <view class="lcsth-right" catchtap='showStorageRule2'>
+            <text>兑换规则 ></text>
+        </view>
+    </view>
+    <view class="lcst-time">
+        <text>{{modglod}}</text>
+        <text>小时</text>
+    </view>
+    <view class="lcst-infohead">
+        <text>收支明细</text>
+        <view>
+            <text class="{{total? 'bgColor':''}}" bindtap='getTotal'>全部</text>
+            <text class="{{income? 'bgColor':''}}" bindtap='getIncome'>收入</text>
+            <text class="{{expend? 'bgColor':''}}" bindtap='getExpend'>支出</text>
+        </view>
+    </view>
+    <view class="lcst-info" wx:if='{{recodeInfo.length>0}}'>
+        <block wx:for='{{recodeInfo}}' wx:key='index'>
+            <view class="lcst-infotext">
+                <view class="lcstif-left">
+                    <text>{{item.shopName}}</text>
+                    <text>{{item.status == 1? item.createTime : item.updateTime}}</text>
+                </view>
+                <text class="{{item.status == 1? 'redColor': 'greenColor'}}">{{item.status == 1? '+'+item.createStorageTime : -1*item.createStorageTime}}</text>
+            </view>
+        </block>
+    </view>
+    <view class="lcst-info1" wx:if='{{recodeInfo.length<=0}}'>
+        <image class="order-info-null" src="http://m.ihotels.cc/app/images/miniapp/null.png"></image>
+        <view class="order-null-text">您还没有时间储值的该信息!</view>
+    </view>
+</view>

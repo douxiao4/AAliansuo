@@ -1,0 +1,81 @@
+<import src="../../wetoast/wetoast.wxml" />
+<import src="../../template/template.wxml" />
+<import src='../../template/stars-template.wxml' />
+
+<view class="container">
+  <view class="lc-head">
+    <view class="lc-headline">
+      <view class="lc-headimgs" catchtap='letImagesPreview'>
+        <image src="{{getHotelInfo.imgsArr[0]? getHotelInfo.imgsArr[0]:'/images/pic_loading@2x.png'}}" data-src='{{getHotelInfo.imgsArr[0]}}' catchtap='letImagesPreview'></image>
+        <image src="{{getHotelInfo.imgsArr[1]? getHotelInfo.imgsArr[1]:'/images/pic_loading@2x.png'}}" data-src='{{getHotelInfo.imgsArr[1]}}' catchtap='letImagesPreview'></image>
+        <image src="{{getHotelInfo.imgsArr[2]? getHotelInfo.imgsArr[2]:'/images/pic_loading@2x.png'}}" data-src='{{getHotelInfo.imgsArr[2]}}' catchtap='letImagesPreview'></image>
+        <view class="lc-imgnum">
+          <image src='/images/icon_pic@2x.png'></image>
+          <text>{{getHotelInfo.hotelPic.length}}</text>
+        </view>
+      </view>
+      <view class="lc-headname" data-id='{{getHotelInfo.hotelId}}' catchtap='goToIntroduce'>
+        <text class="lchl-r1push" wx:if='{{getHotelInfo.allowStorgeTime}}'>时间储值</text>
+        <text>{{getHotelInfo.hotelName}}</text>
+      </view>
+    </view>
+    <view class="lc-headaddress">
+      <view class="lc-adr" catchtap='openMap'>
+        <image src='/images/address.png'></image>
+        <text>{{getHotelInfo.hotelAddress? getHotelInfo.hotelAddress : '位置未添加，可电话咨询或打开地图查看'}}</text>
+        <text wx:if='{{areaname&&distance}}'>{{areaname}} , 距您 {{distance}} km</text>
+      </view>
+    </view>
+  </view>
+  <view class="playaround">
+    <view class="aroundtit">
+    <text>周边推荐</text>
+    </view> 
+    <view class="nullinfo"wx:if="{{!showadcontainer}}">该酒店暂无周边信息推荐</view> 
+    <view class="adcontainer" wx:if="{{showadcontainer}}">
+    <view class="aroundlist" wx:for="{{aroundData}}" wx:key="{{index}}">
+      <view class="leftimg">
+        <!-- <image data-src="undefined" src="https://ucpic.aaroom.cc/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190301105112.png" ></image> -->
+         <image src="{{item.nearBusinessList[0].pic || '/images/nullpic.png'}}" binderror="errorFunction"></image>
+      </view>
+      <view class="rightcontlist">
+        <text class="titname">{{item.nearBusinessList[0].name}}</text>
+        <view class="aroundinfo">
+          <view class="a-score">评分：
+            <text wx:if="{{item.nearBusinessList[0].grade}}">{{item.nearBusinessList[0].grade}}</text>
+            <text wx:if="{{!item.nearBusinessList[0].grade}}">无</text>
+          </view>
+          <view  bindtap="calling" class="a-call" data-reply-phone="{{item.nearBusinessList[0].tel}}">
+          <image src="/images/ipcall.png"></image><text type="default" wx:if="{{item.nearBusinessList[0].tel}}">{{item.nearBusinessList[0].tel}}</text>
+          <text wx:if="{{!item.nearBusinessList[0].tel}}">无</text>
+          </view>
+        </view>
+        <view class="adress-info">
+          <image src="/images/address.png"></image>
+          <text>{{item.nearBusinessList[0].place}}</text>
+        </view>
+        <view class="a-monbox" wx:if="{{item.nearBusinessList[0].price}}">人均¥<text class="a-money">{{item.nearBusinessList[0].price}}</text>元</view>
+      </view>
+    </view>
+  </view>
+
+
+  </view>  
+</view>
+<view class='copytabBar'>
+  <view bindtap="copytabBar" data-url='../index/index'>
+    <image src='/images/home_gray.png'></image>
+    <view>首页</view>  
+  </view>
+  <view bindtap="copytabBar" data-url='../play-around/play-around'>
+    <image src='/images/around-red.png'></image>
+    <view style="color:#ed5548;">玩周边</view>
+  </view>
+  <view bindtap="copytabBar" data-url='../minecenter/minecenter'>
+    <image src='/images/my_gray.png'></image>
+    <view>我的</view>  
+  </view>  
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}" />

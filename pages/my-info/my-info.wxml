@@ -1,0 +1,58 @@
+<import src="../../wetoast/wetoast.wxml"/>
+
+<view class="container">
+	<view class="bg">
+		<view class="my-info">
+			<view>卡号</view>
+			<view>{{memberInfo.cardNum}}</view>
+		</view>
+		<view class="line"></view>
+		<view class="my-info">
+			<view>会员等级</view>
+			<view>{{memberInfo.cardLevel}}</view>
+		</view>
+	</view>
+	<view class="bg mt10">
+		<view class="my-info">
+			<view>会员姓名</view>
+			<view class="color">{{memberInfo.name?memberInfo.name:'无'}}<text> </text></view>
+		</view>
+		<view class="line"></view>
+		<view class="my-info">
+			<view>出生日期</view>
+			<view class="color">{{memberInfo.birthday?memberInfo.birthday:'无'}}<text> </text></view>
+		</view>
+		<view class="line"></view>
+		<view class="my-info">
+			<view>手机</view>
+			<view class="color">{{memberInfo.phoneNum?memberInfo.phoneNum:''}}<text> </text></view>
+		</view>
+		<view class="line"></view>
+		<view class="my-info">
+			<view>证件号码</view>
+			<view class="color">{{memberInfo.certificateNum?memberInfo.certificateNum:'无'}}<text> </text></view>
+		</view>
+		<view class="line"></view>
+		<view class="my-info">
+			<view>邮箱</view>
+			<view class="color">{{memberInfo.email?memberInfo.email:'无'}}<text> </text></view>
+		</view>
+		<view class="line"></view>
+		<!-- 添加权益 -->
+		<view class="my-info toEquity">
+			<view>会员权益</view>
+			<view style="color:#0099ff" bindtap="toEquity">立即进入<text></text>></view>
+		</view>
+	</view>
+	<view class="bg mt10" style="display: none;">
+		<view class="my-info">
+			<view>修改密码</view>
+			<view class="color"><text>></text></view>
+		</view>
+	</view>
+	<button type="primary" class="info-submit" bindtap="toEdit">修改信息</button>
+	<!-- <button class="info-submit" bindtap="outBtn">退出登录</button> -->
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}"/>

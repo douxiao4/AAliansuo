@@ -1,0 +1,78 @@
+<import src="../../wetoast/wetoast.wxml"/>
+
+<!-- 列表主体 -->
+<view class="container" wx:if="{{showContainerWrap}}">
+  <view class="items" wx:for="{{hotelList}}" wx:for-index="idx" wx:key="{{item.hotelId}}" bindtap="openHotelDetail" data-id="{{item.hotelId}}">
+    <view class="topinfo">
+      <view class="price-wrap">
+        <text class="mini-price" wx:if="{{openType==1}}">￥{{item.minPrice}}/晚</text>
+        <text class="mini-price" wx:if="{{openType==2}}">￥{{item.clockPrice}}/{{item.colckHour}}小时</text>
+        <text class="price-text">全网特惠</text>
+      </view>
+      <image class="hotel-logo" src="{{item.logo}}"></image>
+      <view class="collect" data-id="{{item.hotelId}}" data-iscollect="{{item.isCollection}}" data-index="{{idx}}" catchtap="collectHotel">
+        <!--已收藏-->
+        <image src="http://m.ihotels.cc/app/images/miniapp/home_collect_icon1.png" wx:if="{{item.isCollection==1}}"></image>
+        <!--未收藏-->
+        <image src="http://m.ihotels.cc/app/images/miniapp/home_collect_icon.png" wx:if="{{item.isCollection==2}}"></image>
+      </view>
+    </view>
+    <text class="hotel-name">{{item.hotelName}}</text>
+    <view class="score-dist">
+      <text class="scores">评分：{{item.score}}</text>
+      <text class="distance">距离：{{ item.distance <= 0 ? '0' : ( (item.distance/1000) ) }}km</text>
+    </view>
+    <view class="tags">
+      <text wx:for="{{item.serviceNames}}" wx:for-item="tags" wx:key="" wx:for-index="in" wx:if="{{in<2}}">{{tags}}</text>
+    </view>
+  </view>
+  <view class="no-data" wx:if="{{!hasHotelList}}">
+    <image class="order-info-null" src="http://m.ihotels.cc/app/images/miniapp/null.png"></image>
+    <view class="order-null-text">暂无酒店</view>
+  </view>
+</view>
+<!-- 底部三个筛选项 -->
+<view class="filter-btn">
+  <text class="filter-btn-item" catchtap="showHotelsearchType">筛选</text>
+  <view class="filter-btn-item">
+    <picker bindchange="showGetCountyByCity" value="{{index}}" range="{{county}}">
+      <view class="picker">
+        区域
+      </view>
+    </picker>
+  </view>
+  <text class="filter-btn-item" catchtap="showGetQuerySortType">排序</text>
+</view>
+
+<!-- 筛选 -->
+<view class="hotel-search-type" style="width: {{winWidth}}px;height: {{winHeight}}px" wx:if="{{showHotelsearchType}}">
+  <scroll-view scroll-y="true" style="height:{{winHeight}}px" scroll-top="0">
+    <view class="brand" wx:for="{{hotelsearchType}}" wx:key="" wx:for-index="idxp">
+      <view class="brand-title">{{item.name}}</view>
+      <view class="brand-wrap">
+
+        <view class='brand-item {{(brandNameList.length<1)?"active":""}}' wx:if="{{item.field=='brand'}}" data-field="{{item.field}}" data-name="" data-indexp="{{idxp}}" data-indexc="-1" bindtap="selectField">不限</view>
+        <view class='brand-item {{!distance?"active":""}}' wx:if="{{item.field=='distance'}}" data-field="{{item.field}}" data-name="" data-indexp="{{idxp}}" data-indexc="-1" bindtap="selectField">不限</view>
+        <view class='brand-item {{(serviceNameList.length<1)?"active":""}}' wx:if="{{item.field=='service'}}" data-field="{{item.field}}" data-name="" data-indexp="{{idxp}}" data-indexc="-1" bindtap="selectField">不限</view>
+        <view class='brand-item {{!commentLeave?"active":""}}' wx:if="{{item.field=='score'}}" data-field="{{item.field}}" data-name="" data-indexp="{{idxp}}" data-indexc="-1" bindtap="selectField">不限</view>
+
+        <view class="brand-item {{list.isSelected?'active':''}}" wx:for="{{item.data}}" wx:for-item="list" wx:for-index="idxc" wx:key="" data-field="{{item.field}}" data-name="{{list.name}}" data-indexp="{{idxp}}" data-indexc="{{idxc}}" bindtap="selectField">{{list.name}}</view>
+      </view>
+    </view>
+    <view class="brand-btn-wrap">
+      <button class="brand-button" bindtap="selectHotelSearchType">确定</button>
+    </view>
+  </scroll-view>
+</view>
+<!-- 区域 -->
+
+<!-- 排序 -->
+<view class="sort-wrap" wx:if="{{showSortWrap}}">
+  <view class="sort-inner">
+    <view class="sort-item" wx:for="{{getQuerySortType}}" wx:key="" data-opt="{{item.sortOpt}}" data-type="{{item.sortType}}" catchtap="selectQuerySortType">{{item.sortName}}</view>
+    <view class="sort-cancel" catchtap="showGetQuerySortType">取消</view>
+  </view>
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}"/>

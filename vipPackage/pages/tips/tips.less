@@ -1,0 +1,214 @@
+@import "../../../assets/iconfont.wxss";
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+view,text,image,picker,textarea,scroll-view,swiper,swiper-item{
+  box-sizing: border-box;
+}
+
+page {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  background: #f1f1f1;
+
+  .yellow{
+    color: #F05442 !important;
+  }
+
+  .page {
+    display: flex;
+    width: 100%;
+    min-height: 101%;
+    padding: 30rpx;
+    flex-flow: column;
+    .item {
+      width: 100%;
+      margin-bottom: 20rpx;
+      padding: 30rpx 20rpx 10rpx;
+      background: #fff;
+      border: 8rpx solid #e4e4e4;
+      border-radius: 14rpx;
+      .title {
+        width: 100%;
+        min-height: 20px;
+        line-height: 20px;
+        font-size: 16px;
+        color: #333;
+      }
+      .titleSub {
+        margin-top: 10rpx;
+        display: flex;
+        flex-flow: row;
+        width: 100%;
+        padding: 2px 0;
+        min-height: 16px;
+        line-height: 16px;
+        font-size: 12px;
+        color: #888;
+        .name {
+          padding-right: 10rpx;
+          border-right: 2px solid #888;
+        }
+        .time {
+          flex: 1;
+          padding-left: 10rpx;
+        }
+      }
+      .con {
+        margin-top: 10rpx;
+        width: 100%;
+        max-height: 72px;
+        line-height: 18px;
+        color: #666666;
+        font-size: 14px;
+        overflow: hidden;
+      }
+      .butBox {
+        margin-top: 20rpx;
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        .button {
+          line-height: 26px;
+          height: 26px;
+          border-radius: 8rpx;
+          padding: 0 24rpx;
+          font-size: 14px;
+          color: #fff;
+          background: #F05442;
+          border: 1px solid #F05442;
+        }
+        .zanBox{
+          margin-right: 20rpx;
+          padding: 0 10rpx;
+          display: flex;
+          // line-height: 26px;
+          // height: 26px;
+          // font-size: 14px;
+          color: #888;
+          border: 1px solid #F05442;
+          border-radius: 8rpx;
+          text{
+            display: inline-block;
+            font-size: 14px;
+            line-height: 24px;
+            height: 24px;
+          }
+        }
+      }
+    }
+    .bottom-tip {
+      margin: 10rpx auto;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: #888;
+    }
+  }
+
+  // 返回按钮
+  .backIndexShow {
+    position: fixed;
+    width: 100rpx;
+    height: 100rpx;
+    bottom: 40rpx;
+    left: -50rpx;
+    background: #e0481f;
+    border-radius: 999px;
+    overflow: hidden;
+    text-align: center;
+    z-index: 9;
+
+    .icon {
+      line-height: 100rpx;
+      font-size: 60rpx;
+      color: #fff;
+    }
+  }
+
+  .backIndex {
+    position: fixed;
+    width: 100rpx;
+    height: 100rpx;
+    // left: 40rpx;
+    bottom: 40rpx;
+    left: -50rpx;
+    background: #e0481f;
+    border-radius: 999px;
+    overflow: hidden;
+    text-align: center;
+
+    .icon {
+      line-height: 100rpx;
+      font-size: 60rpx;
+      color: #fff;
+    }
+  }
+  // 返回end
+  // mark
+  .mark {
+    z-index: 11;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    .close {
+      position: absolute;
+      top: 5vh;
+      right: 5%;
+    }
+    .conBox {
+      padding: 30rpx;
+      position: absolute;
+      left: 5%;
+      top: 10vh;
+      width: 90%;
+      height: 80vh;
+      background: #fff;
+      .title {
+        padding: 10rpx;
+        font-size: 16px;
+        text-align: center;
+        line-height: 20px;
+        min-height: 20px;
+        color: #333;
+        // border: 1px solid #e6e6e6;
+      }
+      .titleSub {
+        margin-top: 10rpx;
+        width: 100%;
+        padding: 2px 0;
+        min-height: 16px;
+        line-height: 16px;
+        font-size: 14px;
+        color: #888;
+        text-align: center;
+        .name {
+          padding-right: 10rpx;
+          border-right: 2px solid #ccc;
+        }
+        .time {
+          padding-left: 10rpx;
+        }
+      }
+      .conTxt {
+        margin-top: 20rpx;
+        font-size: 14px;
+        color: #333;
+        line-height: 18px;
+      }
+    }
+  }
+}

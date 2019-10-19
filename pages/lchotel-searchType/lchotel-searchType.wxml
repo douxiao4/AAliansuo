@@ -1,0 +1,18 @@
+<view class="container">
+    <view class="lcsearchArea">
+        <block wx:for='{{datas}}' wx:for-index='type' wx:key='type'>
+            <text class="lcbrandName">{{item.name}}</text>
+            <view class="lcbrandName-list">
+                <block wx:for='{{item.data}}' wx:for-item='datas' wx:key='index'>
+                    <text class="{{datas.isselected ? 'lcselected':''}}" 
+                    data-type='{{type}}'
+                    data-id='{{datas.id}}' 
+                    catchtap='getSelectedInfo'>{{datas.name}}</text>
+                </block>
+            </view>
+        </block>
+    </view>
+    <view class="lcsearchButton" catchtap='getConditionHotels'>
+        <text>确定</text>
+    </view>
+</view>

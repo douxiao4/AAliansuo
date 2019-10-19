@@ -1,0 +1,30 @@
+<import src="../../wetoast/wetoast.wxml"/>
+
+<view class="container">
+  <view class="login-box">
+  	<image class="img-tu" src="https://ucpic.aaroom.cc/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190301105109.jpg"></image>
+	  	<view class="login-input">
+	  	    <label>账号：</label>
+	  		<input placeholder="手机号/卡号" class="login-ipt" type="text" value="{{memberId}}" bindinput="bindphone"></input>
+	  	</view>
+	  	<view class="underline"></view>
+	  	<view class="login-input">
+	  	  <label>密码：</label>
+	  		<input placeholder="4-20位字母、数字和字符" class="login-ipt" type="password" value="{{memberPwd}}" bindinput="bindpwd"></input>
+	  		<!-- <image class="login-eye" src="http://m.ihotels.cc/app/images/miniapp/login_password_hide.png"></image> -->
+	  	</view>
+	  	<view class="underline"></view>
+	  	<view class="login-btn">
+	  	  <button class="login-submit" bindtap="submitBtn">立即登录</button>
+
+	  	</view>
+	  	<text class="login-text" bindtap="openLoginWidthVcode">通过短信验证码登录</text>
+  	<view class="login-view">
+  		<view class="login-view-text" bindtap="loginwangji">忘记密码</view>
+  		<view class="login-view-text" bindtap="loginpromptly">立即注册</view>
+  	</view>
+  </view>
+</view>
+
+<!-- wetoast -->
+<template is="wetoast" data="{{...__wetoast__}}"/>

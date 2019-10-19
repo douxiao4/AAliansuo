@@ -1,0 +1,12 @@
+<template name='starsTemplate'>
+    <view class="lc-commentstar">
+        <text>{{score}}</text>
+        <view class="lc-stars">
+            <block wx:for='{{scoreArr}}' wx:key='index'>
+                <image src='/images/icon_star_yellow@2x.png' wx:if='{{item==1}}'></image>
+                <image src='/images/icon_star_half@2x.png' wx:if='{{item==2}}'></image>
+                <image src='/images/icon_star_gray@2x.png' wx:if='{{item==0}}'></image>
+            </block>
+        </view>
+    </view>
+</template>

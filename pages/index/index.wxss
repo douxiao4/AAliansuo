@@ -1,0 +1,837 @@
+/* page{
+  min-height:100%;
+} */
+button {
+  background: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  border: 0;
+  border-radius: 0;
+  display: block;
+  line-height:1;
+}
+
+button::after {
+  border: 0;
+  border-radius: 0;
+}
+
+.container {
+  padding-bottom: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f5f5;
+  width: 100%;
+  min-height: 100%;
+  /* overflow: hidden; */
+}
+
+.bannerBox {
+  z-index: 0;
+}
+
+.queryOhacc {
+  width: 100%;
+  /* border-bottom: 20rpx solid #F0F2F5; */
+  margin-bottom: 15rpx;
+  height: 62rpx;
+  line-height: 47rpx;
+  text-align: center;
+  background-color: #fff;
+  font-size: 32rpx;
+  color: #a2a7aa;
+}
+
+.search-hotel {
+  width: 100%;
+  border-bottom: 20rpx solid #f0f2f5;
+  display: flex;
+  line-height: 100rpx;
+  font-size: 30rpx;
+}
+
+.search-hotel input {
+  line-height: 100rpx;
+  height: 100rpx;
+  margin-left: 100rpx;
+  font-size: 30rpx;
+  flex: 1;
+  text-align: center;
+}
+
+.search-hotel .search-btn {
+  margin-right: 100rpx;
+  flex: 1;
+  text-align: center;
+}
+
+.roomBox {
+  /* margin-top: -50rpx; */
+  position: relative;
+  top: -100rpx;
+  z-index: 11;
+  width: 686rpx;
+  height: auto;
+  overflow: hidden;
+  /* background: #fff; */
+  -moz-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.room-type {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  display: flex;
+  background: #eee;
+  color: #a2a7aa;
+}
+
+.room-type .left,
+.room-type .right {
+  flex: 1;
+  text-align: center;
+  color: #455055;
+}
+
+.room-type .active {
+  background: #fff;
+  color: #040000;
+  font-weight: bold;
+  font-size: 28rpx;
+}
+
+.room-type .border {
+  width: 0;
+  height: 0;
+  border-bottom: 88rpx solid #fff;
+}
+
+.room-type .actLeft {
+  border-right: 40rpx solid transparent;
+}
+
+.room-type .actRight {
+  border-left: 40rpx solid transparent;
+}
+
+.position {
+  padding: 6px 0;
+  width: 100%;
+  font-size: 26rpx;
+  display: flex;
+  border-bottom: 1px solid #efefef;
+  background-color: #fff;
+  position: relative;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.position-text {
+  flex: 1;
+  text-align: left;
+  margin-left: 40rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  color: #040000;
+  font-weight: bold;
+}
+
+.position-btn {
+  flex: 1;
+  text-align: right;
+  margin-right: 50rpx;
+  display: flex;
+  /* flex-direction: column; */
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.position-btn image {
+  margin-left: 13rpx;
+  width: 32rpx;
+  height: 32rpx;
+  /* margin: 10rpx auto; */
+}
+
+.position-btn text {
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+  /* margin-top: 8rpx; */
+}
+
+.area-btn {
+  font-size: 30rpx;
+  color: #878787;
+  width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: left;
+  /*padding-left: 100rpx;*/
+  border-bottom: 1px solid #efefef;
+  background-color: #fff;
+  position: relative;
+}
+
+.area-btn .picker {
+  padding-left: 40rpx;
+  /* display: inline-block; */
+  height: 120rpx;
+  line-height: 120rpx;
+  width: 100%;
+}
+
+.lcform {
+  width: 100%;
+}
+
+.lc-selectbtn {
+  width: 100%;
+  background-color: #fff;
+  padding-top: 30rpx;
+  box-sizing: border-box;
+}
+
+.select-btn {
+  /* font-size: 14px; */
+  background-color: #fff;
+  width: 90%;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.select-btn button {
+  width: 100%;
+  height: 80rpx;
+  /* background-color: #e04923; */
+  color: #fff;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  background-image: linear-gradient(to right, #df3028 0%, #fa6d31 100%);
+  border-radius: 20px;
+}
+
+.select-btn button:active {
+  /* background-image: linear-gradient(to right, #841c18 0%, #98411d 100%);
+  color: #9b9999; */
+  opacity: 0.6;
+}
+
+/* 改动位置开始 */
+
+.lc-address image {
+  width: 42rpx;
+  height: 42rpx;
+  position: absolute;
+  left: 28rpx;
+  top: 38rpx;
+}
+
+.lc-search image {
+  width: 42rpx;
+  height: 42rpx;
+  position: absolute;
+  left: 28rpx;
+  top: 30rpx;
+}
+
+/* 改动位置结束 */
+
+/*会员权益开始  */
+
+.select-date {
+  background-color: #fff;
+  justify-content: space-between;
+}
+
+.lc-equity {
+  height: 150rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 15rpx 20rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  margin-bottom: 15rpx;
+}
+
+.lc-equity image,
+.lc-equity text {
+  position: absolute;
+}
+
+.lc-eq,
+.lc-online,
+.lc-life {
+  position: relative;
+  width: 215rpx;
+  height: 120rpx;
+  margin-right: 15rpx;
+}
+
+.lc-life {
+  margin-right: 0 !important;
+}
+
+.lc-eqbg,
+.lc-onbg,
+.lc-libg {
+  width: 215rpx;
+  height: 120rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.lc-eqbg {
+  width: 234rpx;
+  height: 135rpx;
+  top: -5rpx;
+  left: -10rpx;
+}
+
+.lc-eqman,
+.lc-onman,
+.lc-liman {
+  width: 92rpx;
+  height: 98rpx;
+  right: 0;
+  bottom: -16rpx;
+}
+
+.lc-onman,
+.lc-liman {
+  width: 64rpx;
+  height: 96rpx;
+}
+
+.lc-eqtext1,
+.lc-ontext1,
+.lc-litext1 {
+  left: 16rpx;
+  top: 21rpx;
+  font-size: 28rpx;
+  color: #455055;
+  font-weight: bold;
+}
+
+.lc-eqtext2,
+.lc-ontext2,
+.lc-litext2 {
+  left: 16rpx;
+  top: 60rpx;
+  font-size: 20rpx;
+  color: #a2a7aa;
+}
+
+/* .lc-equity{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 15rpx;
+  padding: 15rpx;
+  background-color: #fff;
+}
+.lc-equity>view {
+  display: flex;
+  flex-direction: row;
+}
+.lc-equity image {
+  width: 42rpx;
+  height: 42rpx;
+  margin: auto 0;
+}
+.lc-equity text {
+  font-size: 25rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-left: 25rpx;
+} */
+
+/* .lc-coline {
+  height: 50rpx;
+  width: 2px;
+  background-color: #ccc;
+  margin-top: 5rpx;
+} */
+
+/*会员权益结束  */
+
+/*尚美品牌开始  */
+
+.lc-SMbrand {
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15rpx;
+}
+
+.lc-smpp {
+  text-align: center;
+  font-size: 28rpx;
+  /* font-weight: normal; */
+  padding-top: 10rpx;
+  padding-bottom: -5rpx;
+  color: #455055;
+  font-weight: bold;
+}
+
+.lc-brandswiper image {
+  width: 185rpx;
+  height: 185rpx;
+  margin-bottom: 10rpx;
+}
+
+.lc-brandswiper swiper {
+  height: 200rpx;
+}
+
+.lc-brandswiper .lc-swv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/*尚美品牌结束  */
+
+/*轮播图开始  */
+
+swiper,
+swiper image {
+  width: 100%;
+  height: 400rpx;
+}
+
+/*轮播图结束  */
+
+.select-date {
+  padding: 32rpx 0 !important;
+}
+
+.lc-clock {
+  display: none;
+}
+
+.lcselect-checkIn {
+  width: 100%;
+  justify-content: flex-start;
+  padding-left: 40rpx;
+  margin-bottom: 0;
+}
+
+.lcselect-checkIn text,
+.lcselect-checkIn view {
+  margin-top: 0;
+  display: block;
+  width: 100%;
+  line-height: 40rpx;
+  text-align: left;
+}
+
+.select-checkIn,
+.select-checkOut {
+  justify-content: flex-start;
+  color: #999;
+  line-height: 40rpx;
+}
+
+.select-checkIn,
+.lcselect-checkIn {
+  padding-left: 40rpx;
+  box-sizing: border-box;
+}
+
+.select-checkOut text {
+  padding-left: 40rpx;
+  box-sizing: border-box;
+}
+
+.select-checkIn text,
+.select-checkOut text {
+  display: block;
+  width: 100%;
+}
+
+.select-checkIn .chIn,
+.select-checkOut .chOu {
+  margin-top: 0 !important;
+  width: 100%;
+}
+
+.count-days {
+  /* text-align: left !important; */
+  line-height: 64rpx;
+  color: #d0021b;
+  font-size: 28rpx;
+}
+
+.lc-countDay {
+  color: #d0021b;
+  font-size: 28rpx;
+}
+
+/* 导航栏 */
+.roomBox .navBox {
+  padding-top: 38rpx;
+  padding-bottom: 25rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.roomBox .navBox .navItem {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.roomBox .navBox .navItem:active {
+  opacity: 0.6;
+}
+
+.roomBox .navBox .navItem image {
+  display: block;
+  width: 36rpx;
+  height: 36rpx;
+}
+
+.roomBox .navBox .navItem view {
+  margin-top: 16rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 20rpx;
+  color: #717171;
+  text-align: center;
+}
+
+/* 导航栏end */
+/* 推荐酒店 */
+.hotelListBox {
+  width: 100%;
+  margin-top: -63rpx;
+  padding-left: 32rpx;
+  box-sizing: border-box;
+}
+
+.hotelListBox .listTitle {
+  margin-bottom: 18rpx;
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: left;
+  font-size: 28rpx;
+  color: #333333;
+  font-weight: 600;
+}
+
+.hotelListBox scroll-view {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  /* white-space: nowrap; */
+}
+
+/* .list{
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+} */
+/* item */
+/* .borderBox {
+  margin-right: 20rpx;
+  width: 621rpx;
+} */
+
+.item {
+  display: inline-block;
+  margin-right: 20rpx;
+  width: 621rpx;
+  padding: 0 18rpx;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 16rpx;
+  text-align: left;
+  box-sizing: content-box;
+}
+
+.item .titleBox {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.item .titleBox view {
+  height: 70rpx;
+  line-height: 70rpx;
+}
+
+.item .titleBox .title {
+  flex: 1;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 24rpx;
+  color: #333;
+}
+
+.item .titleBox .distance {
+  min-width: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.item .titleBox .distance image {
+  display: block;
+  width: 21rpx;
+  height: 24rpx;
+}
+
+.item .titleBox .distance .txt {
+  margin-left: 10rpx;
+  text-align: right;
+  font-size: 20rpx;
+  color: #D0021B;
+}
+
+.item .bannerBox {
+  width: 100%;
+}
+
+.item .bannerBox image {
+  display: block;
+  width: 100%;
+  height: 295rpx;
+}
+
+.item .tagBox {
+  margin-top: 16rpx;
+  height: 32rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.item .tagBox .tag {
+  margin-right: 16rpx;
+  padding: 0 12rpx 0 8rpx;
+  border: 1px solid #FF7889;
+  border-radius: 4px;
+  color: #D0021B;
+  font-size: 20rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  box-sizing: content-box;
+  white-space: nowrap;
+}
+
+.item .tagBox .tag:last-child {
+  margin-right: 0;
+}
+
+.item .serviceBox {
+  margin-top: 6rpx;
+  width: 100%;
+  padding-bottom: 15rpx;
+  border-bottom: 1px solid #EFEFEF;
+}
+
+.item .serviceBox .serviceItems {
+  width: 100%;
+  height: 28rpx;
+  line-height: 28rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 20rpx;
+  color: #005CC7;
+}
+
+.item .bottomBox {
+  padding: 15rpx 0;
+  /* padding-bottom: 15rpx; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item .bottomBox .starBox .lc-commentstar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item .bottomBox .starBox .lc-commentstar text {
+  display: block;
+  font-size: 24rpx;
+  color: #333333;
+  text-align: left;
+}
+
+.item .bottomBox .starBox .lc-commentstar .lc-stars {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item .bottomBox .starBox .lc-commentstar .lc-stars image {
+  display: block;
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.item .bottomBox .btnBox button {
+  padding: 0 44rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  background-image: linear-gradient(-241deg, #FF7833 0%, #CC0422 100%);
+  border-radius: 22rpx;
+  color: #fff;
+  font-size: 20rpx;
+  text-align: center;
+}
+
+.item .bottomBox .priceBox {
+  flex: 1;
+  padding-right: 12rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  text-align: right;
+  font-size: 22rpx;
+  color: #F76731;
+}
+
+/* 推荐酒店end */
+
+
+/* 加载动画 */
+.loadingBox {
+  width: 686rpx;
+  height: 534rpx;
+  background: #fff;
+  border-radius: 16rpx;
+}
+
+.loadingBox .txt {
+  text-align: center;
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 170rpx;
+
+}
+
+.skype-loader {
+  width: 160rpx;
+  height: 160rpx;
+  position: relative;
+  top: 100rpx;
+  margin: 0 auto;
+}
+
+.skype-loader .dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 160rpx;
+  height: 160rpx;
+
+  animation: 1.7s dotrotate cubic-bezier(0.775, 0.005, 0.310, 1.000) infinite;
+}
+
+.skype-loader .dot:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.skype-loader .dot:nth-child(2) {
+  animation-delay: 0.35s;
+}
+
+.skype-loader .dot:nth-child(3) {
+  animation-delay: 0.45s;
+}
+
+.skype-loader .dot:nth-child(4) {
+  animation-delay: 0.55s;
+}
+
+.skype-loader .dot:after,
+.skype-loader .dot .first {
+  content: "";
+  position: absolute;
+  width: 16rpx;
+  height: 16rpx;
+  background: #ccc;
+  border-radius: 50%;
+  left: 50%;
+  margin-left: -4rpx;
+}
+
+.skype-loader .dot .first {
+  background: #ccc;
+  margin-top: -4rpx;
+  animation: 1.7s dotscale cubic-bezier(0.775, 0.005, 0.310, 1.000) infinite;
+  animation-delay: 0.2s;
+}
+
+@keyframes dotrotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dotscale {
+
+  0%,
+  10% {
+    width: 32rpx;
+    height: 32rpx;
+    margin-left: -16rpx;
+    margin-top: -8rpx;
+  }
+
+  50% {
+    width: 16rpx;
+    height: 16rpx;
+    margin-left: -8rpx;
+    margin-top: 0;
+  }
+
+  90%,
+  100% {
+    width: 32rpx;
+    height: 32rpx;
+    margin-left: -16rpx;
+    margin-top: -8rpx;
+  }
+}
+
+/* 加载动画end */
